@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>הדסה מתן - אוטומציה עסקית</title>
-    <script type="text/javascript">
-      var pathSegmentsToKeep = 1;
-
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
-        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+    <meta http-equiv="refresh" content="0; url=/4U/" />
+    <script>
+      // שמירה על הנתיב המקורי
+      var pathname = window.location.pathname;
+      var hash = window.location.hash;
+      var search = window.location.search;
+      var newUrl = '/4U/' + (pathname.split('/4U/')[1] || '') + search + hash;
+      window.location.replace(newUrl);
     </script>
+    <title>Redirecting...</title>
   </head>
   <body>
+    <p>Redirecting...</p>
   </body>
 </html>
