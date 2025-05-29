@@ -40,7 +40,7 @@ function MainLayout() {
         </div>
         {showChat && (
           <div className="chat-window">
-            <ChatBot />
+            <ChatBot setShowChat={setShowChat} />
           </div>
         )}
       </div>
