@@ -38,9 +38,9 @@ function Header() {
         >
           <Link to="/">
             <img 
-              src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=300"
+              src="/logo.png"
               alt="Logo" 
-              className="h-12 w-auto rounded-lg"
+              className="h-12 w-auto"
             />
           </Link>
         </motion.div>

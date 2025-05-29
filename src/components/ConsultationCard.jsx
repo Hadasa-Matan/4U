@@ -54,31 +54,7 @@ function ConsultationCard() {
   };
 
   return (
-    <section id="consultation" className="py-20 min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 relative overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0">
-          <div className="grid grid-cols-12 gap-2 h-full w-full transform rotate-12">
-            {Array.from({ length: 100 }).map((_, index) => (
-              <motion.div
-                key={index}
-                className="h-8 bg-blue-500/30 rounded"
-                initial={{ opacity: 0.1 }}
-                animate={{
-                  opacity: [0.1, 0.3, 0.1],
-                  scale: [1, 1.1, 1],
-                }}
-                transition={{
-                  duration: Math.random() * 3 + 2,
-                  repeat: Infinity,
-                  delay: Math.random() * 2,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-
+    <section id="consultation" className="py-32 bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           ref={ref}
@@ -88,7 +64,7 @@ function ConsultationCard() {
           className="text-center mb-16"
         >
           <motion.h2 
-            className="text-5xl font-bold text-white mb-8"
+            className="text-4xl font-bold text-white mb-12"
             variants={itemVariants}
           >
             הצעד הראשון להצלחת העסק שלך

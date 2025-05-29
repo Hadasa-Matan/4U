@@ -19,7 +19,7 @@ function Testimonials() {
       image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800"
     },
     {
-      author: "חסי ליטופ, מנהלת תוכניות כפיים",
+      author: "חסי לינטופ, מנהלת תוכניות כפיים",
       text: "\"תודה שהגשמת לי חלום...\nהאוטומציה הזו מהממת\nחוסכת לי זמן והתעסקות\nהכל ברור מסודר ומתקתק!! ...\"",
       image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
       avatar: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150"
