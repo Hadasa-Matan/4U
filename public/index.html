@@ -1,23 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="he">
   <head>
-    <meta charset="utf-8">
-    <title>הדסה מתן - אוטומציה עסקית</title>
-    <script type="text/javascript">
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
-          );
-        }
-      }(window.location))
-    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>הדסה מתן - פתרונות אוטומציה</title>
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- סקריפט לשכתוב כתובת URL במקרה של הפניה מ-404 -->
+    <script type="text/javascript">
+      (function (l) {
+        if (l.search[1] === '/') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            })
+            .join('?');
+          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash);
+        }
+      })(window.location);
+    </script>
+
+    <!-- קובץ ה-JS שנוצר על ידי Vite -->
+    <script type="module" src="/4U/assets/index-xxxxx.js"></script>
   </body>
 </html>
