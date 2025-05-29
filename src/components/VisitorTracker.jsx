@@ -18,7 +18,7 @@ function VisitorTracker() {
         };
 
         // כאן תוכלי להוסיף את ה-webhook URL מ-Make
-        const webhookUrl = 'YOUR_MAKE_WEBHOOK_URL';
+        const webhookUrl = 'https://hook.eu2.make.com/itm1d1xudha4e0nnpdg2rcq7ddw7ph5w';
         
         await fetch(webhookUrl, {
           method: 'POST',
