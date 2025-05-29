@@ -16,13 +16,13 @@ function Testimonials() {
       author: "הרב גלוסקין, גבאי ביהכנ\"ס 'אהל שמשון'",
       text: "\"כגבאי בית כנסת המתזז רבות בין משימות לא נגמרות\nגב' מתן הקפיצה אותי בכמה רמות עם אוטומציה מדהימה החוסכת הרבה זמן, (ובמיוחד בדקות אחרונות לפני שבת, ברכת מזל טוב, במהירות שיא וזמני תפילות אוטומטים וכד').\nפשוט, קל ויעיל\"",
       avatar: "/images/avatar1.jpg",
-      image: "/images/testimonial1.jpg"
+      image: "/images/testimonial1.jpg"
     },
     {
       author: "חסי לינטופ, מנהלת תוכניות כפיים",
       text: "\"תודה שהגשמת לי חלום...\nהאוטומציה הזו מהממת\nחוסכת לי זמן והתעסקות\nהכל ברור מסודר ומתקתק!! ...\"",
-      image: "/images/avatar2.gif",
-      avatar: "/images/testimonial2.jpg"
+      avatar: "/images/avatar2.gif",
+      image: "/images/testimonial2.jpg"
     }
   ];
 
@@ -79,7 +79,7 @@ function Testimonials() {
                   >
                     <img
                       src={testimonial.image}
-                      alt="המלצה בכתב יד"
+                      alt="המלצה"
                       className="w-full rounded-lg shadow-md"
                       loading="lazy"
                     />
