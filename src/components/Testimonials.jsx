@@ -83,7 +83,6 @@ function Testimonials() {
                       className="w-full rounded-lg shadow-md"
                       loading="lazy"
                     />
-                    <p className="text-center text-sm text-gray-400 mt-2">לחץ להגדלה</p>
                   </div>
                 )}
               </div>
