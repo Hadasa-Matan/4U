@@ -11,6 +11,7 @@ import Contact from './components/Contact';
 import ChatBot from './components/ChatBot';
 import HomeButton from './components/HomeButton';
 import Footer from './components/Footer';
+import VisitorTracker from './components/VisitorTracker';
 
 function MainLayout() {
   const [showChat, setShowChat] = useState(false);
@@ -44,6 +45,7 @@ function MainLayout() {
           </div>
         )}
       </div>
+      <VisitorTracker />
     </div>
   );
 }
