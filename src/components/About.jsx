@@ -78,7 +78,7 @@ function About() {
               <div className="relative">
                 <div className="absolute inset-0 bg-blue-500 rounded-2xl blur-xl opacity-20 animate-pulse"></div>
                 <img
-                  src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+                  src="/4U/images/Ds3LrL2GnRioYMjRpMR2Q.png"
                   alt="Tech Innovation"
                   className="relative rounded-2xl shadow-2xl w-full object-cover aspect-video"
                 />
