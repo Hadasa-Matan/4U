@@ -22,9 +22,8 @@ function MainLayout() {
       <Header />
       {showHomeButton && <HomeButton />}
       <main className="flex-grow">
-        {location.pathname === '/' && <Hero />}
         <Routes>
-          <Route path="/" element={null} />
+          <Route path="/" element={<Hero />} />
           <Route path="/services" element={<Services />} />
           <Route path="/about" element={<About />} />
           <Route path="/testimonials" element={<Testimonials />} />
@@ -51,7 +50,7 @@ function MainLayout() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/4U">
       <MainLayout />
     </Router>
   );
