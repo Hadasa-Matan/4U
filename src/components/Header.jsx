@@ -38,7 +38,7 @@ function Header() {
         >
           <Link to="/">
             <img 
-              src="/logo.png"
+              src="/4U/logo.png"
               alt="Logo" 
               className="h-12 w-auto"
             />
