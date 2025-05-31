@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { BsChatDots } from 'react-icons/bs';
 import Header from './components/Header';
@@ -17,6 +17,11 @@ function MainLayout() {
   const [showChat, setShowChat] = useState(false);
   const location = useLocation();
   const showHomeButton = location.pathname !== '/';
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
