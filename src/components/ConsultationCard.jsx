@@ -9,6 +9,39 @@ function ConsultationCard() {
     triggerOnce: true
   });
 
+  const handleFormClick = async () => {
+    try {
+      const clickData = {
+        action: 'form_button_click',
+        page: '/consultation',
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        language: navigator.language,
+        screenResolution: `${window.screen.width}x${window.screen.height}`,
+        timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+        referrer: document.referrer
+      };
+
+      // כאן תוכלי להוסיף את ה-webhook URL מ-Make
+      const webhookUrl = 'https://hook.eu2.make.com/1gpuy8jd0zbdih1v5f3rm61jkmtw7l67';
+      
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(clickData)
+      });
+
+      // פתיחת הטופס בחלון חדש
+      window.open('https://www.jotform.com/form/251371057931455', '_blank');
+    } catch (error) {
+      console.error('Error tracking form click:', error);
+      // במקרה של שגיאה, עדיין נפתח את הטופס
+      window.open('https://www.jotform.com/form/251371057931455', '_blank');
+    }
+  };
+
   const steps = [
     {
       icon: <BsClipboardCheck className="w-6 h-6" />,
@@ -100,15 +133,13 @@ function ConsultationCard() {
             variants={itemVariants}
             className="mt-12"
           >
-            <a
-              href="https://form.jotform.com/251493867410057"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              onClick={handleFormClick}
               className="inline-block bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-10 py-5 rounded-full font-medium text-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl hover:shadow-indigo-500/25 relative overflow-hidden group"
             >
               <span className="relative z-10">אני רוצה למלא טופס קצרצר</span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </a>
+            </button>
           </motion.div>
         </motion.div>
       </div>
