@@ -10,6 +10,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'FbAsparagos';
+  src: url('/fonts/FbAsparagos-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   font-family: 'Heebo', sans-serif;
 }
@@ -30,6 +38,11 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'FbAsparagos', sans-serif;
   font-weight: bold;
+}
+
+button, a {
+  font-family: 'FbAsparagos', sans-serif;
+  font-weight: normal;
 }
 
 .chatbot-container {
