@@ -38,7 +38,7 @@ function Contact() {
             src="https://form.jotform.com/251296577428469"
             style={{
               minWidth: '100%',
-              height: '650px',
+              height: '720px',
               border: 'none'
             }}
             scrolling="no"
