@@ -81,6 +81,15 @@ function About() {
                 </p>
               </div>
             </motion.div>
+	
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl font-bold text-white">היתרונות שלנו</h2>
+            </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {techFeatures.map((feature, index) => (
