@@ -68,7 +68,7 @@ function Contact() {
                 </a>
                 <a href={mailtoLink} className="flex items-center justify-center gap-3 text-lg text-gray-300 hover:text-white transition-colors duration-300">
                   <BsEnvelope className="text-indigo-400 w-5 h-5" />
-                  <span className="font-medium">hadasamatan@gmail.com</span>
+                  <span className="font-medium">HadasaMatan@gmail.com</span>
                 </a>
               </div>
 
