@@ -30,19 +30,25 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-lg mx-auto mb-16"
+          className="w-full max-w-3xl mx-auto mb-16"
         >
-          <iframe
-            id="JotFormIFrame-251296577428469"
-            title="צור קשר"
-            src="https://form.jotform.com/251296577428469"
-            style={{
-              minWidth: '100%',
-              height: '800px',
-              border: 'none'
-            }}
-            scrolling="no"
-          />
+          <div className="relative w-full" style={{ paddingTop: '150%' }}>
+            <iframe
+              id="JotFormIFrame-251296577428469"
+              title="צור קשר"
+              src="https://form.jotform.com/251296577428469"
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                border: 'none',
+                backgroundColor: 'transparent'
+              }}
+              scrolling="no"
+            />
+          </div>
         </motion.div>
 
         <motion.div
