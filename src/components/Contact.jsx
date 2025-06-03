@@ -32,7 +32,7 @@ function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="w-full max-w-3xl mx-auto mb-16"
         >
-          <div className="relative w-full" style={{ paddingTop: '150%' }}>
+          <div className="relative w-full" style={{ paddingTop: '100%' }}>
             <iframe
               id="JotFormIFrame-251296577428469"
               title="צור קשר"
@@ -78,8 +78,8 @@ function Contact() {
                   <h4 className="text-lg font-medium text-white">שעות פעילות</h4>
                 </div>
                 <div className="space-y-2 text-gray-300">
-                  <p>א'-ה': 10:00-16:00, 20:00-23:00</p>
-                  <p>ו': 09:00-12:00</p>
+                  <p>א'-ה': 10:00-16:00, 20:00-22:00</p>
+                  <p>ו': 09:00-11:00</p>
                 </div>
               </div>
 
