@@ -33,8 +33,8 @@ function About() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-gray-900 to-indigo-900 py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-32 bg-gradient-to-br from-gray-900 to-indigo-900 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +42,7 @@ function About() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-white mb-6">אודות</h2>
+          <h2 className="text-4xl font-bold text-white mb-12">אודות</h2>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
