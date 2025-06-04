@@ -23,13 +23,13 @@ function Footer() {
                 <BsTelephone className="flex-shrink-0" />
                 <span>050-413-3408</span>
               </a>
-              <a href="mailto:hadasamatan@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
+              <a href="mailto:HadasaMatan@gmail.com" className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors">
                 <BsEnvelope className="flex-shrink-0" />
-                <span>hadasamatan@gmail.com</span>
+                <span>HadasaMatan@gmail.com</span>
               </a>
               <div className="flex items-center gap-2 text-gray-300">
                 <BsClock className="flex-shrink-0" />
-                <span>א'-ה': 10:00-16:00, 20:00-23:00</span>
+                <span>א'-ה': 10:00-16:00, 20:00-22:00, ו': 09:00-11:00</span>
               </div>
             </div>
           </div>
