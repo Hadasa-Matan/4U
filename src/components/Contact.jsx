@@ -36,7 +36,7 @@ function Contact() {
             <iframe
               id="JotFormIFrame-251296577428469"
               title="צור קשר"
-              src="https://form.jotform.com/251296577428469"
+              src="https://forms.fillout.com/t/4tmSG4iqhVus"
               style={{
                 position: 'absolute',
                 top: 0,
