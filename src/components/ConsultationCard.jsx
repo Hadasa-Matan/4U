@@ -41,7 +41,7 @@ function ConsultationCard() {
     }
   };
 
-  const steps = [
+ const steps = [
     {
       number: 1,
       icon: <BsClipboardCheck className="w-6 h-6" />,
@@ -117,10 +117,11 @@ function ConsultationCard() {
   };
 
   const numberVariants = {
-    hidden: { scale: 0, rotate: -180 },
+    hidden: { scale: 0, rotate: -180, x: -20 },
     visible: {
       scale: 1,
       rotate: 0,
+      x: 0,
       transition: {
         duration: 0.8,
         ease: "easeOut",
@@ -128,10 +129,10 @@ function ConsultationCard() {
       }
     },
     hover: {
-      scale: 1.2,
-      rotate: 360,
+      scale: 1.1,
+      rotate: 5,
       transition: {
-        duration: 0.5
+        duration: 0.3
       }
     }
   };
@@ -193,7 +194,7 @@ function ConsultationCard() {
                 whileHover="hover"
                 whileTap="tap"
                 onClick={handleFormClick}
-                className="relative bg-white/10 backdrop-blur-xl rounded-2xl p-8 transition-all duration-500 border border-white/20 group cursor-pointer overflow-hidden"
+                className="relative bg-white/10 backdrop-blur-xl rounded-2xl p-8 pl-16 transition-all duration-500 border border-white/20 group cursor-pointer overflow-hidden"
               >
                 {/* Animated Background Gradient */}
                 <motion.div
@@ -201,10 +202,14 @@ function ConsultationCard() {
                   initial={false}
                 />
                 
-                {/* Number Badge */}
+                {/* Number - positioned on the left */}
                 <motion.div
                   variants={numberVariants}
-                  className="absolute -top-4 -right-4 w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg"
+                  className="absolute top-6 left-6 text-6xl font-bold text-transparent bg-gradient-to-br from-indigo-400 to-purple-400 bg-clip-text drop-shadow-lg"
+                  style={{
+                    fontFamily: 'FbAsparagos, sans-serif',
+                    textShadow: '0 0 20px rgba(99, 102, 241, 0.5)'
+                  }}
                 >
                   {step.number}
                 </motion.div>
