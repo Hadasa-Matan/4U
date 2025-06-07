@@ -30,9 +30,9 @@ function Contact() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-full max-w-3xl mx-auto mb-16"
+          className="w-full max-w-2xl mx-auto mb-16"
         >
-          <div className="relative w-full" style={{ paddingTop: '100%' }}>
+          <div className="relative w-full" style={{ paddingTop: '75%' }}>
             <iframe
               id="JotFormIFrame-251296577428469"
               title="צור קשר"
@@ -44,7 +44,8 @@ function Contact() {
                 width: '100%',
                 height: '100%',
                 border: 'none',
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
+                borderRadius: '12px'
               }}
               scrolling="no"
             />
