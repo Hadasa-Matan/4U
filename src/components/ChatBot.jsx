@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function ChatBot({ setShowChat }) {
   const [message, setMessage] = useState('');
@@ -17,16 +18,27 @@ function ChatBot({ setShowChat }) {
     setShowChat(false);
   };
 
+  const handleClose = () => {
+    setShowChat(false);
+  };
+
   return (
     <div className="h-full flex flex-col">
-      <div className="bg-indigo-600 text-white p-4">
-        <h3 className="font-semibold">צ'אט עם נציג</h3>
+      <div className="bg-indigo-600 text-white p-4 relative">
+        <h3 className="font-semibold"> צ'אט עם נציג וירטואלי</h3>
+        <button
+          onClick={handleClose}
+          className="absolute top-3 left-3 text-white hover:text-gray-200 transition-colors duration-200 p-1 rounded-full hover:bg-indigo-700"
+          aria-label="סגור צ'אט"
+        >
+          <XMarkIcon className="h-5 w-5" />
+        </button>
       </div>
       <div className="flex-1 p-4 overflow-y-auto">
         <div className="bg-gray-100 rounded-lg p-3 mb-4 max-w-[80%]">
           היי,
           <br />
-          הבוט שלנו נמצא כרגע בשלבי פיתוח מתקדמים, ואנו עובדים במרץ כדי להעניק לך את השירות הטוב והמקצועי ביותר. אי"ה בקרוב נשיק את הגרסה המלאה שתוכל לסייע לך באופן מיטבי. נשמח לעמוד לרשותך בהקדם האפשרי ומעריכים את סבלנותך. אם יש לך שאלה, אנא צור איתנו קשר באחד מאמצעי התקשורת.
+          הבוט שלנו נמצא כרגע בשלבי פיתוח מתקדמים, ואנו עובדים במרץ כדי להעניק לך את השירות הטוב והמקצועי ביותר. אי"ה בקרוב נשיק את הגרסה המלאה שתוכל לסייע לך באופן מיטבי. נשמח לעמוד לרשותך בהקדם האפשרי ומעריכים את סבלנותך. לכל שאלה, אנא צור איתנו קשר באחד מאמצעי התקשורת.
         </div>
         <button
           onClick={handleConsultation}
