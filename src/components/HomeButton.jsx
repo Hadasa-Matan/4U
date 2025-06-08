@@ -22,7 +22,7 @@ function HomeButton() {
         transition={{ duration: 0.3 }}
       >
         <BsHouseFill className="text-indigo-600 w-5 h-5" />
-        <span className="text-gray-700 font-medium text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 mr-1">
+        <span className="text-gray-700 font-medium text-sm whitespace-nowrap mr-1">
           חזרה לדף הבית
         </span>
       </motion.div>
