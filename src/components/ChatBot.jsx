@@ -8,7 +8,7 @@ function ChatBot({ setShowChat }) {
   useEffect(() => {
     // טעינת הסקריפט של Chatrace
     const script = document.createElement('script');
-    script.src = 'https://chatrace.com/webchat/?p=1249354&ref=1753054769905';
+    script.src = 'https://chatrace.com/webchat/?p=1249354&id=kX8n4IR4DP27PkpEo2';
     script.async = true;
     
     // הוספת הסקריפט לראש הדף
@@ -54,7 +54,7 @@ function ChatBot({ setShowChat }) {
           }}
         >
           <iframe
-            src="https://chatrace.com/webchat/?p=1249354&ref=1753054769905"
+            src="https://chatrace.com/webchat/?p=1249354&id=kX8n4IR4DP27PkpEo2"
             style={{
               width: '100%',
               height: '100%',
