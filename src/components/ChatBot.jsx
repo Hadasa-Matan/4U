@@ -67,15 +67,6 @@ function ChatBot({ setShowChat }) {
         </div>
       </div>
 
-      {/* כפתור לייעוץ כגיבוי */}
-      <div className="p-4 border-t bg-gray-50">
-        <button
-          onClick={handleConsultation}
-          className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-300 w-full text-sm"
-        >
-          לשיחת ייעוץ ללא עלות
-        </button>
-      </div>
     </div>
   );
 }
