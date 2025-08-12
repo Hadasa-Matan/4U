@@ -10,23 +10,25 @@ function ChatBotWidget() {
 
   return (
     <>
-      {/* בועה + טקסט ליד */}
-      <div className="fixed bottom-4 left-4 flex items-center gap-2 z-50">
-        <div
-          onClick={handleToggle}
-          className="bg-indigo-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-indigo-700 transition"
-        >
-          <ChatBubbleLeftRightIcon className="h-6 w-6" />
+      {/* בועה עם טקסט רק כשהצ'אט סגור */}
+      {!isOpen && (
+        <div className="fixed bottom-4 left-4 flex items-center gap-2 z-50">
+          <div
+            onClick={handleToggle}
+            className="bg-indigo-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-indigo-700 transition"
+          >
+            <ChatBubbleLeftRightIcon className="h-6 w-6" />
+          </div>
+          <div
+            onClick={handleToggle}
+            className="bg-white text-indigo-700 px-3 py-1 rounded-full shadow-md text-sm font-medium cursor-pointer hover:bg-indigo-50 transition"
+          >
+            יש לך שאלה?
+          </div>
         </div>
-        <div
-          onClick={handleToggle}
-          className="bg-white text-indigo-700 px-3 py-1 rounded-full shadow-md text-sm font-medium cursor-pointer hover:bg-indigo-50 transition"
-        >
-          יש לך שאלה?
-        </div>
-      </div>
+      )}
 
-      {/* חלון הצ'אט */}
+      {/* חלון הצ'אט כשהוא פתוח */}
       {isOpen && (
         <div
           className="fixed bottom-20 left-4 w-96 h-[500px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col z-50"
@@ -34,7 +36,7 @@ function ChatBotWidget() {
         >
           {/* כותרת */}
           <div className="bg-indigo-600 text-white p-4 relative">
-            <h3 className="font-semibold text-right">צ'אט עם נציג</h3>
+            <h3 className="font-semibold text-right">צ'אטבוט בשילוב בינה מלאכותית</h3>
             <button
               onClick={handleToggle}
               className="absolute top-3 left-3 text-white hover:text-gray-200 transition-colors duration-200 p-1 rounded-full hover:bg-indigo-700"
@@ -55,13 +57,3 @@ function ChatBotWidget() {
                 direction: 'rtl'
               }}
               title="Chatrace Bot"
-              allow="microphone; camera"
-            />
-          </div>
-        </div>
-      )}
-    </>
-  );
-}
-
-export default ChatBotWidget;
