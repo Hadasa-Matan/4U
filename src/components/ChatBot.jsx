@@ -7,6 +7,7 @@ function ChatBotWidget() {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <>
       {/* בועה עם טקסט רק כשהצ'אט סגור */}
@@ -53,6 +54,15 @@ function ChatBotWidget() {
                 width: '100%',
                 height: '100%',
                 border: 'none',
-                direction: 'rtl'
+                direction: 'rtl',
               }}
               title="Chatrace Bot"
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
+
+export default ChatBotWidget;
