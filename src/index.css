@@ -127,6 +127,22 @@ button, a {
   direction: rtl;
 }
 
+/* מניעת הצגת ווידג'ט ברירת מחדל של Chatrace */
+#ktt10-widget,
+.ktt10-widget,
+[id*="ktt10"],
+[class*="ktt10"] {
+  display: none !important;
+}
+
+/* הצגת הווידג'ט רק בתוך הקונטיינר שלנו */
+.chat-window #ktt10-widget,
+.chat-window .ktt10-widget,
+.chat-window [id*="ktt10"],
+.chat-window [class*="ktt10"] {
+  display: block !important;
+}
+
 @keyframes slideUp {
   from {
     opacity: 0;
