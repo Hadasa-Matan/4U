@@ -7,7 +7,6 @@ function ChatBotWidget() {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-
   return (
     <>
       {/* בועה עם טקסט רק כשהצ'אט סגור */}
