@@ -19,7 +19,7 @@ function ChatBot({ setShowChat }) {
       
       <div className="flex-1 overflow-hidden relative">
         <iframe
-          src="https://chatrace.com/webchat/?p=1249354&id=kX8n4IR4DP27PkpEo2"
+          src="https://chatrace.com/webchat/?p=1249354&ref=1753054769905"
           className="w-full h-full border-none"
           title="צ'אטבוט"
           style={{
