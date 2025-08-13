@@ -52,6 +52,47 @@ button, a {
   z-index: 1000;
 }
 
+.chat-button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chat-question-text {
+  background-color: #4f46e5;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeInSlide 0.5s ease-out, gentlePulse 2s ease-in-out infinite;
+  font-family: 'FbAsparagos', sans-serif;
+}
+
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(0) scale(1.02);
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 .chat-button {
   background-color: #4f46e5;
   color: white;
@@ -83,6 +124,7 @@ button, a {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   animation: slideUp 0.3s ease-out;
+  direction: rtl;
 }
 
 @keyframes slideUp {
