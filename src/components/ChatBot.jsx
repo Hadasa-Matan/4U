@@ -9,7 +9,7 @@ function ChatBot({ setShowChat }) {
   return (
     <div className="h-full flex flex-col" dir="rtl">
       <div className="bg-indigo-600 text-white p-4 relative">
-        <h3 className="font-semibold text-right">צ'אט עם נציג</h3>
+        <h3 className="font-semibold text-right">צ'אטבוט בשילוב בינה מלאכותית</h3>
         <button
           onClick={handleClose}
           className="absolute top-3 left-3 text-white hover:text-gray-200 transition-colors duration-200 p-1 rounded-full hover:bg-indigo-700"
