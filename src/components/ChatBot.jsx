@@ -1,39 +1,7 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
 
 function ChatBot({ setShowChat }) {
-  const chatContainerRef = useRef(null);
-  const scriptLoadedRef = useRef(false);
-
-  useEffect(() => {
-    // טעינת הסקריפט של Chatrace
-    if (!scriptLoadedRef.current) {
-      const script = document.createElement('script');
-      script.src = 'https://chatrace.com/webchat/plugin.js?v=6';
-      script.onload = () => {
-        // הגדרת הצ'אטבוט לאחר טעינת הסקריפט
-        if (window.ktt10) {
-          window.ktt10.setup({
-            id: "kX8n4IR4DP27PkpEo2",
-            accountId: "1249354",
-            color: "#377FE1",
-            container: chatContainerRef.current, // הגדרת הקונטיינר הספציפי
-            showWidget: false // מניעת הצגת הווידג'ט הברירת מחדל
-          });
-        }
-      };
-      document.head.appendChild(script);
-      scriptLoadedRef.current = true;
-    }
-
-    return () => {
-      // ניקוי בעת סגירת הקומפוננטה
-      if (window.ktt10 && window.ktt10.destroy) {
-        window.ktt10.destroy();
-      }
-    };
-  }, []);
-
   const handleClose = () => {
     setShowChat(false);
   };
@@ -50,9 +18,10 @@ function ChatBot({ setShowChat }) {
       </button>
       
       <div className="flex-1 overflow-hidden relative">
-        <div 
-          ref={chatContainerRef}
-          className="w-full h-full"
+        <iframe
+          src="https://chatrace.com/webchat/?p=1249354&id=kX8n4IR4DP27PkpEo2"
+          className="w-full h-full border-none"
+          title="צ'אטבוט"
           style={{
             direction: 'rtl',
             textAlign: 'right'
