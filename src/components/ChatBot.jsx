@@ -1,67 +1,62 @@
-import React, { useState } from 'react';
-import { XMarkIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 
-function ChatBotWidget() {
-  const [isOpen, setIsOpen] = useState(false);
+function ChatBot({ setShowChat }) {
+  const navigate = useNavigate();
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
+  useEffect(() => {
+    // טעינת הסקריפט של Chatrace (הווידג'ט המלא)
+    const script = document.createElement('script');
+    script.src = 'https://chatrace.com/webchat/plugin.js?v=6';
+    script.async = true;
+    document.body.appendChild(script);
+
+    // הפעלת הצ'אט אחרי טעינת הסקריפט
+    script.onload = () => {
+      if (window.ktt10) {
+        window.ktt10.setup({
+          id: "kX8n4IR4DP27PkpEo2",
+          accountId: "1249354",
+          color: "#377FE1",
+          lang: "he"
+        });
+      }
+    };
+
+    // ניקוי כשהקומפוננטה נהרסת
+    return () => {
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
+  const handleClose = () => {
+    setShowChat(false);
   };
 
   return (
-    <>
-      {/* בועה תמיד גלויה */}
-      <div
-        className="fixed bottom-4 left-4 flex items-center gap-2 z-50 cursor-pointer select-none"
-        onClick={handleToggle}
-      >
-        <div className="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition flex items-center justify-center">
-          <ChatBubbleLeftRightIcon className="h-6 w-6" />
-        </div>
-
-        {/* הטקסט מופיע רק כשהצ'אט סגור */}
-        {!isOpen && (
-          <div className="bg-white text-indigo-700 px-3 py-1 rounded-full shadow-md text-sm font-medium hover:bg-indigo-50 transition select-none">
-            יש לך שאלה?
-          </div>
-        )}
+    <div className="h-full flex flex-col" dir="rtl">
+      <div className="bg-indigo-600 text-white p-4 relative">
+        <h3 className="font-semibold text-right">
+          צ'אטבוט בשילוב בינה מלאכותית
+        </h3>
+        <button
+          onClick={handleClose}
+          className="absolute top-3 left-3 text-white hover:text-gray-200 transition-colors duration-200 p-1 rounded-full hover:bg-indigo-700"
+          aria-label="סגור צ'אט"
+        >
+          <XMarkIcon className="h-5 w-5" />
+        </button>
       </div>
 
-      {/* חלון הצ'אט */}
-      {isOpen && (
-        <div
-          className="fixed bottom-20 left-4 w-96 h-[500px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col z-50"
-          dir="rtl"
-        >
-          {/* כותרת */}
-          <div className="bg-indigo-600 text-white p-4 relative">
-            <h3 className="font-semibold text-right">צ'אטבוט בשילוב בינה מלאכותית</h3>
-            <button
-              onClick={handleToggle}
-              className="absolute top-3 left-3 text-white hover:text-gray-200 transition-colors duration-200 p-1 rounded-full hover:bg-indigo-700"
-              aria-label="סגור צ'אט"
-            >
-              <XMarkIcon className="h-5 w-5" />
-            </button>
-          </div>
-
-          {/* אזור הבוט */}
-          <div className="flex-1">
-            <iframe
-              src="https://chatrace.com/webchat/?p=1249354&ref=1753054769905"
-              style={{
-                width: '100%',
-                height: '100%',
-                border: 'none',
-                direction: 'rtl',
-              }}
-              title="Chatrace Bot"
-            />
-          </div>
-        </div>
-      )}
-    </>
+      <div className="flex-1 overflow-hidden relative">
+        {/* הווידג'ט של Chatrace יוטמע כאן */}
+        <div id="chatrace-webchat" className="w-full h-full"></div>
+      </div>
+    </div>
   );
 }
 
-export default ChatBotWidget;
+export default ChatBot;
