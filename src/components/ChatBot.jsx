@@ -10,25 +10,24 @@ function ChatBotWidget() {
 
   return (
     <>
-      {/* בועה עם טקסט רק כשהצ'אט סגור */}
-      {!isOpen && (
-        <div className="fixed bottom-4 left-4 flex items-center gap-2 z-50">
-          <div
-            onClick={handleToggle}
-            className="bg-indigo-600 text-white p-3 rounded-full shadow-lg cursor-pointer hover:bg-indigo-700 transition"
-          >
-            <ChatBubbleLeftRightIcon className="h-6 w-6" />
-          </div>
-          <div
-            onClick={handleToggle}
-            className="bg-white text-indigo-700 px-3 py-1 rounded-full shadow-md text-sm font-medium cursor-pointer hover:bg-indigo-50 transition"
-          >
+      {/* בועה תמיד גלויה */}
+      <div
+        className="fixed bottom-4 left-4 flex items-center gap-2 z-50 cursor-pointer select-none"
+        onClick={handleToggle}
+      >
+        <div className="bg-indigo-600 text-white p-3 rounded-full shadow-lg hover:bg-indigo-700 transition flex items-center justify-center">
+          <ChatBubbleLeftRightIcon className="h-6 w-6" />
+        </div>
+
+        {/* הטקסט מופיע רק כשהצ'אט סגור */}
+        {!isOpen && (
+          <div className="bg-white text-indigo-700 px-3 py-1 rounded-full shadow-md text-sm font-medium hover:bg-indigo-50 transition select-none">
             יש לך שאלה?
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* חלון הצ'אט כשהוא פתוח */}
+      {/* חלון הצ'אט */}
       {isOpen && (
         <div
           className="fixed bottom-20 left-4 w-96 h-[500px] bg-white rounded-lg shadow-lg overflow-hidden flex flex-col z-50"
