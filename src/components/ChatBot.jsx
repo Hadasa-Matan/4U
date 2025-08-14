@@ -7,7 +7,7 @@ function ChatBot({ setShowChat }) {
   };
 
   return (
-    <div className="h-full flex flex-col relative" dir="rtl">
+    <div className="h-full flex flex-col relative" dir="rtl" lang="he">
       {/* כפתור סגירה קטן בפינה */}
       <button
         onClick={handleClose}
@@ -19,7 +19,7 @@ function ChatBot({ setShowChat }) {
       
       <div className="flex-1 overflow-hidden relative">
         <iframe
-          src="https://chatrace.com/webchat/?p=1249354&ref=1753054769905"
+          src="https://chatrace.com/webchat/?p=1249354&ref=1753054769905&lang=he&locale=he&direction=rtl&rtl=1"
           className="w-full h-full border-none"
           title="צ'אטבוט"
           style={{
