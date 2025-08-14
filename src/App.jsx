@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { BsChatDots } from 'react-icons/bs';
 import Header from './components/Header';
@@ -8,13 +8,11 @@ import About from './components/About';
 import Testimonials from './components/Testimonials';
 import ConsultationCard from './components/ConsultationCard';
 import Contact from './components/Contact';
-import ChatBot from './components/ChatBot';
 import HomeButton from './components/HomeButton';
 import Footer from './components/Footer';
 import VisitorTracker from './components/VisitorTracker';
 
 function MainLayout() {
-  const [showChat, setShowChat] = useState(false);
   const location = useLocation();
   const showHomeButton = location.pathname !== '/';
 
@@ -22,6 +20,10 @@ function MainLayout() {
     // Scroll to top on route change
     window.scrollTo(0, 0);
   }, [location.pathname]);
+
+  const openChatInNewTab = () => {
+    window.open('https://chatrace.com/webchat/?p=1249354&id=kX8n4IR4DP27PkpEo2', '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
@@ -41,14 +43,9 @@ function MainLayout() {
       <Footer />
 
       <div className="chatbot-container">
-        <div className="chat-button" onClick={() => setShowChat(!showChat)}>
+        <div className="chat-button" onClick={openChatInNewTab}>
           <BsChatDots size={24} />
         </div>
-        {showChat && (
-          <div className="chat-window">
-            <ChatBot setShowChat={setShowChat} />
-          </div>
-        )}
       </div>
       <VisitorTracker />
     </div>
