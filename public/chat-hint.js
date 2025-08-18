@@ -11,7 +11,7 @@
       var isMobile = window.innerWidth <= 640;
       hint.style.position = "fixed";
       hint.style.bottom = isMobile ? "160px" : "100px"; // מיקמתי את הטקסט קרוב יותר
-      hint.style.right = isMobile ? "20px" : "90px";  // התאמת המיקום על פי המסך
+      hint.style.right = isMobile ? "20px" : "20px";  // מיושר לימין של המסך
       hint.style.zIndex = "2147483646";
       hint.style.cursor = "pointer";
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
@@ -81,8 +81,8 @@
 
       window.addEventListener("resize", function(){
         var isMobile = window.innerWidth <= 640;
-        hint.style.bottom = isMobile ? "100px" : "100px";
-        hint.style.right = isMobile ? "20px" : "100px";
+        hint.style.bottom = isMobile ? "160px" : "100px";
+        hint.style.right = isMobile ? "20px" : "20px"; // תמיד מיושר לימין
       });
     }
 
