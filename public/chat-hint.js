@@ -10,8 +10,8 @@
 
       var isMobile = window.innerWidth <= 640;
       hint.style.position = "fixed";
-      hint.style.bottom = isMobile ? "100px" : "100px";
-      hint.style.right = isMobile ? "20px" : "100px";
+      hint.style.bottom = isMobile ? "120px" : "80px"; // מיקמתי יותר קרוב לבועה
+      hint.style.right = isMobile ? "20px" : "80px";  // מיקום מותאם למסכים שונים
       hint.style.zIndex = "2147483646";
       hint.style.cursor = "pointer";
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
@@ -24,7 +24,8 @@
       span.style.fontSize = "16px";
       span.style.color = "#fff"; // צבע לבן להבליט את הטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
-      span.style.padding = "10px"; // מרווחים
+      span.style.padding = "0"; // הורדתי את המרווחים
+      span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
 
       // הוספת אנימציה להקפצת הטקסט
       span.style.animation = "bounce 1s infinite"; // אפקט קפיצה
@@ -45,6 +46,11 @@
         }
       `;
       document.head.appendChild(style);
+
+      // אנימציה שתתבצע אחרי 10 שניות
+      setTimeout(function() {
+        hint.style.animation = "bounce 1s ease-out";
+      }, 10000);
 
       function hide(){
         try { if (hint && hint.parentNode) hint.parentNode.removeChild(hint); } catch(e){}
@@ -75,8 +81,8 @@
 
       window.addEventListener("resize", function(){
         var isMobile = window.innerWidth <= 640;
-        hint.style.bottom = isMobile ? "100px" : "100px";
-        hint.style.right = isMobile ? "20px" : "100px";
+        hint.style.bottom = isMobile ? "120px" : "80px";
+        hint.style.right = isMobile ? "20px" : "80px";
       });
     }
 
