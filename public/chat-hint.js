@@ -10,8 +10,8 @@
 
       var isMobile = window.innerWidth <= 640;
       hint.style.position = "fixed";
-      hint.style.bottom = isMobile ? "120px" : "80px"; // מיקמתי יותר קרוב לבועה
-      hint.style.right = isMobile ? "20px" : "80px";  // מיקום מותאם למסכים שונים
+      hint.style.bottom = isMobile ? "160px" : "120px"; // מיקמתי את הטקסט יותר קרוב לצ'אט
+      hint.style.right = isMobile ? "20px" : "90px";  // התאמת המיקום
       hint.style.zIndex = "2147483646";
       hint.style.cursor = "pointer";
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
@@ -21,8 +21,8 @@
       span.textContent = "יש לך שאלה?";
 
       // שינוי עיצוב של הטקסט
-      span.style.fontSize = "16px";
-      span.style.color = "#fff"; // צבע לבן להבליט את הטקסט
+      span.style.fontSize = "20px"; // הגדלת הגודל
+      span.style.color = "#fff"; // צבע לבן להבלטת הטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
       span.style.padding = "0"; // הורדתי את המרווחים
       span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
@@ -81,8 +81,8 @@
 
       window.addEventListener("resize", function(){
         var isMobile = window.innerWidth <= 640;
-        hint.style.bottom = isMobile ? "120px" : "80px";
-        hint.style.right = isMobile ? "20px" : "80px";
+        hint.style.bottom = isMobile ? "160px" : "120px";
+        hint.style.right = isMobile ? "20px" : "90px";
       });
     }
 
