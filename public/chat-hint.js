@@ -21,8 +21,8 @@
       span.textContent = "יש לך שאלה?";
 
       // שינוי עיצוב של הטקסט
-      span.style.fontSize = "20px"; // גודל טקסט מוגדל
-      span.style.color = "#fff"; // צבע לבן להבלטת הטקסט
+      span.style.fontSize = "16px";
+      span.style.color = "#fff"; // צבע לבן להבליט את הטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
       span.style.padding = "0"; // הורדתי את המרווחים
       span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
@@ -81,8 +81,8 @@
 
       window.addEventListener("resize", function(){
         var isMobile = window.innerWidth <= 640;
-        hint.style.bottom = isMobile ? "160px" : "100px";
-        hint.style.right = isMobile ? "20px" : "90px";
+        hint.style.bottom = isMobile ? "100px" : "100px";
+        hint.style.right = isMobile ? "20px" : "100px";
       });
     }
 
