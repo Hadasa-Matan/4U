@@ -17,7 +17,7 @@
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
 
       // שינוי עיצוב של המלבן
-      hint.style.backgroundColor = "#fff"; // צבע לבן למלבן
+      hint.style.backgroundColor = "#377FE1"; // צבע כחול למלבן
       hint.style.borderRadius = "12px"; // פינות מעוגלות
       hint.style.padding = "10px 20px"; // מרווחים בתוך המלבן
       hint.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
@@ -28,7 +28,7 @@
 
       // שינוי עיצוב של הטקסט
       span.style.fontSize = "16px";
-      span.style.color = "#377FE1"; // צבע כחול לטקסט
+      span.style.color = "#fff"; // צבע לבן לטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
       span.style.padding = "0"; // הורדתי את המרווחים
       span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
@@ -64,4 +64,38 @@
 
       hint.addEventListener("click", function(){
         try {
-          if (window.ktt10 && typeof window.ktt10.open === "function") windo
+          if (window.ktt10 && typeof window.ktt10.open === "function") window.ktt10.open();
+          else if (window.ktt10 && typeof window.ktt10.toggle === "function") window.ktt10.toggle();
+        } catch(e){}
+        hide();
+      });
+
+      document.addEventListener("click", function(ev){
+        try {
+          var path = ev.composedPath ? ev.composedPath() : [ev.target];
+          for (var i=0; i<path.length; i++){
+            var n = path[i]; if (!n || n === window || n === document) continue;
+            var id = (n.id || "").toLowerCase();
+            var cls = (n.className || "").toString().toLowerCase();
+            var src = ""; try { src = (n.src || "").toLowerCase(); } catch(_) {}
+            if (id.indexOf("ktt10") > -1 || id.indexOf("chatrace") > -1 ||
+                cls.indexOf("ktt10") > -1 || cls.indexOf("chatrace") > -1 ||
+                src.indexOf("chatrace.com") > -1) { hide(); break; }
+          }
+        } catch(e){}
+      }, true);
+
+      window.addEventListener("resize", function(){
+        var isMobile = window.innerWidth <= 640;
+        hint.style.bottom = isMobile ? "160px" : "100px";
+        hint.style.right = isMobile ? "20px" : "20px"; // תמיד מיושר לימין
+      });
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", createHint);
+    } else {
+      createHint();
+    }
+  } catch(e){}
+})();
