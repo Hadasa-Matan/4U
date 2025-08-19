@@ -17,10 +17,10 @@
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
 
       // שינוי עיצוב של המלבן
-      hint.style.backgroundColor = "transparent"; // רקע שקוף כדי להסיר את הרקע מסביב למילים
+      hint.style.backgroundColor = "#fff"; // צבע לבן למלבן
       hint.style.borderRadius = "12px"; // פינות מעוגלות
-      hint.style.padding = "0"; // הורדתי את המרווחים כדי לא ליצור מלבן סביב המילים
-      hint.style.boxShadow = "none"; // לא צריך צל
+      hint.style.padding = "10px 20px"; // מרווחים בתוך המלבן
+      hint.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
 
       var span = document.createElement("span");
       span.className = "chat-question-text";
@@ -30,10 +30,8 @@
       span.style.fontSize = "16px";
       span.style.color = "#377FE1"; // צבע כחול לטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
-      span.style.padding = "10px 20px"; // מרווחים בתוך הטקסט
-      span.style.backgroundColor = "#377FE1"; // רקע כחול סביב המילים
-      span.style.borderRadius = "8px"; // פינות מעוגלות סביב הטקסט
-      span.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
+      span.style.padding = "0"; // הורדתי את המרווחים
+      span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
 
       hint.appendChild(span);
       document.body.appendChild(hint);
@@ -64,11 +62,13 @@
         try { if (hint && hint.parentNode) hint.parentNode.removeChild(hint); } catch(e){}
       }
 
+      // כאשר לוחצים על הטקסט, יפתח הצ'אטבוט
       hint.addEventListener("click", function(){
         try {
-          if (window.ktt10 && typeof window.ktt10.open === "function") window.ktt10.open();
+          if (window.ktt10 && typeof window.ktt10.open === "function") window.ktt10.open(); // פותח את הצ'אטבוט
           else if (window.ktt10 && typeof window.ktt10.toggle === "function") window.ktt10.toggle();
         } catch(e){}
+
         hide();
       });
 
