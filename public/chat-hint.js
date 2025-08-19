@@ -16,19 +16,22 @@
       hint.style.cursor = "pointer";
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
 
+      // שינוי עיצוב של המלבן
+      hint.style.backgroundColor = "#fff"; // צבע לבן למלבן
+      hint.style.borderRadius = "12px"; // פינות מעוגלות
+      hint.style.padding = "10px 20px"; // מרווחים בתוך המלבן
+      hint.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
+
       var span = document.createElement("span");
       span.className = "chat-question-text";
       span.textContent = "יש לך שאלה?";
 
       // שינוי עיצוב של הטקסט
       span.style.fontSize = "16px";
-      span.style.color = "#fff"; // צבע לבן להבליט את הטקסט
+      span.style.color = "#377FE1"; // צבע כחול לטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
       span.style.padding = "0"; // הורדתי את המרווחים
       span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
-
-      // הוספת אנימציה להקפצת הטקסט
-      span.style.animation = "bounce 1s infinite"; // אפקט קפיצה
 
       hint.appendChild(span);
       document.body.appendChild(hint);
@@ -46,6 +49,9 @@
         }
       `;
       document.head.appendChild(style);
+
+      // אנימציה שתתבצע מיידית כאשר האתר נטען
+      hint.style.animation = "bounce 1s ease-out";
 
       // אנימציה שתתבצע אחרי 10 שניות
       setTimeout(function() {
