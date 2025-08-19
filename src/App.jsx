@@ -10,7 +10,6 @@ import Contact from './components/Contact';
 import HomeButton from './components/HomeButton';
 import Footer from './components/Footer';
 import VisitorTracker from './components/VisitorTracker';
-import ChatBot from './components/ChatBot';
 
 function MainLayout() {
   const location = useLocation();
@@ -39,7 +38,6 @@ function MainLayout() {
       <Footer />
 
       <VisitorTracker />
-      <ChatBot />
     </div>
   );
 }

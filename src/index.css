@@ -35,6 +35,35 @@ body {
   background-color: #f8fafc;
 }
 
+/* החלפת בועת צ'אט דיפולטית של Chatrace בתמונה מותאמת */
+/* ננסה לכסות מחלקות וסלקטורים נפוצים של ה-launcher */
+[id*="ktt10"],
+.ktt10-launcher,
+.chatrace-launcher {
+  position: relative !important;
+}
+
+[id*="ktt10"] img,
+.ktt10-launcher img,
+.chatrace-launcher img,
+[id*="ktt10"] svg,
+.ktt10-launcher svg,
+.chatrace-launcher svg {
+  opacity: 0 !important;
+}
+
+[id*="ktt10"]::after,
+.ktt10-launcher::after,
+.chatrace-launcher::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/logo.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'FbAsparagos', sans-serif;
   font-weight: bold;
