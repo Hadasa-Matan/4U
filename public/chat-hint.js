@@ -17,10 +17,10 @@
       hint.style.transition = "all 0.3s ease-in-out"; // אנימציה להבלטה
 
       // שינוי עיצוב של המלבן
-      hint.style.backgroundColor = "#377FE1"; // צבע כחול למלבן
+      hint.style.backgroundColor = "transparent"; // רקע שקוף כדי להסיר את הרקע מסביב למילים
       hint.style.borderRadius = "12px"; // פינות מעוגלות
-      hint.style.padding = "10px 20px"; // מרווחים בתוך המלבן
-      hint.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
+      hint.style.padding = "0"; // הורדתי את המרווחים כדי לא ליצור מלבן סביב המילים
+      hint.style.boxShadow = "none"; // לא צריך צל
 
       var span = document.createElement("span");
       span.className = "chat-question-text";
@@ -28,10 +28,12 @@
 
       // שינוי עיצוב של הטקסט
       span.style.fontSize = "16px";
-      span.style.color = "#fff"; // צבע לבן לטקסט
+      span.style.color = "#377FE1"; // צבע כחול לטקסט
       span.style.fontWeight = "bold"; // הדגשה של הטקסט
-      span.style.padding = "0"; // הורדתי את המרווחים
-      span.style.margin = "0"; // הורדתי את כל המרווחים מסביב
+      span.style.padding = "10px 20px"; // מרווחים בתוך הטקסט
+      span.style.backgroundColor = "#377FE1"; // רקע כחול סביב המילים
+      span.style.borderRadius = "8px"; // פינות מעוגלות סביב הטקסט
+      span.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.1)"; // צל קל
 
       hint.appendChild(span);
       document.body.appendChild(hint);
