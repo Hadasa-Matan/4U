@@ -33,11 +33,11 @@ function ConsultationCard() {
       });
 
       // פתיחת הטופס בחלון חדש
-      window.open('https://form.jotform.com/251493867410057', '_blank');
+      window.open('https://hadasa-matan.github.io/form-4u/', '_blank');
     } catch (error) {
       console.error('Error tracking form click:', error);
       // במקרה של שגיאה, עדיין נפתח את הטופס
-      window.open('https://form.jotform.com/251493867410057', '_blank');
+      window.open('https://hadasa-matan.github.io/form-4u/', '_blank');
     }
   };
 
