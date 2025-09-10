@@ -73,7 +73,7 @@ function Services() {
                   className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105"
                   onClick={() => window.open(service.link, '_blank')}
                 >
-                  צפה בדוגמא
+                  אני רוצה לראות דוגמא
                 </button>
               </div>
             </motion.div>
