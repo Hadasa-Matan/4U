@@ -48,8 +48,14 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-gray-800 text-center">
+        <div className="mt-12 pt-8 border-t border-gray-800 text-center space-y-2">
           <p className="text-lg text-gray-300">© {currentYear} הדסה מתן. כל הזכויות שמורות.</p>
+          <button 
+            onClick={() => handleNavigation('/privacy-policy')} 
+            className="text-sm text-gray-400 hover:text-white transition-colors"
+          >
+            מדיניות פרטיות
+          </button>
         </div>
       </div>
     </footer>
