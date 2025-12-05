@@ -4,30 +4,41 @@ import { useInView } from 'react-intersection-observer';
 import { BsGear, BsLightning, BsRobot, BsChatDots } from 'react-icons/bs';
 
 function Services() {
-  const services = [
+  const featuredService = {
+    icon: <BsChatDots className="w-10 h-10" />,
+    title: "צ'אטבוטים חכמים – ההתמחות שלנו",
+    description:
+      'ההתמחות המרכזית שלנו היא בבנייה והטמעה של צ\'אטבוטים חכמים לעסקים: ניהול תורים, תמיכה טכנית, מסחר אלקטרוני ועוד. הבוטים שלנו עובדים 24/7, חוסכים לך זמן וכסף, ומשדרגים את חוויית הלקוח עם מענה מיידי, ניתוב פניות חכם ומדידת שביעות רצון.',
+    link: 'https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing'
+  };
+
+  const chatbotExamples = [
+    { label: 'צ\'אטבוט לניהול תורים', link: featuredService.link },
+    { label: 'צ\'אטבוט למסחר אלקטרוני', link: featuredService.link },
+    { label: 'צ\'אטבוט לתמיכה טכנית', link: featuredService.link }
+  ];
+
+  const otherServices = [
     {
       icon: <BsGear className="w-8 h-8" />,
       title: 'מערכות ניהול מידע',
-      description: 'בנייה והטמעת מערכת ניהול מידע מותאמת אישית לעסק שלך - לייעול תהליכים, חיסכון בזמן והגדלת הרווחיות. אנו מנתחים את צרכי העסק שלך, מאפיינים פתרונות חכמים, ומיישמים מערכת שתעזור לך לנהל את העסק בצורה חלקה ואפקטיבית יותר.',
+      description:
+        'בנייה והטמעת מערכת ניהול מידע מותאמת אישית לעסק שלך - לייעול תהליכים, חיסכון בזמן והגדלת הרווחיות. אנו מנתחים את צרכי העסק שלך, מאפיינים פתרונות חכמים, ומיישמים מערכת שתעזור לך לנהל את העסק בצורה חלקה ואפקטיבית יותר.',
       link: 'https://drive.google.com/file/d/1SJEK5zrWtqaRAP-3JGDAHiTnlmSxYa0X/view?usp=drive_link'
     },
     {
       icon: <BsLightning className="w-8 h-8" />,
       title: 'פתרונות דיגיטליים',
-      description: 'פיתוח והטמעת פתרונות דיגיטליים מותאמים אישית, כמו טפסים חכמים אינטראקטיביי וקטלוגים דיגיטליים מתקדמים ועוד',
+      description:
+        'פיתוח והטמעת פתרונות דיגיטליים מותאמים אישית, כמו טפסים חכמים אינטראקטיביים, קטלוגים דיגיטליים מתקדמים ועוד.',
       link: 'https://drive.google.com/file/d/1eZ3d7-rxxk9KfZNyrd_gYxPFPb_rtJlJ/view?usp=drive_link'
     },
     {
       icon: <BsRobot className="w-8 h-8" />,
       title: 'פתרונות באמצעות בינה מלאכותית',
-      description: 'שילוב טכנולוגיות AI מתקדמות לייעול תהליכים עסקיים כמו תמלול וסיכום אוטומטי של פגישות ושיחות (טלפון/זום), שליחת הצעות מחיר אוטומטיות, ניהול חשבוניות אוטומטי ועוד והכל ללא התערבות ידנית.',
+      description:
+        'שילוב טכנולוגיות AI מתקדמות לייעול תהליכים עסקיים כמו תמלול וסיכום אוטומטי של פגישות ושיחות, שליחת הצעות מחיר אוטומטיות, ניהול חשבוניות ועוד – והכול עם מינימום התערבות ידנית.',
       link: 'https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing'
-    },
-    {
-      icon: <BsChatDots className="w-8 h-8" />,
-      title: "צ'אטבוטים חכמים",
-      description: 'פתרון שירות לקוחות אוטומטי מתקדם: בוט חכם הפועל 24/7 לניהול מקיף של חווית הלקוח. מטפל במגוון רחב של פניות - ממכירות ועד תמיכה טכנית, מספק מענה מיידי, מנתב שיחות ביעילות מודד שביעות רצון לקוחות ועוד. התוצאה: חיסכון משמעותי בעלויות, שירות זמין ומהיר, והגדלת שביעות רצון הלקוחות עם זמני המתנה מינימליים.',
-      link: 'https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing'
     }
   ];
 
@@ -51,29 +62,62 @@ function Services() {
 
         <div
           ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {services.map((service, index) => (
+          {/* כרטיס צ'אטבוטים חכמים – מלבן שורה מלאה */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6 }}
+            className="md:col-span-3 group bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/60 flex flex-col"
+          >
+            <div className="text-blue-400 mb-6 flex justify-center md:justify-start transform group-hover:scale-110 transition-transform duration-300">
+              {featuredService.icon}
+            </div>
+            <h3 className="text-2xl font-semibold mb-4 text-white text-center md:text-right">
+              {featuredService.title}
+            </h3>
+            <p className="text-gray-300 mb-8 text-center md:text-right">
+              {featuredService.description}
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-auto">
+              {chatbotExamples.map((example, idx) => (
+                <button
+                  key={idx}
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm font-medium"
+                  onClick={() => window.open(example.link, '_blank')}
+                >
+                  {example.label}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* שלושת הריבועים האחרים בשורה נפרדת */}
+          {otherServices.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
               className="group bg-gray-800 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-blue-500/30 flex flex-col"
             >
               <div className="text-blue-400 mb-6 flex justify-center transform group-hover:scale-110 transition-transform duration-300">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-semibold mb-4 text-white">{service.title}</h3>
-              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 mb-6">
+              <h3 className="text-xl font-semibold mb-4 text-white text-center md:text-right">
+                {service.title}
+              </h3>
+              <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300 mb-6 text-center md:text-right">
                 {service.description}
               </p>
               <div className="mt-auto">
-                <button 
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105"
+                <button
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-colors duration-300 transform hover:scale-105 text-sm"
                   onClick={() => window.open(service.link, '_blank')}
                 >
-                  אני רוצה לראות דוגמא
+                  אני רוצה לראות דוגמה
                 </button>
               </div>
             </motion.div>
