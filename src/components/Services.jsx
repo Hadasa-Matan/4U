@@ -8,9 +8,9 @@ function Services() {
     icon: <BsChatDots className="w-10 h-10" />,
     title: "צ'אטבוטים חכמים – ההתמחות שלנו",
     description: `
-    הצ'אטבוט יעבוד עבורך 24 שעות ביממה ויטפל במגוון רחב של צרכי העסק: שירות, מכירות, תמיכה טכנית, ניהול תורים, מעקב הזמנות ומשלוחים, איסוף נתונים ועוד.
-    הכול עם מענה מיידי וניתוב חכם שמקצר זמני המתנה ומשפר משמעותית את חוויית הלקוח.
-    ניתן לשלב בינה מלאכותית ליצירת מענה מותאם אישית, ולחבר את הצ'אטבוט למגוון רחב של ערוצים: וואצאפ, אתר, בוט קולי ועוד.
+הצ'אטבוט יעבוד עבורך 24 שעות ביממה ויטפל במגוון רחב של צרכי העסק: שירות, מכירות, תמיכה טכנית, ניהול תורים, מעקב הזמנות ומשלוחים, איסוף נתונים ועוד.
+הכול עם מענה מיידי וניתוב חכם שמקצר זמני המתנה ומשפר משמעותית את חוויית הלקוח.
+ניתן לשלב בינה מלאכותית ליצירת מענה מותאם אישית, ולחבר את הצ'אטבוט למגוון רחב של ערוצים: וואצאפ, אתר, בוט קולי ועוד.
     `,
     link: 'https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing'
   };
@@ -73,9 +73,10 @@ function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="md:col-span-3 bg-gray-800 rounded-2xl p-8 shadow-lg border border-blue-500/60 flex flex-col"
+            className="md:col-span-3 bg-gray-800 rounded-2xl p-8 shadow-lg border border-blue-500/60 flex flex-col
+                       transition-all duration-300 hover:shadow-2xl hover:border-blue-400/80 hover:bg-gray-800/90"
           >
-            <div className="text-blue-400 mb-6 flex justify-center md:justify-start">
+            <div className="text-blue-400 mb-6 flex justify-center md:justify-start transition-transform duration-300">
               {featuredService.icon}
             </div>
 
@@ -91,7 +92,8 @@ function Services() {
               {chatbotExamples.map((example, idx) => (
                 <button
                   key={idx}
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm font-medium"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 px-4 rounded-lg
+                             transition-all duration-300 transform hover:scale-105 text-sm font-medium"
                   onClick={() => window.open(example.link, '_blank')}
                 >
                   {example.label}
@@ -107,9 +109,10 @@ function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-blue-500/30 flex flex-col"
+              className="bg-gray-800 rounded-2xl p-8 shadow-lg border border-blue-500/30 flex flex-col
+                         transition-all duration-300 hover:shadow-2xl hover:border-blue-400/70 hover:bg-gray-800/90"
             >
-              <div className="text-blue-400 mb-6 flex justify-center">
+              <div className="text-blue-400 mb-6 flex justify-center transition-transform duration-300">
                 {service.icon}
               </div>
 
@@ -123,7 +126,8 @@ function Services() {
 
               <div className="mt-auto">
                 <button
-                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-all duration-300 transform hover:scale-105 text-sm"
+                  className="w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg
+                             transition-all duration-300 transform hover:scale-105 text-sm"
                   onClick={() => window.open(service.link, '_blank')}
                 >
                   אני רוצה לראות דוגמה
