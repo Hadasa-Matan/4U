@@ -16,9 +16,18 @@ function Services() {
   };
 
   const chatbotExamples = [
-    { label: 'צ\'אטבוט לניהול תורים', link: featuredService.link },
-    { label: 'צ\'אטבוט למסחר אלקטרוני', link: featuredService.link },
-    { label: 'צ\'אטבוט לתמיכה טכנית', link: featuredService.link }
+    {
+      label: "צ'אטבוט לניהול תורים",
+      link: featuredService.link
+    },
+    {
+      label: "צ'אטבוט למסחר אלקטרוני",
+      link: 'https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7lklKIfmmvHDx01/view?usp=sharing'
+    },
+    {
+      label: "צ'אטבוט לתמיכה טכנית",
+      link: 'https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing'
+    }
   ];
 
   const otherServices = [
