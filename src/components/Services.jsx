@@ -22,7 +22,7 @@ function Services() {
     },
     {
       label: "צ'אטבוט למסחר אלקטרוני",
-      link: 'https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7lklKIfmmvHDx01/view?usp=sharing'
+      link: 'https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing'
     },
     {
       label: "צ'אטבוט לתמיכה טכנית",
