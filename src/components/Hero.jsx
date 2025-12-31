@@ -9,7 +9,7 @@ function Hero() {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: "url('https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg')",
+          backgroundImage: "url('${import.meta.env.BASE_URL}images/background.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
