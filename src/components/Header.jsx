@@ -25,22 +25,18 @@ function Header() {
     { name: "צור קשר", path: "/contact" },
   ];
 
-  const isSolid = isScrolled || location.pathname !== "/";
-
   return (
     <motion.header
-      initial={{ y: -80 }}
+      initial={{ y: -60 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.4 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isSolid
-          ? "bg-white/95 backdrop-blur-md shadow-[0_6px_30px_rgba(0,0,0,0.08)]"
-          : "bg-white/80 backdrop-blur-sm"
-      }`}
+      transition={{ duration: 0.35 }}
+      className="fixed top-0 w-full z-50 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.06)]"
     >
       <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-20 flex items-center">
-          {/* LOGO */}
+        {/* ↓↓↓ הצרנו כאן את הגובה בלבד ↓↓↓ */}
+        <div className="h-14 flex items-center">
+          
+          {/* LOGO – לא נוגעים בגודל */}
           <Link to="/" className="flex items-center flex-none">
             <img
               src="/4U/logo.png"
@@ -50,36 +46,30 @@ function Header() {
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex md:flex-1 md:justify-end md:items-center gap-8">
-            {navItems.map((item, index) => {
+          <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
+            {navItems.map((item) => {
               const isActive = location.pathname === item.path;
 
               return (
-                <motion.div
+                <Link
                   key={item.name}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.05 }}
+                  to={item.path}
+                  className="relative text-[16px] font-medium transition-colors duration-300"
+                  style={{
+                    color: isActive ? BRAND_GREEN : "#1f2937",
+                  }}
                 >
-                  <Link
-                    to={item.path}
-                    className="relative text-[17px] font-medium transition-colors duration-300"
-                    style={{
-                      color: isActive ? BRAND_GREEN : "#1f2937",
-                    }}
-                  >
-                    {item.name}
+                  {item.name}
 
-                    {/* underline */}
-                    <span
-                      className="absolute -bottom-2 right-0 h-[2px] rounded-full transition-all duration-300"
-                      style={{
-                        width: isActive ? "100%" : "0%",
-                        backgroundColor: BRAND_CYAN,
-                      }}
-                    />
-                  </Link>
-                </motion.div>
+                  {/* underline */}
+                  <span
+                    className="absolute -bottom-2 right-0 h-[2px] rounded-full transition-all duration-300"
+                    style={{
+                      width: isActive ? "100%" : "0%",
+                      backgroundColor: BRAND_CYAN,
+                    }}
+                  />
+                </Link>
               );
             })}
           </nav>
@@ -87,7 +77,7 @@ function Header() {
           {/* MOBILE MENU ICON */}
           <div className="md:hidden flex flex-1 justify-end">
             <button
-              className="p-2 rounded-lg transition-colors"
+              className="p-2 rounded-lg"
               style={{ color: "#1f2937" }}
             >
               <svg
@@ -105,6 +95,7 @@ function Header() {
               </svg>
             </button>
           </div>
+
         </div>
       </div>
     </motion.header>
