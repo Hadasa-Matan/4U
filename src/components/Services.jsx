@@ -142,4 +142,46 @@ function Services() {
                          border transition-all duration-300
                          hover:shadow-[0_28px_70px_rgba(0,0,0,0.35)]"
               style={{
-                backgroundColor: "rgba(
+                backgroundColor: "rgba(255,255,255,0.05)",
+                borderColor: "rgba(124,214,222,0.22)",
+                backdropFilter: "blur(10px)",
+              }}
+            >
+              <div
+                className="mb-6 flex justify-center"
+                style={{ color: BRAND_CYAN }}
+              >
+                {service.icon}
+              </div>
+
+              <h3 className="text-xl font-extrabold mb-3 text-white text-center md:text-right">
+                {service.title}
+              </h3>
+
+              <p className="text-white/70 mb-6 text-center md:text-right leading-relaxed">
+                {service.description}
+              </p>
+
+              <div className="mt-auto">
+                <button
+                  onClick={() => window.open(service.link, "_blank")}
+                  className="w-full py-3 px-4 rounded-xl font-bold text-sm
+                             transition-all duration-300 transform hover:scale-[1.03]"
+                  style={{
+                    border: `2px solid ${BRAND_CYAN}`,
+                    color: "white",
+                    backgroundColor: "rgba(124,214,222,0.10)",
+                  }}
+                >
+                  אני רוצה לראות דוגמה
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default Services;
