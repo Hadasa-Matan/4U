@@ -28,7 +28,7 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
-            {/* Primary CTA - הפתרונות שלנו */}
+            {/* Primary CTA - המוצרים שלנו */}
             <Link
               to="/services"
               style={{
@@ -40,7 +40,7 @@ function Hero() {
                          transition-transform duration-300 hover:scale-[1.04]
                          inline-flex items-center justify-center"
             >
-              הפתרונות שלנו <span className="mr-2">←</span>
+              המוצרים שלנו <span className="mr-2">←</span>
             </Link>
 
             {/* Secondary CTA - שיחת ייעוץ */}
