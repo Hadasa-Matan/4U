@@ -18,7 +18,7 @@ function Header() {
   }, []);
 
   const navItems = [
-    { name: "פתרונות חכמים", path: "/services" },
+    { name: "המוצרים שלנו", path: "/services" },
     { name: "אודות", path: "/about" },
     { name: "המלצות", path: "/testimonials" },
     { name: "ייעוץ", path: "/consultation" },
