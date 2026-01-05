@@ -11,27 +11,28 @@ function Services() {
     icon: <BsChatDots className="w-10 h-10" />,
     title: "צ׳אטבוטים חכמים — שקט תפעולי 24/7",
     intro:
-      "הצ׳אטבוט מטפל בפניות החוזרות, מנתב בקשות ומייצר סדר בתהליך — כדי שהעסק ימשיך לעבוד גם כשאת לא זמינה.",
+      "הצ׳אטבוט יוצר סדר בתהליך ומטפל בפניות החוזרות — כך שהעסק ממשיך לעבוד גם כשאת לא זמינה.",
     bullets: [
-      "מענה מיידי ושירות רציף: מכירות, תמיכה, תיאומים ושאלות נפוצות",
-      "ניתוב חכם ואיסוף פרטים — פחות עומס, פחות פספוסים",
-      "חיבור לערוצים: וואטסאפ, אתר, ובוט קולי (לפי הצורך)",
+      "מענה מיידי: מכירות, תמיכה, תיאומים ושאלות נפוצות",
+      "ניתוב חכם ואיסוף פרטים — פחות עומס ופחות טעויות",
+      "חיבור לערוצים: וואטסאפ, אתר ובוט קולי (לפי הצורך)",
     ],
     outcome: "התוצאה: פחות התעסקות, יותר שליטה ושקט תפעולי בעסק.",
-    link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing",
+    examples: [
+      {
+        label: "דוגמה: ניהול תורים",
+        link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing",
+      },
+      {
+        label: "דוגמה: מסחר אלקטרוני",
+        link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing",
+      },
+      {
+        label: "דוגמה: תמיכה טכנית",
+        link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing",
+      },
+    ],
   };
-
-  const chatbotExamples = [
-    { label: "דוגמה: ניהול תורים", link: featuredService.link },
-    {
-      label: "דוגמה: מסחר אלקטרוני",
-      link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing",
-    },
-    {
-      label: "דוגמה: תמיכה טכנית",
-      link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing",
-    },
-  ];
 
   const otherServices = [
     {
@@ -40,23 +41,20 @@ function Services() {
       description:
         "מערכת אחת שמרכזת נתונים, סטטוסים ותהליכים במקום ברור. פחות חיפושים, פחות טעויות, יותר סדר ושליטה.",
       link: "https://drive.google.com/file/d/1SJEK5zrWtqaRAP-3JGDAHiTnlmSxYa0X/view?usp=drive_link",
-      cta: "אני רוצה לראות דוגמה",
     },
     {
       icon: <BsLightning className="w-8 h-8" />,
       title: "פתרונות דיגיטליים",
       description:
-        "טפסים חכמים, דפי נחיתה וקטלוגים + אוטומציות שמחליפות עבודה ידנית. התהליך זורם לבד, ואת לא רודפת אחרי זה.",
+        "טפסים חכמים, דפי נחיתה ואוטומציות שמחליפות עבודה ידנית. התהליך זורם לבד — ואת לא רודפת אחרי זה.",
       link: "https://drive.google.com/file/d/1eZ3d7-rxxk9KfZNyrd_gYxPFPb_rtJlJ/view?usp=drive_link",
-      cta: "אני רוצה לראות דוגמה",
     },
     {
       icon: <BsRobot className="w-8 h-8" />,
       title: "פתרונות AI",
       description:
-        "AI שמקצר זמן ומוריד עומס: סיכומים, תמלולים, ניסוח הודעות/מיילים, והפקת מסמכים — בצורה חכמה ומסודרת.",
+        "כלי בינה מלאכותית שמורידים עומס: סיכומים, תמלולים, ניסוח הודעות והפקת מסמכים — בצורה חכמה ומסודרת.",
       link: "https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing",
-      cta: "אני רוצה לראות דוגמה",
     },
   ];
 
@@ -84,8 +82,8 @@ function Services() {
             הפתרונות החכמים שלנו
           </h2>
           <p className="text-white/75 max-w-2xl mx-auto leading-relaxed">
-            כל פתרון נבנה כדי לייצר לך <b>שקט תפעולי</b>: פחות התעסקות, יותר סדר,
-            יותר שליטה בעסק.
+            כל פתרון נבנה כדי לייצר <b>שקט תפעולי</b> — פחות התעסקות, יותר סדר
+            ושליטה בעסק.
           </p>
         </motion.div>
 
@@ -105,46 +103,48 @@ function Services() {
             }}
           >
             <div
-              className="mb-6 flex justify-center md:justify-start"
+              className="mb-6 flex justify-end"
               style={{ color: BRAND_CYAN }}
             >
               {featuredService.icon}
             </div>
 
-            <h3 className="text-2xl font-extrabold mb-3 text-white text-center md:text-right">
+            <h3 className="text-2xl font-extrabold mb-3 text-white text-right">
               {featuredService.title}
             </h3>
 
-            <p className="text-white/75 mb-6 text-center md:text-right leading-relaxed">
+            <p className="text-white/75 mb-6 text-right leading-relaxed">
               {featuredService.intro}
             </p>
 
-            {/* BULLETS */}
-            <ul className="text-white/75 mb-6 text-right space-y-2 leading-relaxed">
-              {featuredService.bullets.map((b, i) => (
-                <li key={i} className="flex items-start gap-3 justify-end">
+            {/* BULLETS — מיושרים לימין */}
+            <ul className="space-y-4 text-right mb-6">
+              {featuredService.bullets.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="flex items-start gap-3 justify-end"
+                >
                   <span
-                    className="mt-2 w-2 h-2 rounded-full flex-shrink-0"
+                    className="mt-2 h-1.5 w-1.5 rounded-full flex-shrink-0"
                     style={{ backgroundColor: BRAND_GREEN }}
                   />
-                  <span className="text-center md:text-right">{b}</span>
+                  <span className="text-white/80 leading-relaxed">
+                    {item}
+                  </span>
                 </li>
               ))}
             </ul>
 
-            <p
-              className="text-white/85 font-semibold text-center md:text-right mb-8"
-              style={{ color: "rgba(255,255,255,0.9)" }}
-            >
+            <p className="text-white/90 font-semibold text-right mb-8">
               {featuredService.outcome}
             </p>
 
-            {/* CTA BUTTONS */}
+            {/* EXAMPLES */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-auto">
-              {chatbotExamples.map((example, idx) => (
+              {featuredService.examples.map((ex, idx) => (
                 <button
                   key={idx}
-                  onClick={() => window.open(example.link, "_blank")}
+                  onClick={() => window.open(ex.link, "_blank")}
                   className="w-full py-3 px-4 rounded-xl font-bold text-sm
                              transition-all duration-300 transform hover:scale-[1.03]"
                   style={{
@@ -153,13 +153,13 @@ function Services() {
                     boxShadow: "0 14px 30px rgba(0,0,0,0.25)",
                   }}
                 >
-                  {example.label}
+                  {ex.label}
                 </button>
               ))}
             </div>
           </motion.div>
 
-          {/* OTHER CARDS */}
+          {/* OTHER SERVICES */}
           {otherServices.map((service, index) => (
             <motion.div
               key={index}
@@ -175,17 +175,17 @@ function Services() {
               }}
             >
               <div
-                className="mb-6 flex justify-center"
+                className="mb-6 flex justify-end"
                 style={{ color: BRAND_CYAN }}
               >
                 {service.icon}
               </div>
 
-              <h3 className="text-xl font-extrabold mb-3 text-white text-center md:text-right">
+              <h3 className="text-xl font-extrabold mb-3 text-white text-right">
                 {service.title}
               </h3>
 
-              <p className="text-white/70 mb-6 text-center md:text-right leading-relaxed">
+              <p className="text-white/70 mb-6 text-right leading-relaxed">
                 {service.description}
               </p>
 
@@ -200,7 +200,7 @@ function Services() {
                     backgroundColor: "rgba(124,214,222,0.10)",
                   }}
                 >
-                  {service.cta}
+                  אני רוצה לראות דוגמה
                 </button>
               </div>
             </motion.div>
