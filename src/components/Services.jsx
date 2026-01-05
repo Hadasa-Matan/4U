@@ -9,23 +9,26 @@ const BRAND_CYAN = "#7cd6de";
 function Services() {
   const featuredService = {
     icon: <BsChatDots className="w-10 h-10" />,
-    title: "צ'אטבוטים חכמים – ההתמחות שלנו",
-    description: `
-הצ'אטבוט יעבוד עבורך 24 שעות ביממה ויטפל במגוון רחב של צרכי העסק: שירות, מכירות, תמיכה טכנית, ניהול תורים, מעקב הזמנות ומשלוחים, איסוף נתונים ועוד.
-הכול עם מענה מיידי וניתוב חכם שמקצר זמני המתנה ומשפר משמעותית את חוויית הלקוח.
-ניתן לשלב בינה מלאכותית ליצירת מענה מותאם אישית, ולחבר את הצ'אטבוט למגוון רחב של ערוצים: וואצאפ, אתר, בוט קולי ועוד.
-    `,
+    title: "צ׳אטבוטים חכמים — שקט תפעולי 24/7",
+    intro:
+      "הצ׳אטבוט מטפל בפניות החוזרות, מנתב בקשות ומייצר סדר בתהליך — כדי שהעסק ימשיך לעבוד גם כשאת לא זמינה.",
+    bullets: [
+      "מענה מיידי ושירות רציף: מכירות, תמיכה, תיאומים ושאלות נפוצות",
+      "ניתוב חכם ואיסוף פרטים — פחות עומס, פחות פספוסים",
+      "חיבור לערוצים: וואטסאפ, אתר, ובוט קולי (לפי הצורך)",
+    ],
+    outcome: "התוצאה: פחות התעסקות, יותר שליטה ושקט תפעולי בעסק.",
     link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing",
   };
 
   const chatbotExamples = [
-    { label: "צ'אטבוט לניהול תורים", link: featuredService.link },
+    { label: "דוגמה: ניהול תורים", link: featuredService.link },
     {
-      label: "צ'אטבוט למסחר אלקטרוני",
+      label: "דוגמה: מסחר אלקטרוני",
       link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing",
     },
     {
-      label: "צ'אטבוט לתמיכה טכנית",
+      label: "דוגמה: תמיכה טכנית",
       link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing",
     },
   ];
@@ -35,22 +38,25 @@ function Services() {
       icon: <BsGear className="w-8 h-8" />,
       title: "מערכות ניהול מידע",
       description:
-        "בנייה והטמעת מערכת ניהול מידע מותאמת אישית לעסק שלך - לייעול תהליכים, חיסכון בזמן והגדלת הרווחיות.",
+        "מערכת אחת שמרכזת נתונים, סטטוסים ותהליכים במקום ברור. פחות חיפושים, פחות טעויות, יותר סדר ושליטה.",
       link: "https://drive.google.com/file/d/1SJEK5zrWtqaRAP-3JGDAHiTnlmSxYa0X/view?usp=drive_link",
+      cta: "אני רוצה לראות דוגמה",
     },
     {
       icon: <BsLightning className="w-8 h-8" />,
       title: "פתרונות דיגיטליים",
       description:
-        "פיתוח פתרונות דיגיטליים מותאמים אישית: טפסים חכמים, קטלוגים דיגיטליים, דפי נחיתה מתקדמים ועוד.",
+        "טפסים חכמים, דפי נחיתה וקטלוגים + אוטומציות שמחליפות עבודה ידנית. התהליך זורם לבד, ואת לא רודפת אחרי זה.",
       link: "https://drive.google.com/file/d/1eZ3d7-rxxk9KfZNyrd_gYxPFPb_rtJlJ/view?usp=drive_link",
+      cta: "אני רוצה לראות דוגמה",
     },
     {
       icon: <BsRobot className="w-8 h-8" />,
-      title: "פתרונות באמצעות בינה מלאכותית",
+      title: "פתרונות AI",
       description:
-        "שילוב טכנולוגיות AI לייעול תהליכים: תמלול שיחות, סיכום פגישות, שליחת הצעות מחיר, ניהול חשבוניות ועוד.",
+        "AI שמקצר זמן ומוריד עומס: סיכומים, תמלולים, ניסוח הודעות/מיילים, והפקת מסמכים — בצורה חכמה ומסודרת.",
       link: "https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing",
+      cta: "אני רוצה לראות דוגמה",
     },
   ];
 
@@ -77,8 +83,9 @@ function Services() {
           <h2 className="text-4xl font-extrabold text-white mb-3">
             הפתרונות החכמים שלנו
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto">
-            הכל באותה שפה עיצובית של העמוד הראשי — נקי, טכנולוגי ומותגי.
+          <p className="text-white/75 max-w-2xl mx-auto leading-relaxed">
+            כל פתרון נבנה כדי לייצר לך <b>שקט תפעולי</b>: פחות התעסקות, יותר סדר,
+            יותר שליטה בעסק.
           </p>
         </motion.div>
 
@@ -89,8 +96,8 @@ function Services() {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="md:col-span-3 rounded-3xl p-8 flex flex-col
-                       border shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
+            className="md:col-span-3 rounded-3xl p-8 flex flex-col border
+                       shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
             style={{
               backgroundColor: "rgba(255,255,255,0.06)",
               borderColor: "rgba(124,214,222,0.35)",
@@ -104,14 +111,35 @@ function Services() {
               {featuredService.icon}
             </div>
 
-            <h3 className="text-2xl font-extrabold mb-4 text-white text-center md:text-right">
+            <h3 className="text-2xl font-extrabold mb-3 text-white text-center md:text-right">
               {featuredService.title}
             </h3>
 
-            <p className="text-white/75 whitespace-pre-line mb-8 text-center md:text-right leading-relaxed">
-              {featuredService.description}
+            <p className="text-white/75 mb-6 text-center md:text-right leading-relaxed">
+              {featuredService.intro}
             </p>
 
+            {/* BULLETS */}
+            <ul className="text-white/75 mb-6 text-right space-y-2 leading-relaxed">
+              {featuredService.bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-3 justify-end">
+                  <span
+                    className="mt-2 w-2 h-2 rounded-full flex-shrink-0"
+                    style={{ backgroundColor: BRAND_GREEN }}
+                  />
+                  <span className="text-center md:text-right">{b}</span>
+                </li>
+              ))}
+            </ul>
+
+            <p
+              className="text-white/85 font-semibold text-center md:text-right mb-8"
+              style={{ color: "rgba(255,255,255,0.9)" }}
+            >
+              {featuredService.outcome}
+            </p>
+
+            {/* CTA BUTTONS */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-auto">
               {chatbotExamples.map((example, idx) => (
                 <button
@@ -138,8 +166,7 @@ function Services() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 + index * 0.1 }}
-              className="rounded-3xl p-8 flex flex-col
-                         border transition-all duration-300
+              className="rounded-3xl p-8 flex flex-col border transition-all duration-300
                          hover:shadow-[0_28px_70px_rgba(0,0,0,0.35)]"
               style={{
                 backgroundColor: "rgba(255,255,255,0.05)",
@@ -173,11 +200,17 @@ function Services() {
                     backgroundColor: "rgba(124,214,222,0.10)",
                   }}
                 >
-                  אני רוצה לראות דוגמה
+                  {service.cta}
                 </button>
               </div>
             </motion.div>
           ))}
+        </div>
+
+        {/* FOOT NOTE */}
+        <div className="text-center mt-12 text-white/70">
+          לא בטוחה מה מתאים? נבנה יחד פתרון מדויק לתהליך שלך — כדי שתעבדי עם שקט
+          תפעולי ושליטה.
         </div>
       </div>
     </section>
