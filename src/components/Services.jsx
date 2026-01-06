@@ -1,275 +1,158 @@
-// Services.jsx
 import React from "react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { BsGear, BsLightning, BsRobot, BsChatDots, BsShieldCheck } from "react-icons/bs";
+import {
+  BsGear,
+  BsLightning,
+  BsRobot,
+  BsChatDots,
+  BsShieldCheck,
+  BsArrowLeftShort
+} from "react-icons/bs";
 
 const BRAND_GREEN = "#52de4a";
 const BRAND_CYAN = "#7cd6de";
 const BRAND_BLUE = "#000ab9";
 
 function Services() {
-  const featuredService = {
-    icon: <BsChatDots className="w-10 h-10" />,
-    title: "שקטבוטים™ — צ׳אטבוט חכם שיוצר שקט תפעולי",
-    description:
-      "הבוט עובד 24/7 ומייצר סדר בתהליך: עונה מהר, מנתב נכון, אוסף מידע, ומחבר בין לקוחות/פניות לבין הצוות והמערכות — כדי שהעסק יפעל בצורה רגועה, ברורה ומבוקרת.",
-    highlights: [
-      { title: "סדר ושקיפות", text: "כל פנייה מתועדת, מסווגת ומנותבת — בלי בלגן." },
-      { title: "תגובה מיידית", text: "מענה מהיר שמקצר זמני המתנה ומשפר חוויית לקוח." },
-      { title: "חיבור למערכות", text: "וואטסאפ, אתר, CRM, טפסים, יומן, אוטומציות ועוד." },
-    ],
-    examples: [
-      {
-        label: "דוגמה: ניהול תורים",
-        link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing",
-      },
-      {
-        label: "דוגמה: מסחר אלקטרוני",
-        link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing",
-      },
-      {
-        label: "דוגמה: תמיכה טכנית",
-        link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing",
-      },
-    ],
+  const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.2 }
+    }
   };
 
-  const otherServices = [
-    {
-      icon: <BsGear className="w-8 h-8" />,
-      title: "מערכות ניהול מידע",
-      description:
-        "בניית והטמעת מערכת שמרכזת נתונים וסטטוסים במקום אחד — כדי לדעת בכל רגע מה קורה, מה בוצע ומה השלב הבא.",
-      link: "https://drive.google.com/file/d/1SJEK5zrWtqaRAP-3JGDAHiTnlmSxYa0X/view?usp=drive_link",
-    },
-    {
-      icon: <BsLightning className="w-8 h-8" />,
-      title: "אוטומציות ופתרונות דיגיטל",
-      description:
-        "טפסים חכמים, דפי נחיתה, קטלוגים ואוטומציות שמורידות עבודה ידנית — ומחזירות זמן, סדר ושליטה.",
-      link: "https://drive.google.com/file/d/1eZ3d7-rxxk9KfZNyrd_gYxPFPb_rtJlJ/view?usp=drive_link",
-    },
-    {
-      icon: <BsRobot className="w-8 h-8" />,
-      title: "AI לעסק — חכם ומעשי",
-      description:
-        "שילוב בינה מלאכותית בתהליכים קיימים: סיכום שיחות, תמלול, ניסוח הצעות, ניהול משימות/מסמכים ועוד — בלי להסתבך.",
-      link: "https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing",
-    },
-  ];
-
-  const { ref, inView } = useInView({ threshold: 0.12, triggerOnce: true });
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+  };
 
   return (
-    <section id="services" className="py-24 bg-white">
+    <section id="services" className="py-24 bg-[#f8fafc] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* HEADER */}
+        
+        {/* HEADER - Sharp & Clean */}
         <motion.div
           ref={ref}
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.55 }}
-          className="text-center mb-14"
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+          variants={containerVariants}
+          className="text-center mb-20"
         >
-          <div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border"
-            style={{
-              borderColor: "rgba(0,10,185,0.18)",
-              background: "rgba(124,214,222,0.10)",
-              color: BRAND_BLUE,
-            }}
-          >
-            <BsShieldCheck className="w-4 h-4" />
-            <span className="text-sm font-semibold">שקט • רוגע • שליטה</span>
-          </div>
-
-          <h1 className="mt-5 text-4xl sm:text-5xl font-extrabold text-slate-900">
-            הפתרונות החכמים שלך
-          </h1>
-          <p className="mt-4 text-slate-600 max-w-3xl mx-auto leading-relaxed">
-            כל מה שנבנה כאן נועד לייצר <span className="font-bold" style={{ color: BRAND_BLUE }}>שקט תפעולי</span>:
-            פחות עומס, יותר סדר, ויותר שליטה בתהליך — מהפנייה הראשונה ועד הביצוע.
-          </p>
+          <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6">
+            <BsShieldCheck style={{ color: BRAND_BLUE }} />
+            <span className="text-sm font-bold tracking-wide text-slate-700">מקצוענות • אוטומציה • שקט</span>
+          </motion.div>
+          
+          <motion.h2 variants={itemVariants} className="text-4xl md:text-6xl font-black text-slate-900 mb-6">
+            להפוך עומס ל<span style={{ color: BRAND_BLUE }}>סדר דיגיטלי</span>
+          </motion.h2>
+          
+          <motion.p variants={itemVariants} className="max-w-2xl mx-auto text-lg text-slate-600 leading-relaxed">
+            אני בונה מערכות שלא רק חוסכות זמן, אלא מייצרות תשתית שמאפשרת לעסק שלך לצמוח מתוך רוגע ושליטה מלאה.
+          </motion.p>
         </motion.div>
 
-        {/* FEATURED CARD */}
-        <motion.div
-          initial={{ opacity: 0, y: 18 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="rounded-3xl border overflow-hidden shadow-[0_28px_80px_rgba(0,0,0,0.08)]"
-          style={{ borderColor: "rgba(0,10,185,0.18)" }}
-        >
-          {/* top band */}
-          <div
-            className="px-8 py-7"
-            style={{
-              background: `linear-gradient(135deg, rgba(0,10,185,0.06), rgba(124,214,222,0.12), rgba(82,222,74,0.10))`,
-            }}
+        {/* MAIN SERVICES GRID */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          
+          {/* FEATURED: SHAKET-BOTS (The "Big" Card) */}
+          <motion.div 
+            variants={itemVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="lg:col-span-8 bg-white rounded-[2.5rem] p-8 md:p-12 border border-slate-100 shadow-xl shadow-blue-900/5 relative overflow-hidden group"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-              <div className="flex items-start gap-4">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center border"
-                  style={{
-                    borderColor: "rgba(0,10,185,0.18)",
-                    background: "white",
-                    color: BRAND_BLUE,
-                  }}
-                >
-                  {featuredService.icon}
-                </div>
-
-                <div className="text-right">
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                    {featuredService.title}
-                  </h2>
-                  <p className="mt-2 text-slate-600 leading-relaxed max-w-3xl">
-                    {featuredService.description}
-                  </p>
-                </div>
+            <div className="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-32 -mt-32 blur-3xl opacity-50 group-hover:opacity-80 transition-opacity" />
+            
+            <div className="relative z-10">
+              <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 shadow-inner" style={{ background: `linear-gradient(135deg, ${BRAND_BLUE}, #2b36ff)`, color: 'white' }}>
+                <BsChatDots className="w-8 h-8" />
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center md:justify-end">
-                <a
-                  href="/4U/consultation"
-                  className="inline-flex items-center justify-center rounded-full px-7 py-3 font-bold transition-transform hover:scale-[1.03]"
-                  style={{
-                    backgroundColor: BRAND_GREEN,
-                    color: "#06233a",
-                    boxShadow: "0 16px 36px rgba(0,0,0,0.12)",
-                  }}
-                >
-                  שיחת ייעוץ ללא עלות
-                </a>
-
-                <a
-                  href="/4U/contact"
-                  className="inline-flex items-center justify-center rounded-full px-7 py-3 font-bold border transition-transform hover:scale-[1.03]"
-                  style={{
-                    borderColor: "rgba(0,10,185,0.22)",
-                    color: BRAND_BLUE,
-                    backgroundColor: "rgba(0,10,185,0.04)",
-                  }}
-                >
-                  לדבר איתי
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* content */}
-          <div className="px-8 py-8 bg-white">
-            {/* highlights - no bullets */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {featuredService.highlights.map((h) => (
-                <div
-                  key={h.title}
-                  className="rounded-2xl border p-5 text-right"
-                  style={{
-                    borderColor: "rgba(0,10,185,0.14)",
-                    background: "rgba(0,10,185,0.02)",
-                  }}
-                >
-                  <div className="text-sm font-extrabold" style={{ color: BRAND_BLUE }}>
-                    {h.title}
+              
+              <h3 className="text-3xl font-black text-slate-900 mb-4">שקטבוטים™</h3>
+              <p className="text-xl text-slate-600 mb-8 max-w-xl leading-relaxed">
+                הצ'אטבוט החכם שיוצר לך שקט תפעולי. הוא עובד 24/7, עונה מיידית, מנתב פניות ומחבר בין הלקוח למערכות שלך בצורה מושלמת.
+              </p>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                {["תיעוד וסיווג אוטומטי", "חיבור מלא ל-CRM ולוואטסאפ", "קיצור זמני המתנה ב-90%", "איסוף לידים חכם"].map((feat) => (
+                  <div key={feat} className="flex items-center gap-3 text-slate-700 font-medium">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: BRAND_GREEN }} />
+                    {feat}
                   </div>
-                  <div className="mt-2 text-slate-600 leading-relaxed">{h.text}</div>
-                </div>
-              ))}
-            </div>
-
-            {/* examples */}
-            <div className="mt-7">
-              <div className="text-right text-slate-800 font-extrabold mb-3">
-                דוגמאות לצפייה
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {featuredService.examples.map((ex) => (
-                  <button
-                    key={ex.label}
-                    onClick={() => window.open(ex.link, "_blank")}
-                    className="w-full rounded-2xl px-4 py-3 font-bold transition-all duration-300
-                               hover:shadow-[0_18px_40px_rgba(0,0,0,0.10)] hover:-translate-y-[1px]"
-                    style={{
-                      backgroundColor: "rgba(82,222,74,0.16)",
-                      border: `1px solid rgba(82,222,74,0.45)`,
-                      color: "#06233a",
-                    }}
-                  >
-                    {ex.label}
-                  </button>
                 ))}
               </div>
-            </div>
-          </div>
-        </motion.div>
 
-        {/* OTHER SERVICES */}
-        <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-          {otherServices.map((service, index) => (
-            <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 18 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.08 + index * 0.08 }}
-              className="rounded-3xl border p-7 bg-white text-right
-                         shadow-[0_16px_50px_rgba(0,0,0,0.06)]
-                         hover:shadow-[0_22px_70px_rgba(0,0,0,0.10)]
-                         transition-shadow"
-              style={{ borderColor: "rgba(0,10,185,0.16)" }}
+              <div className="flex flex-wrap gap-4">
+                <button className="px-8 py-4 rounded-2xl font-bold text-white transition-all hover:scale-105 active:scale-95 shadow-lg shadow-blue-700/20" style={{ backgroundColor: BRAND_BLUE }}>
+                  צפה בדוגמה חיה
+                </button>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* SIDE CARD: AI & DATA */}
+          <motion.div 
+            variants={itemVariants}
+            initial="hidden"
+            animate={inView ? "visible" : "hidden"}
+            className="lg:col-span-4 bg-slate-900 rounded-[2.5rem] p-8 border border-slate-800 shadow-2xl relative overflow-hidden text-white"
+          >
+             <div className="absolute bottom-0 left-0 w-32 h-32 bg-emerald-500/20 rounded-full -ml-16 -mb-16 blur-2xl" />
+             
+             <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                <BsRobot className="w-7 h-7" style={{ color: BRAND_GREEN }} />
+              </div>
+              
+              <h3 className="text-2xl font-bold mb-4 text-white">AI לעסק</h3>
+              <p className="text-slate-400 mb-8 leading-relaxed">
+                שילוב בינה מלאכותית בתהליכים קיימים: סיכום שיחות, תמלול וניהול משימות חכם.
+              </p>
+              
+              <button className="w-full py-4 rounded-2xl border border-slate-700 font-bold hover:bg-white hover:text-slate-900 transition-all flex items-center justify-center gap-2 group">
+                לפרטים נוספים
+                <BsArrowLeftShort className="w-6 h-6 group-hover:-translate-x-1 transition-transform" />
+              </button>
+          </motion.div>
+
+          {/* BOTTOM CARDS: AUTOMATION & SYSTEMS */}
+          {[
+            { title: "אוטומציה ודיגיטל", icon: <BsLightning />, desc: "דפי נחיתה וטפסים חכמים שמורידים עבודה ידנית מהצוות.", color: BRAND_CYAN },
+            { title: "מערכות ניהול", icon: <BsGear />, desc: "ריכוז נתונים וסטטוסים במקום אחד לשליטה מלאה בכל רגע.", color: BRAND_BLUE }
+          ].map((s, idx) => (
+            <motion.div 
+              key={idx}
+              variants={itemVariants}
+              initial="hidden"
+              animate={inView ? "visible" : "hidden"}
+              className="lg:col-span-6 bg-white rounded-[2.5rem] p-8 border border-slate-100 shadow-lg group hover:border-blue-100 transition-all"
             >
-              <div className="flex items-center justify-between">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center border"
-                  style={{
-                    borderColor: "rgba(124,214,222,0.45)",
-                    background: "rgba(124,214,222,0.12)",
-                    color: BRAND_BLUE,
-                  }}
-                >
-                  {service.icon}
+              <div className="flex items-center gap-6 text-right">
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center shrink-0" style={{ backgroundColor: `${s.color}15`, color: s.color }}>
+                  {React.cloneElement(s.icon, { className: "w-7 h-7" })}
                 </div>
-                <div
-                  className="text-xs font-bold px-3 py-1 rounded-full border"
-                  style={{
-                    borderColor: "rgba(0,10,185,0.14)",
-                    color: BRAND_BLUE,
-                    background: "rgba(0,10,185,0.03)",
-                  }}
-                >
-                  שקט תפעולי
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{s.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{s.desc}</p>
                 </div>
               </div>
-
-              <h3 className="mt-5 text-xl font-extrabold text-slate-900">
-                {service.title}
-              </h3>
-              <p className="mt-3 text-slate-600 leading-relaxed">
-                {service.description}
-              </p>
-
-              <button
-                onClick={() => window.open(service.link, "_blank")}
-                className="mt-6 w-full rounded-2xl px-4 py-3 font-bold border transition-all
-                           hover:-translate-y-[1px]"
-                style={{
-                  borderColor: "rgba(124,214,222,0.55)",
-                  background: "rgba(124,214,222,0.12)",
-                  color: BRAND_BLUE,
-                }}
-              >
-                לראות דוגמה
-              </button>
             </motion.div>
           ))}
         </div>
 
-        {/* closing line */}
-        <div className="mt-12 text-center text-slate-600">
-          רוצה שנבחר יחד את הפתרון שיביא <span className="font-bold" style={{ color: BRAND_BLUE }}>שקט ושליטה</span> לעסק?
-        </div>
+        {/* FINAL CTA */}
+        <motion.div variants={itemVariants} className="mt-20 text-center">
+             <h4 className="text-2xl font-bold text-slate-900 mb-6">מוכנים להכניס שקט לעסק?</h4>
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="/consultation" className="px-10 py-4 rounded-full font-black text-lg transition-transform hover:scale-105" style={{ backgroundColor: BRAND_GREEN, color: '#06233a' }}>
+                  בואו נדבר, זה משתלם
+                </a>
+             </div>
+        </motion.div>
       </div>
     </section>
   );
