@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { BsArrowLeft, BsShieldCheck, BsLightningCharge, BsClockHistory } from 'react-icons/bs';
 
-// ייבוא הקומפוננטים שכבר קיימים לך
+// ייבוא קומפוננטים - וידאתי שהנתיבים מתאימים לתיקיות שלך בגיטהאב
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Services from './pages/Services';
@@ -12,7 +12,7 @@ import Testimonials from './pages/Testimonials';
 import Consultation from './pages/Consultation';
 import Contact from './pages/Contact';
 
-// הגדרת דף הבית ישירות כאן כדי שלא תצטרכי לחפש קובץ אחר
+// הגדרת דף הבית (Home) כחלק מהקובץ כדי שלא יחסרו קבצים
 const Home = () => {
   const fontBold = { fontFamily: "FbAsparagosBold, sans-serif" };
   const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
@@ -22,16 +22,17 @@ const Home = () => {
       <section className="relative pt-20 pb-32 flex items-center justify-center overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 text-center relative z-10">
           
-          {/* לוגו מרכזי - מוגבל בגודל כדי שלא יתפוצץ */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             className="mb-12"
           >
+            {/* שימי לב לנתיב הלוגו - הוספתי /4U/ כדי שיעבוד בגיטהאב */}
             <img 
-              src="/4U/logo.png" 
+              src="/4U/images/logo.png" 
               alt="Logo" 
               className="h-32 md:h-40 w-auto mx-auto object-contain" 
+              onError={(e) => e.target.src = "/4U/logo.png"} // גיבוי אם התמונה במיקום אחר
             />
           </motion.div>
 
@@ -48,10 +49,10 @@ const Home = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/services" className="px-8 py-3 bg-[#7cd6de] text-white rounded-full font-bold text-lg shadow-lg hover:scale-105 transition-transform" style={fontBold}>
+              <Link to="/services" className="px-8 py-3 bg-[#7cd6de] text-white rounded-full font-bold text-lg shadow-lg" style={fontBold}>
                 לפתרונות שלנו
               </Link>
-              <Link to="/contact" className="px-8 py-3 border-2 border-slate-200 text-slate-700 rounded-full font-bold text-lg hover:bg-slate-50 transition-all" style={fontBold}>
+              <Link to="/contact" className="px-8 py-3 border-2 border-slate-200 text-slate-700 rounded-full font-bold text-lg" style={fontBold}>
                 בואו נדבר
               </Link>
             </div>
@@ -59,7 +60,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* תועלות מהירות */}
       <section className="py-16 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="p-6 bg-white rounded-xl shadow-sm border border-slate-100">
@@ -83,10 +83,10 @@ const Home = () => {
   );
 };
 
-function App() {
+export default function App() {
   return (
     <Router basename="/4U">
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-white">
         <Header />
         <main className="flex-grow">
           <Routes>
@@ -103,5 +103,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;
