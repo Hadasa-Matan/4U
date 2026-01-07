@@ -9,8 +9,11 @@ function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  // הפניה לשם הפונט העבה שהגדרנו ב-CSS
-  const fontBoldStyle = { fontFamily: "FbAsparagosBold, sans-serif" };
+  // הגדרת הסטייל לפונט העבה (Bold) מה-CSS
+  const fontBoldStyle = { 
+    fontFamily: "FbAsparagosBold, sans-serif",
+    fontWeight: "bold" 
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,38 +36,40 @@ function Header() {
       initial={{ y: -60 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.35 }}
-      className="fixed top-0 w-full z-50 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.06)]"
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm" : "bg-white shadow-md"
+      }`}
     >
       <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="h-14 flex items-center">
+        <div className="h-16 flex items-center justify-between">
           
-          {/* LOGO - לחיצה עליו מחזירה הביתה */}
+          {/* LOGO - לחיצה עליו היא החזרה לדף הבית */}
           <Link to="/" className="flex items-center flex-none">
             <img
               src="/4U/logo.png"
               alt="Logo"
-              className="h-11 w-auto"
+              className="h-12 w-auto"
             />
           </Link>
 
           {/* DESKTOP NAV */}
-          <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className="relative text-[17px] transition-colors duration-300"
+                  className="relative text-[17px] transition-colors duration-300 py-1"
                   style={{
                     ...fontBoldStyle,
                     color: isActive ? BRAND_GREEN : "#1f2937",
                   }}
                 >
                   {item.name}
-                  {/* underline */}
+                  {/* Underline indicator */}
                   <span
-                    className="absolute -bottom-1 right-0 h-[2px] rounded-full transition-all duration-300"
+                    className="absolute bottom-0 right-0 h-[3px] rounded-full transition-all duration-300"
                     style={{
                       width: isActive ? "100%" : "0%",
                       backgroundColor: BRAND_CYAN,
@@ -75,9 +80,9 @@ function Header() {
             })}
           </nav>
 
-          {/* MOBILE MENU */}
-          <div className="md:hidden flex flex-1 justify-end">
-            <button className="p-2 rounded-lg" style={{ color: "#1f2937" }}>
+          {/* MOBILE MENU BUTTON */}
+          <div className="md:hidden">
+            <button className="p-2 text-slate-800">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
