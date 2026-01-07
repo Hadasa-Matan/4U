@@ -22,7 +22,7 @@ function Footer() {
           <div className="md:col-span-1">
             <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>הדסה מתן</h4>
             <p className="text-slate-800 text-lg leading-relaxed">
-              מביאים שקט ושליטה לעסק שלך באמצעות פתרונות טכנולוגיים חכמים ואוטומציות מתקדמות שחוסכות לך זמן יקר.
+              מביאים שקט תפעולי ושליטה לעסק שלך באמצעות פתרונות טכנולוגיים חכמים ואוטומציות מתקדמות שחוסכות לך זמן יקר.
             </p>
           </div>
 
