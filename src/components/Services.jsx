@@ -51,7 +51,7 @@ function Services() {
       title: "AI מעשי לעסק",
       description: "הטמעת כלי בינה מלאכותית לסיכום פגישות, ניסוח מסמכים וניהול משימות חכם. פשוט, פרקטי וחוסך שעות של עבודה.",
       link: "https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing",
-      btnText: "בואו נראה מה ה-AI יודע"
+      btnText: "דוגמא לאוטומציה בשילוב AI"
     },
   ];
 
