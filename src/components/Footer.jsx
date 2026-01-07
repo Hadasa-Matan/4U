@@ -1,72 +1,95 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { BsEnvelope, BsPhone } from "react-icons/bs";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
 
-const BRAND_CYAN = "#7cd6de"; 
+const BRAND_GREEN = "#52de4a";
+const BRAND_CYAN = "#7cd6de";
 
-function Footer() {
-  const fontBold = { fontFamily: "FbAsparagosBold, sans-serif" };
-  const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
+function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
-  // הכנת הלינק למייל עם נושא ומלל שיווקי
-  const emailSubject = encodeURIComponent("פנייה חדשה מהאתר");
-  const emailBody = encodeURIComponent("היי הדסה,\nהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.");
-  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+  // דיוק הגדרת הפונט - הוספת Bold כמשקל למקרה שהדפדפן צריך עזרה
+  const fontBoldStyle = { 
+    fontFamily: "FbAsparagosBold, sans-serif",
+    fontWeight: "bold" 
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const navItems = [
+    { name: "המוצרים שלנו", path: "/services" },
+    { name: "אודות", path: "/about" },
+    { name: "המלצות", path: "/testimonials" },
+    { name: "ייעוץ", path: "/consultation" },
+    { name: "צור קשר", path: "/contact" },
+  ];
 
   return (
-    <footer className="py-12" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right" dir="rtl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+    <motion.header
+      initial={{ y: -60 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.35 }}
+      className="fixed top-0 w-full z-50 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.06)]"
+    >
+      <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-14 flex items-center">
           
-          {/* עמודה 1: שם ותיאור (בלי לוגו) */}
-          <div className="md:col-span-1">
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>הדסה מתן</h4>
-            <p className="text-slate-800 text-lg leading-relaxed">
-              מביאים שקט תפעולי ושליטה לעסק שלך באמצעות פתרונות טכנולוגיים חכמים ואוטומציות מתקדמות שחוסכות לך זמן יקר.
-            </p>
-          </div>
+          {/* LOGO - הוא לבדו משמש כחזרה לדף הבית */}
+          <Link to="/" className="flex items-center flex-none">
+            <img
+              src="/4U/logo.png"
+              alt="Logo"
+              className="h-11 w-auto"
+            />
+          </Link>
 
-          {/* עמודה 2: ניווט מלא */}
-          <div>
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>ניווט מהיר</h4>
-            <ul className="space-y-3 text-lg">
-              <li><Link to="/services" className="hover:text-white transition-colors">המוצרים שלנו</Link></li>
-              <li><Link to="/about" className="hover:text-white transition-colors">אודות</Link></li>
-              <li><Link to="/testimonials" className="hover:text-white transition-colors">המלצות</Link></li>
-              <li><Link to="/consultation" className="hover:text-white transition-colors">ייעוץ</Link></li>
-              <li><Link to="/contact" className="hover:text-white transition-colors">צור קשר</Link></li>
-            </ul>
-          </div>
-
-          {/* עמודה 3: פרטי קשר עם טלפון ומייל לחיץ */}
-          <div>
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>דברו איתנו</h4>
-            <ul className="space-y-4 text-lg text-slate-800">
-              <li className="flex items-center gap-3">
-                <BsPhone className="text-slate-900 w-5 h-5" />
-                <span dir="ltr">050-413-3408</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <BsEnvelope className="text-slate-900 w-5 h-5" />
-                <a 
-                  href={mailtoLink} 
-                  className="hover:text-white transition-colors underline decoration-slate-400 underline-offset-4"
+          {/* DESKTOP NAV */}
+          <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
+            {navItems.map((item) => {
+              const isActive = location.pathname === item.path;
+              return (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className="relative text-[17px] transition-colors duration-300"
+                  style={{
+                    ...fontBoldStyle,
+                    color: isActive ? BRAND_GREEN : "#1f2937",
+                  }}
                 >
-                  HadasaMatan@gmail.com
-                </a>
-              </li>
-            </ul>
+                  {item.name}
+                  {/* underline */}
+                  <span
+                    className="absolute -bottom-1 right-0 h-[2px] rounded-full transition-all duration-300"
+                    style={{
+                      width: isActive ? "100%" : "0%",
+                      backgroundColor: BRAND_CYAN,
+                    }}
+                  />
+                </Link>
+              );
+            })}
+          </nav>
+
+          {/* MOBILE MENU */}
+          <div className="md:hidden flex flex-1 justify-end">
+            <button className="p-2 rounded-lg" style={{ color: "#1f2937" }}>
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
           </div>
-
-        </div>
-
-        {/* זכויות יוצרים */}
-        <div className="mt-12 pt-8 border-t border-black/10 text-center text-slate-700 text-md">
-          <p>© {new Date().getFullYear()} כל הזכויות שמורות להדסה מתן - שקט ושליטה בעסק.</p>
         </div>
       </div>
-    </footer>
+    </motion.header>
   );
 }
 
-export default Footer;
+export default Header;
