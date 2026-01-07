@@ -10,12 +10,15 @@ import {
   BsCalendarCheck 
 } from "react-icons/bs";
 
-// צבעי המיתוג שלך
+// צבעי המיתוג
 const BRAND_BLUE = "#000ab9";
 const BRAND_GREEN = "#52de4a";
 const BRAND_CYAN = "#7cd6de";
 
 function Services() {
+  // הגדרת סגנון פונט אחיד לכל האלמנטים
+  const customFontStyle = { fontFamily: "FbAsparagos, sans-serif" };
+
   const featuredService = {
     icon: <BsChatDots className="w-10 h-10" />,
     title: "שקבוט — המוצר המבוקש לשקט תפעולי",
@@ -23,18 +26,9 @@ function Services() {
   };
 
   const chatbotExamples = [
-    { 
-      label: "איך עובד ניהול תורים?", 
-      link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing" 
-    },
-    { 
-      label: "צפייה בבוט מכירות (E-com)", 
-      link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing" 
-    },
-    { 
-      label: "דמו: תמיכה ושירות לקוחות", 
-      link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing" 
-    },
+    { label: "איך עובד ניהול תורים?", link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing" },
+    { label: "צפייה בבוט מכירות (E-com)", link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing" },
+    { label: "דמו: תמיכה ושירות לקוחות", link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing" },
   ];
 
   const otherServices = [
@@ -64,7 +58,7 @@ function Services() {
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
 
   return (
-    <section id="services" className="py-24 bg-[#fcfcfc]" dir="rtl">
+    <section id="services" className="py-24 bg-[#fcfcfc]" dir="rtl" style={customFontStyle}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
         
         {/* כותרת עמוד */}
@@ -75,33 +69,34 @@ function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4" style={customFontStyle}>
             הפתרונות החכמים ל<span style={{ color: BRAND_BLUE }}>עסק שלך</span>
           </h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg leading-relaxed" style={customFontStyle}>
             כל מה שנבנה כאן נועד לייצר לך מקום לצמוח מתוכו. פחות עומס, יותר סדר.
           </p>
         </motion.div>
 
-        {/* גריד שירותים */}
+        {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* כרטיס שקבוט */}
+          {/* כרטיס שקבוט - עם מסגרת כחולה מודגשת */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="md:col-span-3 rounded-[2.5rem] p-8 md:p-12 flex flex-col border transition-all relative overflow-hidden group"
+            className="md:col-span-3 rounded-[2.5rem] p-8 md:p-12 flex flex-col border transition-all relative overflow-hidden"
             style={{
               backgroundColor: "white",
-              borderColor: "rgba(0,10,185,0.12)",
-              boxShadow: "0 30px 60px rgba(0,10,185,0.04)",
+              borderColor: `${BRAND_BLUE}40`, // מסגרת כחולה ב-25% שקיפות
+              boxShadow: "0 20px 50px rgba(0,10,185,0.05)",
+              borderWidth: "1px"
             }}
           >
-            <div className="absolute top-0 left-0 w-32 h-32 bg-blue-50 rounded-full -ml-16 -mt-16 blur-3xl opacity-50" />
-            
             <div style={{ color: BRAND_BLUE }} className="mb-6 relative z-10">{featuredService.icon}</div>
-            <h3 className="text-3xl font-black mb-4 text-slate-900 relative z-10">{featuredService.title}</h3>
-            <p className="text-slate-600 text-lg mb-10 leading-relaxed max-w-4xl relative z-10 whitespace-pre-line">
+            <h3 className="text-3xl font-black mb-4 text-slate-900 relative z-10" style={customFontStyle}>
+              {featuredService.title}
+            </h3>
+            <p className="text-slate-600 text-lg mb-10 leading-relaxed max-w-4xl relative z-10 whitespace-pre-line" style={customFontStyle}>
               {featuredService.description}
             </p>
 
@@ -111,7 +106,7 @@ function Services() {
                   key={idx}
                   onClick={() => window.open(ex.link, "_blank")}
                   className="py-4 px-4 rounded-2xl font-bold transition-all hover:scale-[1.03] shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-                  style={{ backgroundColor: BRAND_GREEN, color: "#06233a" }}
+                  style={{ backgroundColor: BRAND_GREEN, color: "#06233a", ...customFontStyle }}
                 >
                   {ex.label}
                   <BsArrowLeft className="w-4 h-4" />
@@ -120,7 +115,7 @@ function Services() {
             </div>
           </motion.div>
 
-          {/* שירותים נוספים */}
+          {/* שירותים נוספים - עם מסגרת כחולה דקה */}
           {otherServices.map((service, idx) => (
             <motion.div
               key={idx}
@@ -128,21 +123,26 @@ function Services() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.1 * idx }}
               className="rounded-[2rem] p-8 flex flex-col border bg-white hover:shadow-xl transition-all duration-300"
-              style={{ borderColor: "rgba(124,214,222,0.3)" }}
+              style={{ 
+                borderColor: `${BRAND_BLUE}25`, // מסגרת כחולה עדינה יותר לכרטיסים הקטנים
+                borderWidth: "1px"
+              }}
             >
               <div className="mb-6 flex justify-start" style={{ color: BRAND_BLUE }}>
                 <div className="p-3 rounded-xl shadow-inner" style={{ backgroundColor: "rgba(124,214,222,0.1)" }}>
                   {service.icon}
                 </div>
               </div>
-              <h3 className="text-xl font-black mb-3 text-slate-900">{service.title}</h3>
-              <p className="text-slate-600 mb-8 leading-relaxed">
+              <h3 className="text-xl font-black mb-3 text-slate-900" style={customFontStyle}>
+                {service.title}
+              </h3>
+              <p className="text-slate-600 mb-8 leading-relaxed" style={customFontStyle}>
                 {service.description}
               </p>
               <button
                 onClick={() => window.open(service.link, "_blank")}
                 className="mt-auto py-3 rounded-xl font-bold border transition-all flex items-center justify-center gap-2 group hover:bg-slate-50 shadow-sm"
-                style={{ borderColor: BRAND_BLUE, color: BRAND_BLUE }}
+                style={{ borderColor: BRAND_BLUE, color: BRAND_BLUE, ...customFontStyle }}
               >
                 {service.btnText}
                 <BsArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
@@ -156,12 +156,13 @@ function Services() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20 text-center bg-white border border-slate-100 p-10 rounded-[3rem] shadow-sm"
+          className="mt-20 text-center bg-white border p-10 rounded-[3rem] shadow-sm"
+          style={{ borderColor: `${BRAND_BLUE}20` }}
         >
-          <h4 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
+          <h4 className="text-2xl md:text-3xl font-black text-slate-900 mb-4" style={customFontStyle}>
             רוצה שנבחר יחד את הפתרון שיביא <span style={{ color: BRAND_BLUE }}>שקט ושליטה</span> לעסק?
           </h4>
-          <p className="text-slate-600 mb-8 text-lg">
+          <p className="text-slate-600 mb-8 text-lg" style={customFontStyle}>
             שיחת אפיון קצרה שתעזור לנו להבין בדיוק מה יעבוד הכי טוב עבורך.
           </p>
           <a
@@ -169,7 +170,7 @@ function Services() {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-xl transition-all hover:scale-105 shadow-xl hover:shadow-2xl"
-            style={{ backgroundColor: BRAND_GREEN, color: "#06233a" }}
+            style={{ backgroundColor: BRAND_GREEN, color: "#06233a", ...customFontStyle }}
           >
             <BsCalendarCheck className="w-6 h-6" />
             שיחת הצעה ללא עלות
