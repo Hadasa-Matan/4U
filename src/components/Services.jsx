@@ -21,34 +21,34 @@ function Services() {
 
   const featuredService = {
     icon: <BsChatDots className="w-10 h-10" />,
-    title: "שקבוט — המוצר המבוקש לשקט תפעולי",
+    title: "שקבוט - המוצר המבוקש לשקט תפעולי",
     description: `השקבוט הוא מוצר חכם ומוכן להטמעה שחוסך לך זמן יקר. הוא העובד הדיגיטלי שתמיד זמין עבור הלקוחות שלך: עונה מיידית, מנהל תורים, סוגר מכירות ומנתב פניות – הכל באוטומציה מלאה שמורידה ממך את העומס. הוא מתממשק בקלות לוואטסאפ, לאתר ול-CRM שלך.`,
   };
 
   const chatbotExamples = [
-    { label: "איך עובד ניהול תורים?", link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing" },
-    { label: "צפייה בבוט מכירות (E-com)", link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing" },
-    { label: "דמו: תמיכה ושירות לקוחות", link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing" },
+    { label: "אקבוט ניהול תורים?", link: "https://drive.google.com/file/d/1j40VZjj1TLtvokKUPsXepMadL6beAmQR/view?usp=sharing" },
+    { label: "שקבוט מכירות (E-com)", link: "https://drive.google.com/file/d/1TrcUi_U-TyjDjaG5R0gJy1mrZy5Ijp5L/view?usp=sharing" },
+    { label: "שקבוט תמיכה ושירות לקוחות", link: "https://drive.google.com/file/d/1YJaNj6uWyU4IczBh7ufpHKIfmmvHDx01/view?usp=sharing" },
   ];
 
   const otherServices = [
     {
       icon: <BsGear className="w-8 h-8" />,
       title: "מערכות שליטה וסדר",
-      description: "בניית תשתית שמרכזת את כל המידע והסטטוסים במקום אחד. במקום בלגן של הודעות וקבצים — הכל מסודר במערכת שנותנת לך שליטה מלאה.",
+      description: "בניית תשתית שמרכזת את כל המידע והסטטוסים במקום אחד. במקום בלגן של הודעות וקבצים - הכל מסודר במערכת שנותנת לך שליטה מלאה.",
       link: "https://drive.google.com/file/d/1SJEK5zrWtqaRAP-3JGDAHiTnlmSxYa0X/view?usp=drive_link",
       btnText: "לראות איך הסדר נראה"
     },
     {
       icon: <BsLightning className="w-8 h-8" />,
       title: "אוטומציות ודיגיטל",
-      description: "חיבור בין מערכות, טפסים חכמים ודפי נחיתה שמבצעים פעולות חוזרות במקומך. פחות עבודה ידנית — הרבה יותר זמן פנוי לצמוח.",
+      description: "חיבור בין מערכות, טפסים חכמים ודפי נחיתה שמבצעים פעולות חוזרות במקומך. פחות עבודה ידנית - הרבה יותר זמן פנוי לצמוח.",
       link: "https://drive.google.com/file/d/1eZ3d7-rxxk9KfZNyrd_gYxPFPb_rtJlJ/view?usp=drive_link",
       btnText: "לצפייה באוטומציה בפעולה"
     },
     {
       icon: <BsRobot className="w-8 h-8" />,
-      title: "AI מעשי לעסק",
+      title: "שילוב AI בעסק",
       description: "הטמעת כלי בינה מלאכותית לסיכום פגישות, ניסוח מסמכים וניהול משימות חכם. פשוט, פרקטי וחוסך שעות של עבודה.",
       link: "https://drive.google.com/file/d/1nsEMxi8_btHp6ZFlQW2lWwn4VUukrkSV/view?usp=sharing",
       btnText: "דוגמא לאוטומציה בשילוב AI"
