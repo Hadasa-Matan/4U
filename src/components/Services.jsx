@@ -7,7 +7,7 @@ import {
   BsRobot, 
   BsChatDots, 
   BsArrowLeft,
-  BsShieldCheck 
+  BsCalendarCheck 
 } from "react-icons/bs";
 
 // צבעי המיתוג שלך
@@ -18,8 +18,8 @@ const BRAND_CYAN = "#7cd6de";
 function Services() {
   const featuredService = {
     icon: <BsChatDots className="w-10 h-10" />,
-    title: "השקבוט™ — המומחיות שלנו",
-    description: `השקבוט הוא לא עוד צ'אטבוט רגיל. הוא העובד הדיגיטלי שתמיד זמין עבור הלקוחות שלך: עונה מיידית, מנהל תורים, סוגר מכירות ומנתב פניות – הכל באוטומציה מלאה שמורידה ממך את העומס. הוא מתממשק בקלות לוואטסאפ, לאתר ול-CRM שלך.`,
+    title: "שקבוט — המוצר המבוקש לשקט תפעולי",
+    description: `השקבוט הוא מוצר חכם ומוכן להטמעה שחוסך לך זמן יקר. הוא העובד הדיגיטלי שתמיד זמין עבור הלקוחות שלך: עונה מיידית, מנהל תורים, סוגר מכירות ומנתב פניות – הכל באוטומציה מלאה שמורידה ממך את העומס. הוא מתממשק בקלות לוואטסאפ, לאתר ול-CRM שלך.`,
   };
 
   const chatbotExamples = [
@@ -67,7 +67,7 @@ function Services() {
     <section id="services" className="py-24 bg-[#fcfcfc]" dir="rtl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-right">
         
-        {/* כותרת עליונה */}
+        {/* כותרת עמוד */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
@@ -75,11 +75,6 @@ function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border mb-4 shadow-sm" 
-               style={{ borderColor: "rgba(0,10,185,0.1)", backgroundColor: "white", color: BRAND_BLUE }}>
-            <BsShieldCheck className="w-4 h-4" />
-            <span className="text-sm font-bold tracking-wide">הדרך שלך לשקט תפעולי</span>
-          </div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 mb-4">
             הפתרונות החכמים ל<span style={{ color: BRAND_BLUE }}>עסק שלך</span>
           </h2>
@@ -88,10 +83,10 @@ function Services() {
           </p>
         </motion.div>
 
-        {/* GRID */}
+        {/* גריד שירותים */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
-          {/* הכרטיס המרכזי: שקבוט */}
+          {/* כרטיס שקבוט */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -106,7 +101,7 @@ function Services() {
             
             <div style={{ color: BRAND_BLUE }} className="mb-6 relative z-10">{featuredService.icon}</div>
             <h3 className="text-3xl font-black mb-4 text-slate-900 relative z-10">{featuredService.title}</h3>
-            <p className="text-slate-600 text-lg mb-10 leading-relaxed max-w-4xl relative z-10">
+            <p className="text-slate-600 text-lg mb-10 leading-relaxed max-w-4xl relative z-10 whitespace-pre-line">
               {featuredService.description}
             </p>
 
@@ -125,7 +120,7 @@ function Services() {
             </div>
           </motion.div>
 
-          {/* כרטיסי שירותים נוספים */}
+          {/* שירותים נוספים */}
           {otherServices.map((service, idx) => (
             <motion.div
               key={idx}
@@ -155,6 +150,32 @@ function Services() {
             </motion.div>
           ))}
         </div>
+
+        {/* הנעה לפעולה - שיחת הצעה */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-20 text-center bg-white border border-slate-100 p-10 rounded-[3rem] shadow-sm"
+        >
+          <h4 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
+            רוצה שנבחר יחד את הפתרון שיביא <span style={{ color: BRAND_BLUE }}>שקט ושליטה</span> לעסק?
+          </h4>
+          <p className="text-slate-600 mb-8 text-lg">
+            שיחת אפיון קצרה שתעזור לנו להבין בדיוק מה יעבוד הכי טוב עבורך.
+          </p>
+          <a
+            href="https://cal.com/hadasa-matan/4u"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-10 py-5 rounded-full font-black text-xl transition-all hover:scale-105 shadow-xl hover:shadow-2xl"
+            style={{ backgroundColor: BRAND_GREEN, color: "#06233a" }}
+          >
+            <BsCalendarCheck className="w-6 h-6" />
+            שיחת הצעה ללא עלות
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );
