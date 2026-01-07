@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
+import { BsHouseDoor } from "react-icons/bs"; // אייקון הבית
 
 const BRAND_GREEN = "#52de4a";
 const BRAND_CYAN = "#7cd6de";
 
 function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
 
-  const fontBoldStyle = { 
-    fontFamily: "'FbAsparagosBold', sans-serif",
-    fontWeight: "bold" 
-  };
+  // הגדרת הפונט העבה (Bold)
+  const fontBold = { fontFamily: "FbAsparagosBold, sans-serif" };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navItems = [
     { name: "המוצרים שלנו", path: "/services" },
@@ -21,46 +30,86 @@ function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-[100] bg-white shadow-md h-16 flex items-center">
-      <div className="max-w-7xl mx-auto px-4 w-full flex flex-row-reverse justify-between items-center">
-        
-        {/* LOGO - הגדרת גובה קשיחה למניעת הלוגו הענק שראית */}
-        <Link to="/" className="flex-none block" style={{ height: '40px' }}>
-          <img 
-            src="/4U/logo.png" 
-            alt="Logo" 
-            className="h-10 w-auto object-contain" 
-            style={{ height: '40px', maxWidth: 'none' }}
-          />
-        </Link>
+    <>
+      <motion.header
+        initial={{ y: -60 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.35 }}
+        className="fixed top-0 w-full z-50 bg-white shadow-[0_6px_24px_rgba(0,0,0,0.06)]"
+      >
+        <div className="max-w-[2000px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="h-14 flex items-center">
+            
+            {/* LOGO */}
+            <Link to="/" className="flex items-center flex-none">
+              <img
+                src="/4U/logo.png"
+                alt="Logo"
+                className="h-11 w-auto"
+              />
+            </Link>
 
-        {/* NAV */}
-        <nav className="hidden md:flex flex-row-reverse items-center gap-8">
-          {navItems.map((item) => {
-            const isActive = location.pathname === item.path;
-            return (
-              <Link
-                key={item.name}
-                to={item.path}
-                className="relative text-lg transition-colors whitespace-nowrap"
-                style={{
-                  ...fontBoldStyle,
-                  color: isActive ? BRAND_GREEN : "#1f2937",
-                }}
-              >
-                {item.name}
-                {isActive && (
-                  <span 
-                    className="absolute -bottom-1 right-0 w-full h-1 rounded-full" 
-                    style={{ backgroundColor: BRAND_CYAN }} 
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </nav>
-      </div>
-    </header>
+            {/* DESKTOP NAV */}
+            <nav className="hidden md:flex flex-1 justify-end items-center gap-8">
+              {navItems.map((item) => {
+                const isActive = location.pathname === item.path;
+                return (
+                  <Link
+                    key={item.name}
+                    to={item.path}
+                    className="relative text-[16px] transition-colors duration-300"
+
+
+
+
+
+
+
+
+
+                    style={{
+                      ...fontBold, // שימוש בפונט העבה
+                      color: isActive ? BRAND_GREEN : "#1f2937",
+                    }}
+                  >
+                    {item.name}
+                    {/* underline */}
+                    <span
+                      className="absolute -bottom-2 right-0 h-[2px] rounded-full transition-all duration-300"
+                      style={{
+                        width: isActive ? "100%" : "0%",
+                        backgroundColor: BRAND_CYAN,
+                      }}
+                    />
+                  </Link>
+                );
+              })}
+            </nav>
+
+            {/* MOBILE MENU */}
+            <div className="md:hidden flex flex-1 justify-end">
+              <button className="p-2 rounded-lg" style={{ color: "#1f2937" }}>
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </motion.header>
+
+      {/* כפתור חזרה לדף הבית - מופיע רק אם לא בדף הבית */}
+      {location.pathname !== "/" && (
+        <Link 
+          to="/"
+          className="fixed top-20 left-6 z-40 flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-md border border-slate-100 hover:shadow-lg transition-all group"
+          style={fontBold} // פונט עבה
+        >
+          <span className="text-slate-600 group-hover:text-blue-800 transition-colors">חזרה לדף הבית</span>
+          <BsHouseDoor className="w-5 h-5 text-[#000ab9]" />
+        </Link>
+      )}
+    </>
   );
 }
 
