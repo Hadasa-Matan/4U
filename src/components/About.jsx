@@ -34,7 +34,7 @@ const About = () => {
       {/* --- MAIN CONTENT CARD --- */}
       <section className="py-10 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-[32px] border-[3px] overflow-hidden relative" 
+          <div className="bg-white rounded-[32px] border-[1.5px] overflow-hidden relative" 
                style={{ 
                  borderColor: BRAND_BLUE
                }}>
