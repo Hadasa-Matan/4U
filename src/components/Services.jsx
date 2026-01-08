@@ -84,7 +84,7 @@ const Services = () => {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="rounded-[32px] p-8 md:p-12 border-[3px] bg-white relative overflow-hidden"
+            className="rounded-[32px] p-8 md:p-12 border-[1.5px] bg-white relative overflow-hidden"
             style={{ borderColor: BRAND_BLUE }}
           >
             <div className="absolute top-0 right-0 w-2 h-full"
@@ -123,8 +123,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 * idx }}
-                className="rounded-2xl p-6 flex flex-col border-[3px] bg-white hover:shadow-md transition-all"
-                style={{ borderColor: BRAND_BLUE }}
+                className="rounded-2xl p-6 flex flex-col bg-slate-50 hover:shadow-md transition-all"
               >
                 <div className="mb-6 flex justify-start" style={{ color: BRAND_BLUE }}>
                   <div className="p-3 rounded-xl" style={{ backgroundColor: "rgba(124,214,222,0.1)" }}>
@@ -139,20 +138,19 @@ const Services = () => {
                 </p>
                 <button
                   onClick={() => window.open(service.link, "_blank")}
-                  className="mt-auto py-3 rounded-xl font-bold border-2 transition-all flex items-center justify-center gap-2 group hover:bg-slate-50"
-                  style={{ borderColor: BRAND_BLUE, color: BRAND_BLUE, ...fontBold }}
+                  className="mt-auto py-3 px-4 rounded-xl font-bold transition-all hover:scale-[1.03] flex items-center justify-center gap-2 shadow-md"
+                  style={{ backgroundColor: BRAND_GREEN, color: "#06233a", ...fontBold }}
                 >
                   {service.btnText}
-                  <BsArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  <BsArrowLeft className="w-4 h-4" />
                 </button>
               </motion.div>
             ))}
           </div>
 
-          {/* הנעה לפעולה - סיכום דף - עם סגנון About */}
+          {/* הנעה לפעולה - סיכום דף */}
           <motion.div 
-            className="mt-8 text-center bg-white border-[3px] p-10 rounded-[32px]"
-            style={{ borderColor: BRAND_BLUE }}
+            className="mt-8 text-center bg-slate-50 p-10 rounded-[32px]"
           >
             <h4 className="text-2xl md:text-3xl text-slate-900 mb-4" style={fontBold}>
               רוצה שנבחר יחד את הפתרון שיביא <span style={{ color: BRAND_BLUE }}>שקט ושליטה</span> לעסק?
