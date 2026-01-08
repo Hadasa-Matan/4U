@@ -23,7 +23,7 @@ const About = () => {
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 bg-slate-50/50 border-b border-slate-100 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl text-slate-900 mb-4" style={fontBold}>
-            קצת <span style={{ color: BRAND_CYAN }}>עליי</span>
+            נעים <span style={{ color: BRAND_CYAN }}>להכיר</span>
           </h1>
           <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
             מחליפה מורכבות טכנולוגית ב<span style={{ color: BRAND_BLUE, fontWeight: "bold" }}>שקט תפעולי</span>, כדי שתחזירו לעצמכם את ה<span style={{ color: BRAND_BLUE, fontWeight: "bold" }}>שליטה</span> ביומיום.
