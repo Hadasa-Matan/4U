@@ -84,7 +84,7 @@ const Services = () => {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            className="rounded-[32px] p-8 md:p-12 border-[1.5px] bg-white relative overflow-hidden"
+            className="rounded-[32px] p-8 md:p-12 border-[3px] bg-white relative overflow-hidden"
             style={{ borderColor: BRAND_BLUE }}
           >
             <div className="absolute top-0 right-0 w-2 h-full"
@@ -123,7 +123,7 @@ const Services = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.1 * idx }}
-                className="rounded-2xl p-6 flex flex-col border-[1.5px] bg-white hover:shadow-md transition-all"
+                className="rounded-2xl p-6 flex flex-col border-[3px] bg-white hover:shadow-md transition-all"
                 style={{ borderColor: BRAND_BLUE }}
               >
                 <div className="mb-6 flex justify-start" style={{ color: BRAND_BLUE }}>
@@ -151,7 +151,7 @@ const Services = () => {
 
           {/* הנעה לפעולה - סיכום דף - עם סגנון About */}
           <motion.div 
-            className="mt-8 text-center bg-white border-[1.5px] p-10 rounded-[32px]"
+            className="mt-8 text-center bg-white border-[3px] p-10 rounded-[32px]"
             style={{ borderColor: BRAND_BLUE }}
           >
             <h4 className="text-2xl md:text-3xl text-slate-900 mb-4" style={fontBold}>
