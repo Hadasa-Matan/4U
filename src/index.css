@@ -10,7 +10,6 @@
   font-display: swap;
 }
 
-
 @font-face {
   font-family: 'FbAsparagos';
   src: url('/fonts/FbAsparagos-Regular.otf') format('opentype');
@@ -21,17 +20,11 @@
 
 :root {
   font-family: 'Heebo', sans-serif;
-
-
-
-
-
 }
 
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
-
 }
 
 body {
@@ -178,10 +171,6 @@ button, a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #818cf8;
-
-
-
-
 }
 
 /* Responsive adjustments for home button */
@@ -191,3 +180,4 @@ button, a {
     bottom: 20px;
     right: 20px;
   }
+}
