@@ -1,142 +1,152 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { BsTelephone, BsEnvelope, BsClock, BsChatDots } from 'react-icons/bs';
+import { BsClipboardCheck, BsCalendarCheck, BsGear, BsCheckCircle, BsArrowLeft } from 'react-icons/bs';
 
+const BRAND_BLUE = "#000ab9";
 const BRAND_GREEN = "#52de4a";
 const BRAND_CYAN = "#7cd6de";
-const BRAND_BLUE = "#000ab9";
 
-function Contact() {
+function ConsultationCard() {
+  const fontBold = { fontFamily: "FbAsparagosBold, sans-serif", fontWeight: "bold" };
+  const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
+
+  const fontFaceStyle = `
+    @font-face { font-family: 'FbAsparagosBold'; src: url('/4U/fonts/FbAsparagos-Bold.otf') format('opentype'); }
+    @font-face { font-family: 'FbAsparagos'; src: url('/4U/fonts/FbAsparagos-Regular.otf') format('opentype'); }
+  `;
+
   const { ref, inView } = useInView({
     threshold: 0.1,
     triggerOnce: true
   });
 
-  const fontBold = { fontFamily: "FbAsparagosBold, sans-serif", fontWeight: "bold" };
-  const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
-  const fontEng = { fontFamily: "FbRimonaEng, sans-serif" };
+  const handleFormClick = async () => {
+    try {
+      const clickData = {
+        action: 'form_button_click',
+        page: '/consultation',
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent
+      };
 
-  const fontFaceStyle = `
-    @font-face { font-family: 'FbAsparagosBold'; src: url('/4U/fonts/FbAsparagos-Bold.otf') format('opentype'); }
-    @font-face { font-family: 'FbAsparagos'; src: url('/4U/fonts/FbAsparagos-Regular.otf') format('opentype'); }
-    @font-face { font-family: 'FbRimonaEng'; src: url('/4U/fonts/FbRimonaEng-Regular.otf') format('opentype'); }
-  `;
+      const webhookUrl = 'https://hook.eu2.make.com/1gpuy8jd0zbdih1v5f3rm61jkmtw7l67';      
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(clickData)
+      });
 
-  const emailSubject = encodeURIComponent("הגעתי דרך האתר שלך");
-  const emailBody = encodeURIComponent("שלום וברכה,\n\nאשמח ל...");
-  const mailtoLink = `mailto:hadasamatan@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+      window.open('https://hadasa-matan.github.io/form-4u/', '_blank');
+    } catch (error) {
+      console.error('Error tracking form click:', error);
+      window.open('https://hadasa-matan.github.io/form-4u/', '_blank');
+    }
+  };
+
+  const steps = [
+    {
+      number: 1,
+      icon: <BsClipboardCheck className="w-8 h-8" />,
+      title: "מילוי טופס קצר",
+      description: "צעד ראשון פשוט להבנת הצרכים העסקיים שלך שיסייע לך להבין כיצד פתרונות אוטומטיים יכולים לקדם את העסק שלך."
+    },
+    {
+      number: 2,
+      icon: <BsCalendarCheck className="w-8 h-8" />,
+      title: "תיאום פגישה",
+      description: "נקבע זמן נוח לשיחת ייעוץ מעמיקה לבחינת הפתרונות המתאימים לעסק שלך."
+    },
+    {
+      number: 3,
+      icon: <BsGear className="w-8 h-8" />,
+      title: "פיתוח פתרון מותאם",
+      description: "יחד נגבש תכנית פעולה המותאמת במדויק לצרכים ולמטרות העסק שלך."
+    },
+    {
+      number: 4,
+      icon: <BsCheckCircle className="w-8 h-8" />,
+      title: "יישום והטמעה",
+      description: "נלווה אותך לאורך כל הדרך ונוודא שהפתרון האוטומטי משתלב בצורה חלקה בעסק."
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-white pb-12" dir="rtl" style={fontRegular}>
+    <section id="consultation" className="py-24 bg-white relative overflow-hidden" dir="rtl" style={fontRegular}>
       <style>{fontFaceStyle}</style>
 
-      {/* --- HERO SECTION - זהה ל-About --- */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 bg-slate-50/50 border-b border-slate-100 text-center">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl text-slate-900 mb-4" style={fontBold}>
-            צור <span style={{ color: BRAND_CYAN }}>קשר</span>
-          </h1>
-          <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            נשמח לשמוע ממך ולעזור לך להכניס שקט ושליטה לעסק
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl text-slate-900 mb-6" style={fontBold}>
+            הצעד הראשון ל<span style={{ color: BRAND_BLUE }}>הצלחת העסק</span> שלך
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            תהליך פשוט וממוקד שיהפוך את המורכבות הטכנולוגית לשקט תפעולי
           </p>
-        </div>
-      </section>
+        </motion.div>
 
-      {/* --- MAIN CONTENT --- */}
-      <section className="py-10 px-6">
-        <div className="max-w-4xl mx-auto space-y-8">
-          
-          {/* טופס יצירת קשר */}
-          <motion.div
-            ref={ref}
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-            className="w-full"
-          >
-            <div className="relative w-full rounded-[32px] overflow-hidden border-[1.5px]" 
-                 style={{ paddingTop: '75%', borderColor: BRAND_BLUE }}>
-              <iframe
-                id="JotFormIFrame-251296577428469"
-                title="צור קשר"
-                src="https://forms.fillout.com/t/4tmSG4iqhVus"
-                style={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  border: 'none',
-                  backgroundColor: 'transparent'
-                }}
-                scrolling="no"
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-slate-50 rounded-3xl p-8 relative overflow-hidden border border-slate-100 shadow-sm group"
+            >
+              {/* הפס הצבעוני הממותג בצד ימין */}
+              <div 
+                className="absolute top-0 right-0 w-1.5 h-full"
+                style={{ background: `linear-gradient(180deg, ${BRAND_BLUE} 0%, ${BRAND_CYAN} 50%, ${BRAND_GREEN} 100%)` }} 
               />
-            </div>
-          </motion.div>
-
-          {/* דרכים נוספות ליצירת קשר */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white rounded-[32px] border-[1.5px] p-8 md:p-12 relative overflow-hidden"
-            style={{ borderColor: BRAND_BLUE }}
-          >
-            <div className="absolute top-0 right-0 w-2 h-full"
-                 style={{ background: `linear-gradient(180deg, ${BRAND_BLUE} 0%, ${BRAND_CYAN} 50%, ${BRAND_GREEN} 100%)` }} />
-            
-            <div className="relative z-10">
-              <h3 className="text-2xl md:text-3xl text-slate-900 mb-8 text-center" style={fontBold}>
-                דרכים נוספות ליצירת קשר:
-              </h3>
               
-              <div className="grid grid-cols-1 gap-8">
-                
-                {/* פרטי קשר */}
-                <div className="space-y-4">
-                  <a href="tel:0504133408" 
-                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
-                     style={fontEng}>
-                    <BsTelephone className="w-5 h-5" style={{ color: BRAND_BLUE }} />
-                    <span className="font-medium">050-413-3408</span>
-                  </a>
-                  <a href={mailtoLink} 
-                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
-                     style={fontEng}>
-                    <BsEnvelope className="w-5 h-5" style={{ color: BRAND_BLUE }} />
-                    <span className="font-medium">HadasaMatan@gmail.com</span>
-                  </a>
-                </div>
-
-                {/* שעות פעילות */}
-                <div className="border-t border-slate-100 pt-6">
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <BsClock className="w-5 h-5" style={{ color: BRAND_CYAN }} />
-                    <h4 className="text-lg text-slate-900" style={fontBold}>שעות פעילות</h4>
-                  </div>
-                  <div className="space-y-2 text-slate-600 text-center" style={fontEng}>
-                    <p>א'-ה': 10:00-16:00, 20:00-22:00</p>
-                    <p>ו': 09:00-11:00</p>
-                  </div>
-                </div>
-
-                {/* צ'אטבוט */}
-                <div className="border-t border-slate-100 pt-6">
-                  <div className="flex items-center justify-center gap-3 mb-4">
-                    <BsChatDots className="w-5 h-5" style={{ color: BRAND_GREEN }} />
-                    <h4 className="text-lg text-slate-900" style={fontBold}>צ'אטבוט 24 שעות ביממה</h4>
-                  </div>
-                  <p className="text-slate-600 text-center">זמין לכל שאלה ובכל עת :)</p>
-                </div>
+              <div className="text-slate-200 absolute -left-2 -top-2 text-8xl opacity-10 font-bold select-none" style={fontBold}>
+                {step.number}
               </div>
-            </div>
-          </motion.div>
 
+              <div className="relative z-10">
+                <div className="mb-6 inline-flex p-3 rounded-2xl bg-white shadow-sm" style={{ color: BRAND_BLUE }}>
+                  {step.icon}
+                </div>
+                <h3 className="text-xl mb-3 text-slate-900" style={fontBold}>
+                  {step.title}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-      </section>
-    </div>
+
+        {/* כפתור הנעה לפעולה מרכזי */}
+        <motion.div 
+          className="mt-16 text-center"
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+        >
+          <button
+            onClick={handleFormClick}
+            className="group relative inline-flex items-center gap-3 px-12 py-5 rounded-full font-bold text-xl transition-all hover:scale-105 shadow-xl"
+            style={{ backgroundColor: BRAND_GREEN, color: "#06233a", ...fontBold }}
+          >
+            אני רוצה למלא טופס קצרצר
+            <BsArrowLeft className="group-hover:-translate-x-2 transition-transform" />
+          </button>
+          
+          <p className="mt-4 text-slate-400 text-sm">
+            * לוקח פחות מ-60 שניות למילוי
+          </p>
+        </motion.div>
+      </div>
+    </section>
   );
 }
 
-export default Contact;
+export default ConsultationCard;
