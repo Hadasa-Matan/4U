@@ -41,7 +41,7 @@ function Testimonials() {
     {
       author: "טובי",
       text: "\"שירות עם לב ונשמה... ביעילות ובמהירות... הרווח כולו שלך!.\"",
-      avatar: "/4U/images/avatar2.gif", 
+      avatar: "/4U/images/publicimagesavatar2.gif", 
       image: "/4U/images/testimonial3.jpg"
     }
   ];
