@@ -139,7 +139,7 @@ const Services = () => {
                 </p>
                 <button
                   onClick={() => window.open(service.link, "_blank")}
-                  className="mt-auto py-3 rounded-xl font-bold border transition-all flex items-center justify-center gap-2 group hover:bg-slate-50"
+                  className="mt-auto py-3 rounded-xl font-bold border-2 transition-all flex items-center justify-center gap-2 group hover:bg-slate-50"
                   style={{ borderColor: BRAND_BLUE, color: BRAND_BLUE, ...fontBold }}
                 >
                   {service.btnText}
