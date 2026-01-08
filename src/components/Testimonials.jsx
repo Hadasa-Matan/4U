@@ -17,7 +17,6 @@ function Testimonials() {
     triggerOnce: true
   });
 
-  // הגדרות פונטים זהות ל-About
   const fontBold = { fontFamily: "FbAsparagosBold, sans-serif", fontWeight: "bold" };
   const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
 
@@ -40,9 +39,9 @@ function Testimonials() {
       image: "/4U/images/testimonial2.jpg"
     },
     {
-      author: "לקוח מרוצה נוסף",
-      text: "\"השירות והמקצועיות של הדסה פשוט יוצאי דופן. המערכות שבנתה לנו שינו את פני העסק מקצה לקצה והביאו לשקט תפעולי אמיתי.\"",
-      avatar: "/4U/images/avatar1.jpg", // ניתן לשנות לאווטאר אחר
+      author: "טובי",
+      text: "\"שירות עם לב ונשמה... ביעילות ובמהירות... הרווח כולו שלך!.\"",
+      avatar: "/4U/images/avatar2.gif", 
       image: "/4U/images/testimonial3.jpg"
     }
   ];
@@ -64,7 +63,7 @@ function Testimonials() {
     <div className="min-h-screen bg-white" dir="rtl" style={fontRegular}>
       <style>{fontFaceStyle}</style>
 
-      {/* --- HERO SECTION - זהה בדיוק ל-About ו-Services --- */}
+      {/* --- HERO SECTION --- */}
       <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 bg-slate-50/50 border-b border-slate-100 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-3xl md:text-5xl text-slate-900 mb-4" style={fontBold}>
@@ -87,15 +86,20 @@ function Testimonials() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-[2rem] border-[1px] border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col"
+                className="bg-white rounded-[2rem] border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col relative"
               >
+                {/* פס צבעוני בצד ימין - ללא מסגרת כחולה */}
+                <div 
+                  className="absolute top-0 right-0 w-1.5 h-full"
+                  style={{ background: `linear-gradient(180deg, ${BRAND_BLUE} 0%, ${BRAND_CYAN} 50%, ${BRAND_GREEN} 100%)` }} 
+                />
+
                 <div className="p-8 flex-grow">
                   <div className="flex items-center mb-6">
                     <img
                       src={testimonial.avatar}
                       alt={testimonial.author}
-                      className="w-14 h-14 rounded-full object-cover border-2"
-                      style={{ borderColor: BRAND_BLUE }}
+                      className="w-14 h-14 rounded-full object-cover border-2 border-slate-50 shadow-sm"
                     />
                     <div className="mr-4">
                       <h3 className="text-lg font-bold text-slate-900" style={fontBold}>{testimonial.author}</h3>
