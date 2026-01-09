@@ -1,17 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { BsTelephone, BsEnvelope, BsClock, BsChatDots } from 'react-icons/bs';
 
 const BRAND_GREEN = "#52de4a";
 const BRAND_CYAN = "#7cd6de";
 const BRAND_BLUE = "#000ab9";
 
 function Contact() {
-  const { ref, inView } = useInView({
-    threshold: 0.1,
-    triggerOnce: true
-  });
+  const [isVisible, setIsVisible] = useState(false);
 
   const fontBold = { fontFamily: "FbAsparagosBold, sans-serif", fontWeight: "bold" };
   const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
@@ -23,9 +18,9 @@ function Contact() {
     @font-face { font-family: 'FbRimonaEng'; src: url('/4U/fonts/FbRimonaEng-Regular.otf') format('opentype'); }
   `;
 
-  const emailSubject = encodeURIComponent("הגעתי דרך האתר שלך");
-  const emailBody = encodeURIComponent("שלום וברכה,\n\nאשמח ל...");
-  const mailtoLink = `mailto:hadasamatan@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+  const emailSubject = encodeURIComponent("פנייה חדשה מהאתר");
+  const emailBody = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
+  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
     <div className="min-h-screen bg-white pb-12" dir="rtl" style={fontRegular}>
@@ -49,14 +44,14 @@ function Contact() {
           
           {/* טופס יצירת קשר */}
           <motion.div
-            ref={ref}
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="w-full"
           >
             <div className="relative w-full rounded-[32px] overflow-hidden border-[1.5px]" 
-                 style={{ paddingTop: '75%', borderColor: BRAND_BLUE }}>
+                 style={{ paddingTop: '60%', borderColor: BRAND_BLUE }}>
               <iframe
                 id="JotFormIFrame-251296577428469"
                 title="צור קשר"
@@ -78,7 +73,8 @@ function Contact() {
           {/* דרכים נוספות ליצירת קשר */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white rounded-[32px] border-[1.5px] p-8 md:p-12 relative overflow-hidden"
             style={{ borderColor: BRAND_BLUE }}
@@ -98,13 +94,17 @@ function Contact() {
                   <a href="tel:0504133408" 
                      className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
                      style={fontEng}>
-                    <BsTelephone className="w-5 h-5" style={{ color: BRAND_BLUE }} />
+                    <svg className="w-5 h-5" style={{ color: BRAND_BLUE }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
                     <span className="font-medium">050-413-3408</span>
                   </a>
                   <a href={mailtoLink} 
                      className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
                      style={fontEng}>
-                    <BsEnvelope className="w-5 h-5" style={{ color: BRAND_BLUE }} />
+                    <svg className="w-5 h-5" style={{ color: BRAND_BLUE }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
                     <span className="font-medium">HadasaMatan@gmail.com</span>
                   </a>
                 </div>
@@ -112,7 +112,9 @@ function Contact() {
                 {/* שעות פעילות */}
                 <div className="border-t border-slate-100 pt-6">
                   <div className="flex items-center justify-center gap-3 mb-4">
-                    <BsClock className="w-5 h-5" style={{ color: BRAND_CYAN }} />
+                    <svg className="w-5 h-5" style={{ color: BRAND_CYAN }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     <h4 className="text-lg text-slate-900" style={fontBold}>שעות פעילות</h4>
                   </div>
                   <div className="space-y-2 text-slate-600 text-center" style={fontEng}>
@@ -124,7 +126,9 @@ function Contact() {
                 {/* צ'אטבוט */}
                 <div className="border-t border-slate-100 pt-6">
                   <div className="flex items-center justify-center gap-3 mb-4">
-                    <BsChatDots className="w-5 h-5" style={{ color: BRAND_GREEN }} />
+                    <svg className="w-5 h-5" style={{ color: BRAND_GREEN }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                    </svg>
                     <h4 className="text-lg text-slate-900" style={fontBold}>צ'אטבוט 24 שעות ביממה</h4>
                   </div>
                   <p className="text-slate-600 text-center">זמין לכל שאלה ובכל עת :)</p>
