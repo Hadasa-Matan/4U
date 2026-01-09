@@ -23,7 +23,7 @@ function HomeButton() {
       >
         <BsHouseFill className="text-indigo-600 w-5 h-5" />
         <span className="text-gray-700 font-medium text-sm whitespace-nowrap mr-1">
-          חזרה לדף הבית
+        לדף הבית
         </span>
       </motion.div>
     </a>
