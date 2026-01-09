@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { BsClipboardCheck, BsCalendarCheck, BsGear, BsCheckCircle, BsArrowLeft } from 'react-icons/bs';
+import { BsClipboardCheck, BsCalendarCheck, BsGear, BsCheckCircle, BsArrowLeft, BsStars } from 'react-icons/bs';
 
 const BRAND_BLUE = "#000ab9";
 const BRAND_GREEN = "#52de4a";
@@ -24,7 +24,7 @@ function ConsultationCard() {
   const handleFormClick = async () => {
     try {
       const clickData = {
-        action: 'form_button_click',
+        action: 'consultation_card_click',
         page: '/consultation',
         timestamp: new Date().toISOString(),
         userAgent: navigator.userAgent
@@ -90,6 +90,7 @@ function ConsultationCard() {
           </p>
         </motion.div>
 
+        {/* שלבים לחיצים */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step, index) => (
             <motion.div
@@ -97,10 +98,10 @@ function ConsultationCard() {
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-slate-50 rounded-3xl p-8 relative overflow-hidden border border-slate-100 shadow-sm group"
+              whileHover={{ y: -8, scale: 1.02 }}
+              onClick={handleFormClick}
+              className="bg-slate-50 rounded-3xl p-8 relative overflow-hidden border border-slate-100 shadow-sm group cursor-pointer transition-all duration-300 hover:shadow-md"
             >
-              {/* הפס הצבעוני הממותג בצד ימין */}
               <div 
                 className="absolute top-0 right-0 w-1.5 h-full"
                 style={{ background: `linear-gradient(180deg, ${BRAND_BLUE} 0%, ${BRAND_CYAN} 50%, ${BRAND_GREEN} 100%)` }} 
@@ -111,7 +112,7 @@ function ConsultationCard() {
               </div>
 
               <div className="relative z-10">
-                <div className="mb-6 inline-flex p-3 rounded-2xl bg-white shadow-sm" style={{ color: BRAND_BLUE }}>
+                <div className="mb-6 inline-flex p-3 rounded-2xl bg-white shadow-sm transition-colors group-hover:bg-blue-50" style={{ color: BRAND_BLUE }}>
                   {step.icon}
                 </div>
                 <h3 className="text-xl mb-3 text-slate-900" style={fontBold}>
@@ -125,24 +126,39 @@ function ConsultationCard() {
           ))}
         </div>
 
-        {/* כפתור הנעה לפעולה מרכזי */}
+        {/* כפתור הנעה לפעולה עם הבטחה לערך */}
         <motion.div 
           className="mt-16 text-center"
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
         >
-          <button
-            onClick={handleFormClick}
-            className="group relative inline-flex items-center gap-3 px-12 py-5 rounded-full font-bold text-xl transition-all hover:scale-105 shadow-xl"
-            style={{ backgroundColor: BRAND_GREEN, color: "#06233a", ...fontBold }}
-          >
-            אני רוצה למלא טופס קצרצר
-            <BsArrowLeft className="group-hover:-translate-x-2 transition-transform" />
-          </button>
+          <div className="inline-block relative">
+            <button
+              onClick={handleFormClick}
+              className="group relative inline-flex flex-col items-center justify-center px-12 py-6 rounded-full font-bold transition-all hover:scale-105 shadow-xl"
+              style={{ backgroundColor: BRAND_GREEN, color: "#06233a" }}
+            >
+              <span className="text-xl md:text-2xl flex items-center gap-2" style={fontBold}>
+                אני רוצה למלא טופס ולקבל סיכום אוטומטי
+                <BsArrowLeft className="group-hover:-translate-x-2 transition-transform" />
+              </span>
+            </button>
+            
+            {/* תגית "אוטומטי" מעל הכפתור */}
+            <div className="absolute -top-4 -left-4 bg-white border-2 border-blue-600 text-blue-700 text-xs py-1 px-3 rounded-full shadow-sm flex items-center gap-1 animate-bounce" style={fontBold}>
+              <BsStars className="text-yellow-500" />
+              מתנה בסיום!
+            </div>
+          </div>
           
-          <p className="mt-4 text-slate-400 text-sm">
-            * לוקח פחות מ-60 שניות למילוי
-          </p>
+          <div className="mt-6 space-y-2">
+            <p className="text-slate-700 font-medium text-lg" style={fontBold}>
+              בסיום המילוי תקבלו למייל ניתוח של פוטנציאל האוטומציה בעסק שלכם 🚀
+            </p>
+            <p className="text-slate-400 text-sm">
+              * המילוי לוקח פחות מ-60 שניות • הסיכום נשלח באופן מיידי
+            </p>
+          </div>
         </motion.div>
       </div>
     </section>
