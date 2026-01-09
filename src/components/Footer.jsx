@@ -14,9 +14,9 @@ function Footer() {
     @font-face { font-family: 'FbRimonaEng'; src: url('/4U/fonts/FbRimonaEng-Regular.otf') format('opentype'); }
   `;
   
-  const subject = "פנייה חדשה מהאתר";
-  const body = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
-  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+const subject = "פנייה חדשה מהאתר";
+const body = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
+const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
   return (
     <footer className="py-12" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
@@ -46,7 +46,7 @@ function Footer() {
           
           {/* עמודה 3: פרטי קשר */}
           <div>
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>דברו איתנו</h4>
+            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>דברו איתי</h4>
             <ul className="space-y-4 text-lg text-slate-800">
               <li className="flex items-center gap-3">
                 <svg className="text-slate-900 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
