@@ -1,92 +1,62 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function PrivacyPolicy() {
+  // גורם לדף להיפתח תמיד מלמעלה כשנכנסים
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  const fontBold = { fontFamily: "FbAsparagosBold, sans-serif", fontWeight: "bold" };
+  const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
+
   return (
-    <div className="max-w-4xl mx-auto p-6 text-right leading-relaxed">
-      <h1 className="text-3xl font-bold text-blue-800 mb-6">
-        מדיניות פרטיות – אמנת פרטיות
-      </h1>
+    <div className="min-h-screen bg-white pt-32 pb-20 px-6" dir="rtl" style={fontRegular}>
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-10 text-slate-900 border-r-4 border-[#000ab9] pr-4" style={fontBold}>
+          מדיניות פרטיות <span className="text-[#7cd6de]">ואמנת שירות</span>
+        </h1>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">מי אנחנו?</h2>
-      <p className="mb-4">
-        האתר שלנו הוא{" "}
-        <a
-          href="https://hadasa-matan.github.io/4U/"
-          className="text-blue-600 hover:underline"
-        >
-          https://hadasa-matan.github.io/4U/
-        </a>{" "}
-        ומספק שירותי אוטומציה עסקית, צ’אטבוטים וכלי טכנולוגיה לעסקים.
-      </p>
+        <div className="space-y-8 text-slate-700 leading-relaxed text-lg">
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-3" style={fontBold}>מי אנחנו?</h2>
+            <p>
+              האתר שלנו הוא{" "}
+              <a href="https://hadasa-matan.github.io/4U/" className="text-[#000ab9] hover:underline">
+                https://hadasa-matan.github.io/4U/
+              </a>{" "}
+              והוא מספק שירותי אוטומציה עסקית, צ’אטבוטים וכלי טכנולוגיה מתקדמים לעסקים.
+            </p>
+          </section>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">איסוף ושימוש במידע</h2>
-      <p className="mb-4">
-        המשתמש מצהיר כי החברה רשאית לאסוף ולשמור את הפרטים שנמסרו על ידו
-        (שם, טלפון, דוא"ל, תחום עסקי ועוד) לצורך שיפור השירותים, יצירת קשר,
-        שליחת עדכונים או הצעות שיווקיות, וכן לצרכים סטטיסטיים – הכול בהתאם
-        לחוק. מידע סטטיסטי לא יזהה את המשתמש אישית.
-      </p>
+          <section className="bg-slate-50 p-6 rounded-2xl border-r-4 border-[#52de4a]">
+            <h2 className="text-xl font-bold text-slate-900 mb-3" style={fontBold}>איסוף ושימוש במידע</h2>
+            <p>
+              המשתמש מצהיר כי החברה רשאית לאסוף ולשמור את הפרטים שנמסרו על ידו (שם, טלפון, דוא"ל) לצורך שיפור השירות, יצירת קשר ושליחת עדכונים. המידע נשמר באופן מאובטח ואינו מועבר לצד ג' למטרות סחר.
+            </p>
+          </section>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">שמירת מידע</h2>
-      <p className="mb-4">
-        הנתונים נשמרים במערכות CRM וכלי אוטומציה כגון MAKE, ChatRace,
-        וכדומה. מסירת המידע אינה חובה, אך בלעדיה לא ניתן יהיה להשתמש בכל
-        השירותים באתר.
-      </p>
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-3" style={fontBold}>Cookies ועוגיות</h2>
+            <p>
+              האתר עושה שימוש בעוגיות (Cookies) לצורך שיפור חוויית המשתמש ואיסוף נתונים סטטיסטיים אנונימיים.
+            </p>
+          </section>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">Cookies ועוגיות</h2>
-      <p className="mb-4">
-        האתר עושה שימוש בעוגיות (Cookies) לצורך שיפור חוויית המשתמש, שמירת
-        פרטי התחברות, ואיסוף נתונים סטטיסטיים. ניתן לחסום עוגיות בהגדרות
-        הדפדפן, אך הדבר עלול להגביל חלק מהשירותים באתר.
-      </p>
+          <section>
+            <h2 className="text-xl font-bold text-slate-900 mb-3" style={fontBold}>זכויות המשתמש</h2>
+            <p>
+              המשתמש רשאי לעיין, לעדכן או לדרוש מחיקה של המידע שנשמר עליו. לפניות בנושא:{" "}
+              <a href="mailto:HadasaMatan@gmail.com" className="text-[#000ab9] font-bold">
+                HadasaMatan@gmail.com
+              </a>
+            </p>
+          </section>
+        </div>
 
-      <h2 className="text-xl font-semibold mt-6 mb-2">
-        תוכן משובץ מאתרים אחרים
-      </h2>
-      <p className="mb-4">
-        ייתכן שתוכן באתר יכלול רכיבים מוטמעים (כגון סרטונים, טפסים או מאמרים).
-        תוכן מוטמע מתנהג כאילו המשתמש ביקר באתר המקור, וייתכן שייאסף עליו מידע
-        נוסף בהתאם למדיניות הפרטיות של אותו אתר.
-      </p>
-
-      <h2 className="text-xl font-semibold mt-6 mb-2">זכויות המשתמש</h2>
-      <p className="mb-4">
-        המשתמש רשאי לעיין, לעדכן או לדרוש מחיקה של המידע שנשמר עליו בהתאם לחוק
-        הגנת הפרטיות. לפניות בנושא ניתן ליצור קשר:{" "}
-        <a
-          href="mailto:HadasaMatan@gmail.com"
-          className="text-blue-600 hover:underline"
-        >
-          HadasaMatan@gmail.com
-        </a>
-      </p>
-
-      <h2 className="text-xl font-semibold mt-6 mb-2">
-        מסירת מידע לצדדים שלישיים
-      </h2>
-      <p className="mb-4">
-        החברה תעביר מידע לצדדים שלישיים רק במקרים הבאים:
-      </p>
-      <ul className="list-disc pr-6 mb-4">
-        <li>לצורך תפעול האתר או גביית תשלום, בכפוף להתחייבות לסודיות.</li>
-        <li>במקרה של הפרת תנאי שימוש באתר.</li>
-        <li>אם יתקבל צו בית משפט או הוראה כדין.</li>
-        <li>
-          במסגרת מחלוקת, הליך משפטי או בוררות, או אם הדבר נחוץ לשמירה על
-          זכויות החברה.
-        </li>
-      </ul>
-
-      <h2 className="text-xl font-semibold mt-6 mb-2">אבטחת מידע</h2>
-      <p className="mb-4">
-        אנו נוקטים באמצעים מקובלים לשמירה על סודיות המידע, אך אין ביכולתנו
-        להבטיח הגנה מוחלטת מפני פריצות או שימוש לא מורשה.
-      </p>
-
-      <p className="text-sm text-gray-600 mt-10">
-        עודכן לאחרונה: ספטמבר 2025
-      </p>
+        <p className="text-sm text-slate-400 mt-16 pt-8 border-t border-slate-100">
+          עודכן לאחרונה: ינואר 2026
+        </p>
+      </div>
     </div>
   );
 }
