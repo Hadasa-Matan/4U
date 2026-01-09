@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { BsClipboardCheck, BsCalendarCheck, BsGear, BsCheckCircle, BsArrowLeft, BsStars } from 'react-icons/bs';
+import { BsClipboardCheck, BsCalendarCheck, BsGear, BsCheckCircle, BsArrowLeft, BsLightningCharge } from 'react-icons/bs';
 
 const BRAND_BLUE = "#000ab9";
 const BRAND_GREEN = "#52de4a";
@@ -26,8 +26,7 @@ function ConsultationCard() {
       const clickData = {
         action: 'consultation_card_click',
         page: '/consultation',
-        timestamp: new Date().toISOString(),
-        userAgent: navigator.userAgent
+        timestamp: new Date().toISOString()
       };
 
       const webhookUrl = 'https://hook.eu2.make.com/1gpuy8jd0zbdih1v5f3rm61jkmtw7l67';      
@@ -48,26 +47,26 @@ function ConsultationCard() {
     {
       number: 1,
       icon: <BsClipboardCheck className="w-8 h-8" />,
-      title: "מילוי טופס קצר",
-      description: "צעד ראשון פשוט להבנת הצרכים העסקיים שלך שיסייע לך להבין כיצד פתרונות אוטומטיים יכולים לקדם את העסק שלך."
+      title: "אבחון צרכים מעמיק",
+      description: "מילוי שאלון מקיף (כ-10 דק') שיאפשר לנו לנתח לעומק את תהליכי העבודה הקיימים אצלכם בעסק."
     },
     {
       number: 2,
-      icon: <BsCalendarCheck className="w-8 h-8" />,
-      title: "תיאום פגישה",
-      description: "נקבע זמן נוח לשיחת ייעוץ מעמיקה לבחינת הפתרונות המתאימים לעסק שלך."
+      icon: <BsLightningCharge className="w-8 h-8" />,
+      title: "ניתוח טכנולוגי",
+      description: "תוך 24 שעות תקבלו למייל סקירה מותאמת אישית של פתרונות האוטומציה המדויקים עבורכם."
     },
     {
       number: 3,
-      icon: <BsGear className="w-8 h-8" />,
-      title: "פיתוח פתרון מותאם",
-      description: "יחד נגבש תכנית פעולה המותאמת במדויק לצרכים ולמטרות העסק שלך."
+      icon: <BsCalendarCheck className="w-8 h-8" />,
+      title: "שיחת ייעוץ אסטרטגית",
+      description: "תיאום פגישה לבחינת המלצות הדו\"ח ובניית מפת דרכים ליישום האוטומציות בעסק."
     },
     {
       number: 4,
       icon: <BsCheckCircle className="w-8 h-8" />,
-      title: "יישום והטמעה",
-      description: "נלווה אותך לאורך כל הדרך ונוודא שהפתרון האוטומטי משתלב בצורה חלקה בעסק."
+      title: "יציאה לדרך",
+      description: "הטמעת המערכות החדשות וליווי צמוד עד ליצירת שקט תפעולי ושליטה מלאה בעסק."
     }
   ];
 
@@ -83,15 +82,14 @@ function ConsultationCard() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl text-slate-900 mb-6" style={fontBold}>
-            הצעד הראשון ל<span style={{ color: BRAND_BLUE }}>הצלחת העסק</span> שלך
+            הצעד הראשון ל<span style={{ color: BRAND_BLUE }}>שקט תפעולי</span>
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-            תהליך פשוט וממוקד שיהפוך את המורכבות הטכנולוגית לשקט תפעולי
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            אנחנו לא מאמינים בפתרונות "פס נע". תהליך האבחון שלנו נועד לדייק את הטכנולוגיה לצרכים האמיתיים שלכם.
           </p>
         </motion.div>
 
-        {/* שלבים לחיצים */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-right">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -106,16 +104,15 @@ function ConsultationCard() {
                 className="absolute top-0 right-0 w-1.5 h-full"
                 style={{ background: `linear-gradient(180deg, ${BRAND_BLUE} 0%, ${BRAND_CYAN} 50%, ${BRAND_GREEN} 100%)` }} 
               />
-              
               <div className="text-slate-200 absolute -left-2 -top-2 text-8xl opacity-10 font-bold select-none" style={fontBold}>
                 {step.number}
               </div>
 
               <div className="relative z-10">
-                <div className="mb-6 inline-flex p-3 rounded-2xl bg-white shadow-sm transition-colors group-hover:bg-blue-50" style={{ color: BRAND_BLUE }}>
+                <div className="mb-6 inline-flex p-3 rounded-2xl bg-white shadow-sm" style={{ color: BRAND_BLUE }}>
                   {step.icon}
                 </div>
-                <h3 className="text-xl mb-3 text-slate-900" style={fontBold}>
+                <h3 className="text-xl mb-3 text-slate-900 leading-tight" style={fontBold}>
                   {step.title}
                 </h3>
                 <p className="text-slate-600 text-sm leading-relaxed">
@@ -126,7 +123,6 @@ function ConsultationCard() {
           ))}
         </div>
 
-        {/* כפתור הנעה לפעולה עם הבטחה לערך */}
         <motion.div 
           className="mt-16 text-center"
           initial={{ opacity: 0 }}
@@ -135,28 +131,26 @@ function ConsultationCard() {
           <div className="inline-block relative">
             <button
               onClick={handleFormClick}
-              className="group relative inline-flex flex-col items-center justify-center px-12 py-6 rounded-full font-bold transition-all hover:scale-105 shadow-xl"
+              className="group relative inline-flex flex-col items-center justify-center px-10 py-6 rounded-full font-bold transition-all hover:scale-105 shadow-xl"
               style={{ backgroundColor: BRAND_GREEN, color: "#06233a" }}
             >
-              <span className="text-xl md:text-2xl flex items-center gap-2" style={fontBold}>
-                אני רוצה למלא טופס ולקבל סיכום אוטומטי
+              <span className="text-xl md:text-2xl flex items-center gap-3" style={fontBold}>
+                אני רוצה להתחיל באבחון העסקי
                 <BsArrowLeft className="group-hover:-translate-x-2 transition-transform" />
               </span>
             </button>
             
-            {/* תגית "אוטומטי" מעל הכפתור */}
-            <div className="absolute -top-4 -left-4 bg-white border-2 border-blue-600 text-blue-700 text-xs py-1 px-3 rounded-full shadow-sm flex items-center gap-1 animate-bounce" style={fontBold}>
-              <BsStars className="text-yellow-500" />
-              מתנה בסיום!
+            <div className="absolute -top-4 -right-4 bg-[#000ab9] text-white text-xs py-1.5 px-4 rounded-full shadow-lg flex items-center gap-1" style={fontBold}>
+              מקיף ומקצועי
             </div>
           </div>
           
-          <div className="mt-6 space-y-2">
-            <p className="text-slate-700 font-medium text-lg" style={fontBold}>
-              בסיום המילוי תקבלו למייל ניתוח של פוטנציאל האוטומציה בעסק שלכם 🚀
+          <div className="mt-8 space-y-3">
+            <p className="text-slate-800 font-medium text-lg leading-relaxed" style={fontBold}>
+              השקעה של 10 דקות שתחסוך לכם מאות שעות עבודה בשנה.
             </p>
-            <p className="text-slate-400 text-sm">
-              * המילוי לוקח פחות מ-60 שניות • הסיכום נשלח באופן מיידי
+            <p className="text-slate-500 text-md max-w-xl mx-auto italic">
+              דו"ח אופציות טכנולוגיות מותאם אישית ישלח אליכם למייל תוך 24 שעות מסיום המילוי.
             </p>
           </div>
         </motion.div>
