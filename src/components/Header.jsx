@@ -27,7 +27,7 @@ function Header() {
     { name: "המוצרים שלנו", path: "/services" },
     { name: "אודות", path: "/about" },
     { name: "המלצות", path: "/testimonials" },
-    { name: "ייעוץ", path: "/consultation" },
+    { name: "אבחון עסקי במתנה", path: "/consultation" },
     { name: "צור קשר", path: "/contact" },
   ];
 
