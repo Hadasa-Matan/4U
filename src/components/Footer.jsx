@@ -14,9 +14,9 @@ function Footer() {
     @font-face { font-family: 'FbRimonaEng'; src: url('/4U/fonts/FbRimonaEng-Regular.otf') format('opentype'); }
   `;
   
-const subject = "פנייה חדשה מהאתר";
-const body = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
-const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  const subject = "פנייה חדשה מהאתר";
+  const body = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
+  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
   return (
     <footer className="py-12" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
@@ -77,8 +77,16 @@ const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(su
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-black/10 text-center text-slate-700 text-md">
-          <p>© {new Date().getFullYear()} כל הזכויות שמורות להדסה מתן - שקט תפעולי. שליטה בעסק.</p>
+        {/* שורת זכויות ומדיניות - מעודכן */}
+        <div className="mt-12 pt-8 border-t border-black/10 text-center text-slate-700">
+          <p className="text-md mb-2">© {new Date().getFullYear()} כל הזכויות שמורות להדסה מתן - שקט תפעולי. שליטה בעסק.</p>
+          <div className="flex justify-center items-center gap-3 text-sm opacity-80">
+            <span>גלישה בטוחה ומאושרת</span>
+            <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
+            <Link to="/privacy-policy" className="hover:text-white transition-colors underline underline-offset-4">
+              מדיניות פרטיות
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
