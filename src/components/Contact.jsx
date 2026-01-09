@@ -92,20 +92,18 @@ function Contact() {
                 {/* פרטי קשר */}
                 <div className="space-y-4">
                   <a href="tel:0504133408" 
-                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
-                     style={fontEng}>
+                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300">
                     <svg className="w-5 h-5" style={{ color: BRAND_BLUE }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    <span className="font-medium">050-413-3408</span>
+                    <span className="font-medium" style={fontEng}>050-413-3408</span>
                   </a>
                   <a href={mailtoLink} 
-                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300"
-                     style={fontEng}>
+                     className="flex items-center justify-center gap-3 text-lg text-slate-700 hover:text-slate-900 transition-colors duration-300">
                     <svg className="w-5 h-5" style={{ color: BRAND_BLUE }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span className="font-medium">HadasaMatan@gmail.com</span>
+                    <span className="font-medium" style={fontEng}>HadasaMatan@gmail.com</span>
                   </a>
                 </div>
 
@@ -117,9 +115,9 @@ function Contact() {
                     </svg>
                     <h4 className="text-lg text-slate-900" style={fontBold}>שעות פעילות</h4>
                   </div>
-                  <div className="space-y-2 text-slate-600 text-center" style={fontEng}>
-                    <p>א'-ה': 10:00-16:00, 20:00-22:00</p>
-                    <p>ו': 09:00-11:00</p>
+                  <div className="space-y-2 text-slate-600 text-center">
+                    <p><span style={fontRegular}>א'-ה': </span><span style={fontEng}>10:00-16:00, 20:00-22:00</span></p>
+                    <p><span style={fontRegular}>ו': </span><span style={fontEng}>09:00-11:00</span></p>
                   </div>
                 </div>
 
@@ -129,9 +127,9 @@ function Contact() {
                     <svg className="w-5 h-5" style={{ color: BRAND_GREEN }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
-                    <h4 className="text-lg text-slate-900" style={fontBold}>צ'אטבוט 24 שעות ביממה</h4>
+                    <h4 className="text-lg text-slate-900" style={fontBold}>צ'אטבוט <span style={fontEng}>24</span> שעות ביממה</h4>
                   </div>
-                  <p className="text-slate-600 text-center">זמין לכל שאלה ובכל עת :)</p>
+                  <p className="text-slate-600 text-center" style={fontRegular}>זמין לכל שאלה ובכל עת :)</p>
                 </div>
               </div>
             </div>
