@@ -19,23 +19,23 @@ function Footer() {
   const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
   return (
-    <footer className="py-12" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
+    <footer className="py-6" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
       <style>{fontFaceStyle}</style>
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-right" dir="rtl">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           {/* עמודה 1: אודות */}
           <div className="md:col-span-1">
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>הדסה מתן</h4>
-            <p className="text-slate-800 text-lg leading-relaxed">
+            <h4 className="text-lg mb-3 text-slate-900" style={fontBold}>הדסה מתן</h4>
+            <p className="text-slate-800 text-base leading-snug">
               מביאים שקט ושליטה לעסק שלך באמצעות פתרונות טכנולוגיים חכמים ואוטומציות מתקדמות שחוסכות לך זמן יקר.
             </p>
           </div>
           
           {/* עמודה 2: ניווט מהיר */}
           <div>
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>ניווט מהיר</h4>
-            <ul className="space-y-3 text-lg">
+            <h4 className="text-lg mb-3 text-slate-900" style={fontBold}>ניווט מהיר</h4>
+            <ul className="space-y-1 text-base">
               <li><Link to="/services" className="hover:text-white transition-colors">המוצרים שלנו</Link></li>
               <li><Link to="/about" className="hover:text-white transition-colors">אודות</Link></li>
               <li><Link to="/testimonials" className="hover:text-white transition-colors">המלצות</Link></li>
@@ -46,10 +46,10 @@ function Footer() {
           
           {/* עמודה 3: פרטי קשר */}
           <div>
-            <h4 className="text-xl mb-6 text-slate-900" style={fontBold}>דברו איתי</h4>
-            <ul className="space-y-4 text-lg text-slate-800">
+            <h4 className="text-lg mb-3 text-slate-900" style={fontBold}>דברו איתי</h4>
+            <ul className="space-y-2 text-base text-slate-800">
               <li className="flex items-center gap-3">
-                <svg className="text-slate-900 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="text-slate-900 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <a 
@@ -62,7 +62,7 @@ function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-3">
-                <svg className="text-slate-900 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="text-slate-900 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
                 <a 
@@ -77,12 +77,10 @@ function Footer() {
           </div>
         </div>
         
-        {/* שורת זכויות ומדיניות - מעודכן */}
-        <div className="mt-12 pt-8 border-t border-black/10 text-center text-slate-700">
-          <p className="text-md mb-2">© {new Date().getFullYear()} כל הזכויות שמורות להדסה מתן - שקט תפעולי. שליטה בעסק.</p>
-          <div className="flex justify-center items-center gap-3 text-sm opacity-80">
-            <span>גלישה בטוחה ומאושרת</span>
-            <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
+        {/* שורת זכויות ומדיניות */}
+        <div className="mt-6 pt-4 border-t border-black/10 text-center text-slate-700">
+          <p className="text-sm mb-1">© {new Date().getFullYear()} כל הזכויות שמורות להדסה מתן - שקט תפעולי. שליטה בעסק.</p>
+          <div className="flex justify-center items-center gap-3 text-xs opacity-80">
             <Link to="/PrivacyPolicy" className="hover:text-white transition-colors underline underline-offset-4">
               מדיניות פרטיות
             </Link>
