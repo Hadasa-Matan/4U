@@ -56,9 +56,9 @@ function Hero() {
               className="w-72 sm:w-auto px-10 py-4 rounded-full font-extrabold text-lg
                          transition-transform duration-300 hover:scale-[1.04]
                          inline-flex items-center justify-center"
-            >
-              לאבחון עסקי ומפת דרכים טכנולוגית 🎁 <span className="mr-2">←</span>
             </Link>
+  לאבחון עסקי ומפת דרכים טכנולוגית 🎁
+</Link>
           </motion.div>
         </div>
       </div>
