@@ -57,7 +57,7 @@ function Hero() {
                          transition-transform duration-300 hover:scale-[1.04]
                          inline-flex items-center justify-center"
             >
-              🎁 לאבחון עסקי ומפת דרכים טכנולוגית<span className="mr-2">←</span>
+              לאבחון עסקי ומפת דרכים טכנולוגית 🎁 <span className="mr-2">←</span>
             </Link>
           </motion.div>
         </div>
