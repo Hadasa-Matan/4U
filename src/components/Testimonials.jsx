@@ -21,28 +21,28 @@ function Testimonials() {
   const fontRegular = { fontFamily: "FbAsparagos, sans-serif" };
 
   const fontFaceStyle = `
-    @font-face { font-family: 'FbAsparagosBold'; src: url('/4U/fonts/FbAsparagos-Bold.otf') format('opentype'); }
-    @font-face { font-family: 'FbAsparagos'; src: url('/4U/fonts/FbAsparagos-Regular.otf') format('opentype'); }
+    @font-face { font-family: 'FbAsparagosBold'; src: url('/fonts/FbAsparagos-Bold.otf') format('opentype'); }
+    @font-face { font-family: 'FbAsparagos'; src: url('/fonts/FbAsparagos-Regular.otf') format('opentype'); }
   `;
 
   const testimonials = [
     {
       author: "הרב גלוסקין, גבאי ביהכנ\"ס 'אהל שמשון'",
       text: "\"כגבאי בית כנסת המתזז רבות בין משימות לא נגמרות גב' מתן הקפיצה אותי בכמה רמות עם אוטומציה מדהימה החוסכת הרבה זמן, פשוט, קל ויעיל\"",
-      avatar: "/4U/images/avatar1.jpg",
-      image: "/4U/images/testimonial1.jpg"
+      avatar: "/images/avatar1.jpg",
+      image: "/images/testimonial1.jpg"
     },
     {
       author: "חסי לינטופ, מנהלת תוכניות כפיים",
       text: "\"תודה שהגשמת לי חלום... האוטומציה הזו מהממת חוסכת לי זמן והתעסקות הכל ברור מסודר ומתקתק!! ...\"",
-      avatar: "/4U/images/avatar2.gif",
-      image: "/4U/images/testimonial2.jpg"
+      avatar: "/images/avatar2.gif",
+      image: "/images/testimonial2.jpg"
     },
     {
       author: "טובי",
       text: "\"שירות עם לב ונשמה... ביעילות ובמהירות... הרווח כולו שלך!.\"",
-      avatar: "/4U/images/publicimagesavatar2.gif", 
-      image: "/4U/images/testimonial3.jpg"
+      avatar: "/images/publicimagesavatar2.gif", 
+      image: "/images/testimonial3.jpg"
     }
   ];
 

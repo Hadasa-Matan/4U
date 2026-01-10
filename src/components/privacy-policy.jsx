@@ -21,8 +21,8 @@ function PrivacyPolicy() {
             <h2 className="text-xl font-bold text-slate-900 mb-3" style={fontBold}>מי אנחנו?</h2>
             <p>
               האתר שלנו הוא{" "}
-              <a href="https://hadasa-matan.github.io/4U/" className="text-[#000ab9] hover:underline">
-                https://hadasa-matan.github.io/4U/
+              <a href="https://hadasamatan.com/" className="text-[#000ab9] hover:underline">
+                https://hadasamatan.com/
               </a>{" "}
               והוא מספק שירותי אוטומציה עסקית, צ’אטבוטים וכלי טכנולוגיה מתקדמים לעסקים.
             </p>

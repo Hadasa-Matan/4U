@@ -46,7 +46,7 @@ function Header() {
           {/* LOGO - לחיצה עליו היא החזרה לדף הבית */}
           <Link to="/" className="flex items-center flex-none">
             <img
-              src="/4U/logo.png"
+              src="/logo.png"
               alt="Logo"
               className="h-12 w-auto"
             />
