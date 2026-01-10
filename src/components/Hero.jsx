@@ -57,7 +57,7 @@ function Hero() {
                          hover:bg-[rgba(124,214,222,0.18)]
                          inline-flex items-center justify-center"
             >
-              שיחת יעוץ ללא עלות
+              🎁 לאבחון עסקי ומפת דרכים טכנולוגית
             </Link>
           </motion.div>
         </div>
