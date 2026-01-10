@@ -70,7 +70,7 @@ function Testimonials() {
             מה הלקוחות <span style={{ color: BRAND_CYAN }}>אומרים</span>
           </h1>
           <p className="text-base md:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            ההצלחה שלכם היא המדד הכי טוב לעבודה שלי. הנה כמה סיפורים מהשטח.
+            ההצלחה שלכם היא המדד הכי טוב לעבודה שלי. הנה כמה מהשטח.
           </p>
         </div>
       </section>
