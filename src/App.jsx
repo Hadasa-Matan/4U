@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import HomeButton from './components/HomeButton';
 import Footer from './components/Footer';
 import VisitorTracker from './components/VisitorTracker';
+import PrivacyPolicy from './components/PrivacyPolicy'; // ודאי שזה השם והנתיב של הקובץ שלך
 
 function MainLayout() {
 
@@ -36,6 +37,7 @@ function MainLayout() {
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/consultation" element={<ConsultationCard />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<PrivacyPolicy />} />
         </Routes>
       </main>
 
