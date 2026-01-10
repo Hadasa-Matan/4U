@@ -19,7 +19,7 @@ function Hero() {
         }}
       />
 
-      {/* Buttons only - positioned lower so they won't cover the banner text */}
+      {/* Buttons container */}
       <div className="relative z-10 min-h-screen flex items-end pb-24 sm:pb-28">
         <div className="w-full flex justify-center px-4">
           <motion.div
@@ -28,24 +28,9 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
-            {/* Primary CTA - המוצרים שלנו */}
+            {/* Secondary CTA - המוצרים שלנו (עכשיו עם מסגרת) */}
             <Link
               to="/services"
-              style={{
-                backgroundColor: BRAND_GREEN,
-                color: "#06233a",
-                boxShadow: "0 16px 36px rgba(0,0,0,0.25)",
-              }}
-              className="w-72 sm:w-auto px-10 py-4 rounded-full font-extrabold text-lg
-                         transition-transform duration-300 hover:scale-[1.04]
-                         inline-flex items-center justify-center"
-            >
-              המוצרים שלנו <span className="mr-2">←</span>
-            </Link>
-
-            {/* Secondary CTA - שיחת ייעוץ */}
-            <Link
-              to="/consultation"
               style={{
                 borderColor: BRAND_CYAN,
                 color: "#ffffff",
@@ -57,7 +42,22 @@ function Hero() {
                          hover:bg-[rgba(124,214,222,0.18)]
                          inline-flex items-center justify-center"
             >
-              🎁 לאבחון עסקי ומפת דרכים טכנולוגית
+              המוצרים שלנו
+            </Link>
+
+            {/* Primary CTA - שיחת ייעוץ (עכשיו הירוק הבולט) */}
+            <Link
+              to="/consultation"
+              style={{
+                backgroundColor: BRAND_GREEN,
+                color: "#06233a",
+                boxShadow: "0 16px 36px rgba(0,0,0,0.25)",
+              }}
+              className="w-72 sm:w-auto px-10 py-4 rounded-full font-extrabold text-lg
+                         transition-transform duration-300 hover:scale-[1.04]
+                         inline-flex items-center justify-center"
+            >
+              שיחת יעוץ ללא עלות <span className="mr-2">←</span>
             </Link>
           </motion.div>
         </div>
