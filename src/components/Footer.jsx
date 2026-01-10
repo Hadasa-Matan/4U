@@ -83,7 +83,7 @@ function Footer() {
           <div className="flex justify-center items-center gap-3 text-sm opacity-80">
             <span>גלישה בטוחה ומאושרת</span>
             <span className="w-1 h-1 bg-slate-600 rounded-full"></span>
-            <Link to="/privacy-policy" className="hover:text-white transition-colors underline underline-offset-4">
+            <Link to="/PrivacyPolicy" className="hover:text-white transition-colors underline underline-offset-4">
               מדיניות פרטיות
             </Link>
           </div>
