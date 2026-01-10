@@ -28,7 +28,7 @@ function Hero() {
             transition={{ duration: 0.6 }}
             className="flex flex-col sm:flex-row gap-4 items-center justify-center"
           >
-            {/* Secondary CTA - המוצרים שלנו (עכשיו עם מסגרת) */}
+            {/* Secondary CTA - המוצרים שלנו */}
             <Link
               to="/services"
               style={{
@@ -45,7 +45,7 @@ function Hero() {
               המוצרים שלנו
             </Link>
 
-            {/* Primary CTA - שיחת ייעוץ (עכשיו הירוק הבולט) */}
+            {/* Primary CTA - שיחת יעוץ */}
             <Link
               to="/consultation"
               style={{
@@ -55,10 +55,10 @@ function Hero() {
               }}
               className="w-72 sm:w-auto px-10 py-4 rounded-full font-extrabold text-lg
                          transition-transform duration-300 hover:scale-[1.04]
-                         inline-flex items-center justify-center"
+                         inline-flex items-center justify-center text-center"
+            >
+              לאבחון עסקי ומפת דרכים טכנולוגית 🎁
             </Link>
-  לאבחון עסקי ומפת דרכים טכנולוגית 🎁
-</Link>
           </motion.div>
         </div>
       </div>
