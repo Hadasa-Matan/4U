@@ -58,7 +58,7 @@ function MainLayout() {
 
 function App() {
   return (
-    <Router basename="/4U">
+    <Router basename="/">
       <MainLayout />
     </Router>
   );
