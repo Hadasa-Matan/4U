@@ -20,7 +20,7 @@ function Contact() {
 
   const emailSubject = encodeURIComponent("פנייה חדשה מהאתר");
   const emailBody = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
-  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+  const mailtoLink = `mailto:Hadasa@hadasamatan.com?subject=${emailSubject}&body=${emailBody}`;
 
   return (
     <div className="min-h-screen bg-white pb-12" dir="rtl" style={fontRegular}>
@@ -103,7 +103,7 @@ function Contact() {
                     <svg className="w-5 h-5" style={{ color: BRAND_BLUE }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
-                    <span className="font-medium" style={fontEng}>HadasaMatan@gmail.com</span>
+                    <span className="font-medium" style={fontEng}>Hadasa@hadasamatan.com</span>
                   </a>
                 </div>
 
