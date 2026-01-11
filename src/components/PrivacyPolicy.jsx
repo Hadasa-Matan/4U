@@ -1,3 +1,4 @@
+// PrivacyPolicy.jsx
 import React, { useEffect } from "react";
 
 const BRAND_GREEN = "#52de4a";
@@ -111,7 +112,7 @@ function PrivacyPolicy() {
             <li>🔒 הגבלת גישה למידע רק לאנשים מורשים</li>
           </ul>
           <p className="text-slate-600 text-base">
-            ייתכן כי אנו שומרים חלק מהמידע בשרתי ענן מחוץ לישראל (כגון Google, Amazon). העברת המידע נעשית בהתאם לתקנות הגנת הפרטיות (העברת מידע לחו"ל), תשס"א–2001.
+            ייתכן כי אנו שומרים חלק מהמידע בשרתי ענן מחוץ לישראל (כגון Google, Amazon). העברת המידע נעשית בהתאם לתקנות הגנת הפרטיות (העברת מידע לחו\"ל), תשס\"א–2001.
           </p>
           <p className="mt-3 text-slate-600 text-base">
             <strong>שימו לב:</strong> אף שיטת אבטחה אינה חסינה ב-100%. אנו עושים את מירב המאמצים להגן על המידע, אך איננו יכולים להבטיח אבטחה מוחלטת.
@@ -127,7 +128,7 @@ function PrivacyPolicy() {
           <p className="mb-3"><strong>אנו לא מוכרים או משכירים את המידע האישי שלכם.</strong></p>
           <p className="mb-3">עם זאת, אנו עשויים לשתף מידע עם:</p>
           <ul className="space-y-2 mr-6">
-            <li>📧 <strong>ספקי שירות:</strong> כגון שירותי דוא"ל, אחסון ענן, ניתוח נתונים - רק כדי לספק את השירות.</li>
+            <li>📧 <strong>ספקי שירות:</strong> כגון שירותי דוא\"ל, אחסון ענן, ניתוח נתונים - רק כדי לספק את השירות.</li>
             <li>⚖️ <strong>חובות חוקיות:</strong> במקרה שהחוק מחייב אותנו לחשוף מידע.</li>
           </ul>
           <p className="mt-3 text-slate-600 text-base">
@@ -169,7 +170,7 @@ function PrivacyPolicy() {
           <p className="mb-3">לשאלות, הבהרות או בקשות בנוגע למדיניות הפרטיות:</p>
           <div className="space-y-2">
             <p>
-              📧 <strong>דוא"ל:</strong>{" "}
+              📧 <strong>דוא\"ל:</strong>{" "}
               <a href="mailto:office@hadasamatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
                 office@hadasamatan.com
               </a>
@@ -187,7 +188,58 @@ function PrivacyPolicy() {
     }
   ];
 
-  return (...);
+  return (
+    <div className="min-h-screen bg-white pb-12" dir="rtl" style={fontRegular}>
+      <style>{fontFaceStyle}</style>
+
+      <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 bg-slate-50/50 border-b border-slate-100">
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-3xl md:text-5xl text-slate-900 mb-4 text-center" style={fontBold}>
+            מדיניות <span style={{ color: BRAND_CYAN }}>פרטיות</span>
+          </h1>
+          <p className="text-base md:text-lg text-slate-600 text-center leading-relaxed max-w-2xl mx-auto">
+            אנו מחויבים להגן על הפרטיות שלכם. מדיניות זו מסבירה כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלכם.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-10 px-6">
+        <div className="max-w-4xl mx-auto space-y-8">
+          {sections.map((section, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-[32px] border-[1.5px] p-8 md:p-10 relative overflow-hidden"
+              style={{ borderColor: section.color }}
+            >
+              <div
+                className="absolute top-0 right-0 w-2 h-full"
+                style={{ backgroundColor: section.color }}
+              />
+              <div className="relative z-10">
+                <h2 className="text-2xl md:text-3xl text-slate-900 mb-4" style={fontBold}>
+                  {section.title}
+                </h2>
+                <div className="text-slate-700 leading-relaxed space-y-3">
+                  {section.content}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <div className="max-w-4xl mx-auto px-6 mt-12">
+        <div className="bg-slate-50 rounded-2xl p-6 text-center border-t-4" style={{ borderColor: BRAND_BLUE }}>
+          <p className="text-sm text-slate-500">
+            <strong>עודכן לאחרונה:</strong> ינואר 2026
+          </p>
+          <p className="text-sm text-slate-500 mt-2">
+            מסמך זה נכתב בהתאם להוראות חוק הגנת הפרטיות, התשמ\"א–1981, תקנות הגנת הפרטיות (אבטחת מידע), התשע\"ז–2017, והנחיות הרשות להגנת הפרטיות.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default PrivacyPolicy;
