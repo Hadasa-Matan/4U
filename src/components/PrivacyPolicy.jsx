@@ -27,14 +27,14 @@ function PrivacyPolicy() {
           </p>
           <p>
             כתובת האתר:{" "}
-            <a href="https://HadasaMatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
-              https://HadasaMatan.com
+            <a href="https://hadasamatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
+              https://hadasamatan.com
             </a>
           </p>
           <p className="mt-2">
             דוא"ל:{" "}
-            <a href="mailto:HadasaMatan@gmail.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
-              HadasaMatan@gmail.com
+            <a href="mailto:office@hadasamatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
+              office@hadasamatan.com
             </a>
           </p>
         </>
@@ -51,6 +51,9 @@ function PrivacyPolicy() {
             <li><strong>מידע טכני:</strong> כתובת IP, סוג דפדפן, מערכת הפעלה, זמן ביקור - באמצעות עוגיות (Cookies) ואמצעי מעקב אחרים.</li>
             <li><strong>מידע שימושי:</strong> דפים שבהם ביקרתם, זמן שהות באתר, אינטראקציות עם תכנים שונים.</li>
           </ul>
+          <p className="mt-4 text-slate-600 text-base">
+            <strong>הבהרה:</strong> מסירת המידע נעשית מרצונכם החופשי. עם זאת, ייתכן שלא נוכל לספק מענה או שירותים מסוימים אם לא תספקו את המידע המבוקש.
+          </p>
         </>
       ),
       color: BRAND_CYAN
@@ -66,6 +69,9 @@ function PrivacyPolicy() {
             <li>✅ <strong>שיווק ותקשורת:</strong> שליחת עדכונים, ניוזלטרים והצעות רלוונטיות (רק אם הסכמתם לכך).</li>
             <li>✅ <strong>ניתוח סטטיסטי:</strong> הבנת התנהגות משתמשים באופן אנונימי.</li>
           </ul>
+          <p className="mt-3 text-slate-600 text-base">
+            <strong>שימוש למטרות שיווק:</strong> ייעשה רק לאחר קבלת הסכמתכם המפורשת, בהתאם לחוק התקשורת (בזק ושידורים), תשמ"ב–1982.
+          </p>
         </>
       ),
       color: BRAND_GREEN
@@ -85,6 +91,9 @@ function PrivacyPolicy() {
           <p className="mt-3">
             <strong>אתם יכולים לחסום עוגיות</strong> באמצעות הגדרות הדפדפן שלכם, אך זה עשוי להשפיע על תפקוד מסוימים באתר.
           </p>
+          <p className="mt-3 text-slate-600 text-base">
+            ייתכן ותוצג בפניכם בקשת הסכמה לשימוש בעוגיות שאינן חיוניות (כגון לצרכי ניתוח או שיווק), בהתאם להנחיות הרשות להגנת הפרטיות.
+          </p>
         </>
       ),
       color: BRAND_BLUE
@@ -101,6 +110,9 @@ function PrivacyPolicy() {
             <li>🔒 שמירת מידע בשרתים מאובטחים</li>
             <li>🔒 הגבלת גישה למידע רק לאנשים מורשים</li>
           </ul>
+          <p className="text-slate-600 text-base">
+            ייתכן כי אנו שומרים חלק מהמידע בשרתי ענן מחוץ לישראל (כגון Google, Amazon). העברת המידע נעשית בהתאם לתקנות הגנת הפרטיות (העברת מידע לחו"ל), תשס"א–2001.
+          </p>
           <p className="mt-3 text-slate-600 text-base">
             <strong>שימו לב:</strong> אף שיטת אבטחה אינה חסינה ב-100%. אנו עושים את מירב המאמצים להגן על המידע, אך איננו יכולים להבטיח אבטחה מוחלטת.
           </p>
@@ -139,35 +151,16 @@ function PrivacyPolicy() {
           </ul>
           <p className="mt-4 p-4 bg-slate-50 rounded-xl border-r-4" style={{ borderColor: BRAND_BLUE }}>
             <strong>לממש את זכויותיכם:</strong> צרו איתנו קשר ב-{" "}
-            <a href="mailto:HadasaMatan@gmail.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
-              HadasaMatan@gmail.com
+            <a href="mailto:office@hadasamatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
+              office@hadasamatan.com
             </a>
+          </p>
+          <p className="text-slate-600 text-base mt-3">
+            אנו מתחייבים להשיב לבקשות לעיון או תיקון מידע בתוך 30 יום ממועד קבלת הפנייה, בהתאם לסעיף 13 לחוק הגנת הפרטיות.
           </p>
         </>
       ),
       color: BRAND_BLUE
-    },
-    {
-      title: "קישורים לאתרים חיצוניים",
-      content: (
-        <>
-          <p>
-            האתר עשוי לכלול קישורים לאתרים חיצוניים. אנו לא אחראים על מדיניות הפרטיות או התוכן של אתרים אלה. מומלץ לעיין במדיניות הפרטיות של כל אתר שאליו אתם נכנסים.
-          </p>
-        </>
-      ),
-      color: BRAND_CYAN
-    },
-    {
-      title: "שינויים במדיניות הפרטיות",
-      content: (
-        <>
-          <p>
-            אנו שומרים לעצמנו את הזכות לעדכן מדיניות זו מעת לעת. כל שינוי יפורסם בעמוד זה, ותאריך העדכון האחרון יופיע בתחתית הדף. המשך שימוש באתר לאחר עדכון המדיניות מהווה הסכמה לשינויים.
-          </p>
-        </>
-      ),
-      color: BRAND_GREEN
     },
     {
       title: "יצירת קשר",
@@ -177,8 +170,8 @@ function PrivacyPolicy() {
           <div className="space-y-2">
             <p>
               📧 <strong>דוא"ל:</strong>{" "}
-              <a href="mailto:HadasaMatan@gmail.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
-                HadasaMatan@gmail.com
+              <a href="mailto:office@hadasamatan.com" className="font-bold hover:underline" style={{ color: BRAND_BLUE }}>
+                office@hadasamatan.com
               </a>
             </p>
             <p>
@@ -194,62 +187,7 @@ function PrivacyPolicy() {
     }
   ];
 
-  return (
-    <div className="min-h-screen bg-white pb-12" dir="rtl" style={fontRegular}>
-      <style>{fontFaceStyle}</style>
-
-      {/* HERO */}
-      <section className="pt-24 pb-12 md:pt-32 md:pb-16 px-6 bg-slate-50/50 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-3xl md:text-5xl text-slate-900 mb-4 text-center" style={fontBold}>
-            מדיניות <span style={{ color: BRAND_CYAN }}>פרטיות</span>
-          </h1>
-          <p className="text-base md:text-lg text-slate-600 text-center leading-relaxed max-w-2xl mx-auto">
-            אנו מחויבים להגן על הפרטיות שלכם. מדיניות זו מסבירה כיצד אנו אוספים, משתמשים ומגנים על המידע האישי שלכם.
-          </p>
-        </div>
-      </section>
-
-      {/* CONTENT */}
-      <section className="py-10 px-6">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {sections.map((section, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-[32px] border-[1.5px] p-8 md:p-10 relative overflow-hidden"
-              style={{ borderColor: section.color }}
-            >
-              <div
-                className="absolute top-0 right-0 w-2 h-full"
-                style={{ backgroundColor: section.color }}
-              />
-              
-              <div className="relative z-10">
-                <h2 className="text-2xl md:text-3xl text-slate-900 mb-4" style={fontBold}>
-                  {section.title}
-                </h2>
-                <div className="text-slate-700 leading-relaxed space-y-3">
-                  {section.content}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* FOOTER NOTE */}
-      <div className="max-w-4xl mx-auto px-6 mt-12">
-        <div className="bg-slate-50 rounded-2xl p-6 text-center border-t-4" style={{ borderColor: BRAND_BLUE }}>
-          <p className="text-sm text-slate-500">
-            <strong>עודכן לאחרונה:</strong> ינואר 2026
-          </p>
-          <p className="text-sm text-slate-500 mt-2">
-            מדיניות זו כתובה בשפה פשוטה ונגישה, ועומדת בדרישות חוק הגנת הפרטיות התשמ"א-1981
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+  return (...);
 }
 
 export default PrivacyPolicy;

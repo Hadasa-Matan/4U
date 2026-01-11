@@ -14,9 +14,11 @@ function Footer() {
     @font-face { font-family: 'FbRimonaEng'; src: url('/fonts/FbRimonaEng-Regular.otf') format('opentype'); }
   `;
   
-  const subject = "פנייה חדשה מהאתר";
-  const body = "היי הדסה,%0D%0Aהגעתי דרך האתר שלך ואשמח לשמוע עוד על הפתרונות שלך ליצירת שקט ושליטה בעסק שלי.%0D%0Aנשתמע!";
-  const mailtoLink = `mailto:HadasaMatan@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+  // הגדרה נקייה של המייל החדש
+  const email = "Hadasa@hadasamatan.com";
+  const subject = encodeURIComponent("פנייה חדשה מהאתר");
+  const body = encodeURIComponent("היי הדסה, הגעתי דרך האתר ואשמח לשמוע עוד על הפתרונות שלך.");
+  const mailtoLink = `mailto:${email}?subject=${subject}&body=${body}`;
 
   return (
     <footer className="py-6" style={{ backgroundColor: BRAND_CYAN, ...fontRegular }}>
@@ -70,7 +72,7 @@ function Footer() {
                   style={fontEng}
                   className="hover:text-white transition-colors underline decoration-slate-400 underline-offset-4"
                 >
-                  HadasaMatan@gmail.com
+                  Hadasa@hadasamatan.com
                 </a>
               </li>
             </ul>
