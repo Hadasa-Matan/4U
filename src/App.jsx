@@ -13,7 +13,8 @@ import Contact from './components/Contact';
 import HomeButton from './components/HomeButton';
 import Footer from './components/Footer';
 import VisitorTracker from './components/VisitorTracker';
-import PrivacyPolicy from './components/PrivacyPolicy'; // ודאי שזה השם והנתיב של הקובץ שלך
+import PrivacyPolicy from './components/PrivacyPolicy';
+import ChatBot from './components/ChatBot';
 
 function MainLayout() {
 
@@ -42,18 +43,8 @@ function MainLayout() {
       </main>
 
       <Footer />
-
-
-
-
-
-
-
-
-
-
-
       <VisitorTracker />
+      <ChatBot />
     </div>
   );
 }
