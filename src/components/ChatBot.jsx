@@ -12,7 +12,7 @@ function ChatBot() {
         window.ktt10.setup({
           id: "kX8n4IR4DP27PkpEo2",
           accountId: "1249354",
-          color: "#377FE1"
+          color: "#0AD000"
         });
       }
     };
