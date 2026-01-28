@@ -2,26 +2,30 @@ import React, { useEffect } from 'react';
 
 function ChatBot() {
   useEffect(() => {
-    // 1. הוספת ה-CSS לאפקט הנשימה
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes pulse-animation {
         0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+        50% { transform: scale(1.08); }
         100% { transform: scale(1); }
       }
       
-      /* זיהוי הכפתור של צ'אטרייס והפעלת האנימציה */
-      #chatrace-web-chat-container, 
-      .chatrace-launcher-button, 
-      [id^="ktt10-"] { 
-        animation: pulse-animation 2s infinite ease-in-out !important;
-        transition: transform 0.3s ease;
+      /* טרגוט ספציפי של כפתור הפתיחה בלבד */
+      div[id^="ktt10-"] iframe[title="chat-button"],
+      .chatrace-launcher-button,
+      #chatrace-web-chat-container > div:not([class*="window"]) { 
+        animation: pulse-animation 2.2s infinite ease-in-out !important;
+        transform-origin: center bottom;
+      }
+
+      /* מוודא שחלון הצ'אט עצמו כשהוא פתוח לא יושפע מהאנימציה */
+      div[id^="ktt10-"] iframe:not([title="chat-button"]),
+      .chat-window-container {
+        animation: none !important;
       }
     `;
     document.head.appendChild(style);
 
-    // 2. טעינת הסקריפט של הצאטבוט
     const script = document.createElement('script');
     script.src = "https://chatrace.com/webchat/plugin.js?v=6";
     script.async = true;
